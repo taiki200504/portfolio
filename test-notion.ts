@@ -32,46 +32,32 @@ const formatUUID = (id: string) => {
 const formattedId = formatUUID(newsDbId!);
 console.log("Formatted ID:", formattedId);
 
+const waitingListDbId = process.env.NOTION_WAITING_LIST_DB_ID;
+
 async function test() {
     try {
-        console.log("Retrieving database...");
+        if (!waitingListDbId) {
+            throw new Error("NOTION_WAITING_LIST_DB_ID is not defined");
+        }
+        const formattedId = formatUUID(waitingListDbId);
+        console.log("Retrieving Waiting List database schema for:", formattedId);
+
         const db = await notion.databases.retrieve({ database_id: formattedId });
-        console.log("Database retrieved successfully. Title:", (db as any).title?.[0]?.plain_text);
+        console.log("Object Type:", db.object);
+        console.log("Data Sources:", (db as any).data_sources);
 
-        console.log("Querying database via fetch...");
-        const response = await fetch(`https://api.notion.com/v1/databases/${formattedId}/query`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${apiKey}`,
-                "Notion-Version": "2022-06-28",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                filter: {
-                    property: "Published",
-                    checkbox: {
-                        equals: true,
-                    },
-                },
-                sorts: [
-                    {
-                        property: "Date",
-                        direction: "descending",
-                    },
-                ],
-            }),
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Fetch failed: ${response.status} ${response.statusText} - ${errorText}`);
+        if ((db as any).data_sources && (db as any).data_sources.length > 0) {
+            const sourceId = (db as any).data_sources[0].id;
+            console.log("Found Source DB ID:", sourceId);
+            console.log("Retrieving Source DB...");
+            const sourceDb = await notion.databases.retrieve({ database_id: sourceId });
+            console.log("Source DB Properties Keys:", Object.keys(sourceDb.properties));
+        } else if ('properties' in db) {
+            console.log("Properties Keys:", Object.keys(db.properties));
+        } else {
+            console.log("No properties field found on object.");
         }
 
-        const data = await response.json();
-        console.log("Success! Results:", data.results.length);
-        if (data.results.length > 0) {
-            console.log("First item properties:", JSON.stringify(data.results[0].properties, null, 2));
-        }
     } catch (error: any) {
         console.error("Error:", error.message);
         if (error.body) {

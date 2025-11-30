@@ -30,22 +30,107 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             parent: { database_id: WAITING_LIST_DB_ID },
             properties: {
                 "Name": { title: [{ text: { content: name || "Anonymous" } }] },
-                "Email": { email: email },
-                "Company / Organization": { rich_text: [{ text: { content: organization || "" } }] },
-                "Role / Title": { rich_text: [{ text: { content: role || "" } }] },
-                "Website / URL": { url: website || null },
-                "Interested In": {
-                    multi_select: Array.isArray(interest)
-                        ? interest.map((v: string) => ({ name: v }))
-                        : interest ? [{ name: interest }] : []
-                },
-                "Expected Installation Timing": { select: { name: timing || "Undecided" } },
-                "Source": { select: { name: "HP Waiting List" } },
-                "Lead Status": { select: { name: "New" } },
-                "Notes / Use case image": {
-                    rich_text: [{ text: { content: message || "" } }],
-                },
             },
+            children: [
+                {
+                    object: "block",
+                    type: "heading_3",
+                    heading_3: {
+                        rich_text: [{ text: { content: "Contact Details" } }]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Email: " }, annotations: { bold: true } },
+                            { text: { content: email || "N/A" } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Company: " }, annotations: { bold: true } },
+                            { text: { content: organization || "N/A" } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Role: " }, annotations: { bold: true } },
+                            { text: { content: role || "N/A" } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Website: " }, annotations: { bold: true } },
+                            { text: { content: website || "N/A" } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "heading_3",
+                    heading_3: {
+                        rich_text: [{ text: { content: "Interest & Timing" } }]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Interested In: " }, annotations: { bold: true } },
+                            { text: { content: Array.isArray(interest) ? interest.join(", ") : (interest || "N/A") } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Timing: " }, annotations: { bold: true } },
+                            { text: { content: timing || "N/A" } }
+                        ]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "heading_3",
+                    heading_3: {
+                        rich_text: [{ text: { content: "Message" } }]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [{ text: { content: message || "N/A" } }]
+                    }
+                },
+                {
+                    object: "block",
+                    type: "paragraph",
+                    paragraph: {
+                        rich_text: [
+                            { text: { content: "Submitted At: " }, annotations: { bold: true, color: "gray" } },
+                            { text: { content: new Date().toISOString() }, annotations: { color: "gray" } }
+                        ]
+                    }
+                }
+            ],
         });
 
         return res.status(200).json({ ok: true });
