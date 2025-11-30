@@ -10,6 +10,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
+        console.log("Fetching news from Notion DB:", databaseId);
         const response = await (notion.databases as any).query({
             database_id: databaseId,
             filter: {
@@ -25,6 +26,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 },
             ],
         });
+
+        console.log("Notion response results count:", response.results.length);
 
         const news = response.results.map((page: any) => {
             const properties = page.properties;

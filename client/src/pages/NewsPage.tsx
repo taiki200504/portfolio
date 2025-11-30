@@ -20,7 +20,16 @@ export default function NewsPage() {
                         </h1>
 
                         <div className="space-y-8">
-                            {news && news.length > 0 ? (
+                            {!news && !error && (
+                                <div className="text-center text-white/40 py-12">Loading...</div>
+                            )}
+                            {error && (
+                                <div className="text-center text-white/40 py-12">Failed to load news.</div>
+                            )}
+                            {news && news.length === 0 && (
+                                <div className="text-center text-white/40 py-12">No news available.</div>
+                            )}
+                            {news && news.length > 0 && (
                                 news.map((item: any) => (
                                     <Link key={item.id} href={`/news/${item.slug}`} className="block group">
                                         <article className="bg-white/5 border border-white/10 p-8 rounded-xl hover:border-[#f6bd2b] transition-all duration-300">
@@ -42,10 +51,6 @@ export default function NewsPage() {
                                         </article>
                                     </Link>
                                 ))
-                            ) : (
-                                <div className="text-center text-white/40 py-12">
-                                    {error ? "Failed to load news." : "Loading..."}
-                                </div>
                             )}
                         </div>
                     </div>
