@@ -36,7 +36,7 @@ async function test() {
     try {
         console.log("Retrieving database...");
         const db = await notion.databases.retrieve({ database_id: formattedId });
-        console.log("Database retrieved successfully. Title:", db.title?.[0]?.plain_text);
+        console.log("Database retrieved successfully. Title:", (db as any).title?.[0]?.plain_text);
 
         console.log("Querying database via fetch...");
         const response = await fetch(`https://api.notion.com/v1/databases/${formattedId}/query`, {

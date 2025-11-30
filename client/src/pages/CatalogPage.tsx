@@ -31,6 +31,7 @@ export default function CatalogPage() {
         priceRange: "",
         specificPrice: "",
         requests: "",
+        timing: "",
     });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
