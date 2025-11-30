@@ -1,8 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            company: formData.get("company"),
+            subject: formData.get("subject"),
+            message: formData.get("message"),
+        };
+
+        try {
+            const response = await fetch("/api/notion/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to submit");
+            }
+
+            toast.success("Message sent successfully!");
+            (e.target as HTMLFormElement).reset();
+        } catch (error) {
+            console.error("Contact form error:", error);
+            toast.error("Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <Section id="contact" className="bg-[#040B17] relative">
             <div className="container mx-auto px-4">
@@ -21,8 +62,7 @@ export function Contact() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        action="https://formspree.io/f/YOUR_FORM_ID"
-                        method="POST"
+                        onSubmit={handleSubmit}
                         className="space-y-6"
                     >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -34,6 +74,11 @@ export function Contact() {
                                 <label className="text-xs font-bold text-white/50 tracking-wider">EMAIL</label>
                                 <input type="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder="メールアドレス" />
                             </div>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-xs font-bold text-white/50 tracking-wider">COMPANY</label>
+                            <input type="text" name="company" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder="会社名 / 組織名" />
                         </div>
 
                         <div className="space-y-2">
@@ -52,8 +97,8 @@ export function Contact() {
                         </div>
 
                         <div className="text-center pt-8">
-                            <Button type="submit" size="lg" className="w-full md:w-auto rounded-full font-bold tracking-wider">
-                                SEND MESSAGE
+                            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full md:w-auto rounded-full font-bold tracking-wider">
+                                {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                             </Button>
                         </div>
                     </motion.form>

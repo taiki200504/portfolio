@@ -46,9 +46,9 @@ export function Navbar() {
                     <div
                         className={cn(
                             "relative flex items-center justify-between px-6 py-4 rounded-full transition-all duration-500",
-                            "bg-white/[0.03] backdrop-blur-xl border border-white/10",
+                            "bg-[#040B17]/80 backdrop-blur-xl border border-white/10",
                             "shadow-[0_8px_32px_rgba(0,0,0,0.12)]",
-                            scrolled && "bg-[#040B17]/60 border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.24)]"
+                            scrolled && "bg-[#040B17]/95 border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.24)]"
                         )}
                     >
                         {/* Liquid Glow Effect */}
