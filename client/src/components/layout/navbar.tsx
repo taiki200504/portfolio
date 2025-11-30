@@ -20,6 +20,7 @@ export function Navbar() {
     const navLinks = [
         { name: "PHILOSOPHY", href: "/philosophy" },
         { name: "PRODUCT", href: "/product" },
+        { name: "NEWS", href: "/news" },
         { name: "COMPANY", href: "/company" },
     ];
 
@@ -41,10 +42,8 @@ export function Navbar() {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/">
-                        <a className="flex items-center gap-3 group">
-                            <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-8 md:h-10 object-contain" />
-                        </a>
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-8 md:h-10 object-contain" />
                     </Link>
 
                     {/* Desktop Nav */}
