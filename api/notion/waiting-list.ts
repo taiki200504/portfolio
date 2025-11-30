@@ -30,6 +30,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             parent: { database_id: WAITING_LIST_DB_ID },
             properties: {
                 "Name": { title: [{ text: { content: name || "Anonymous" } }] },
+                "Email": { email: email },
+                "Organization": { rich_text: [{ text: { content: organization || "" } }] },
+                "Role": { rich_text: [{ text: { content: role || "" } }] },
+                "Website": { url: website || null },
+                "Interest": {
+                    multi_select: Array.isArray(interest)
+                        ? interest.map((v: string) => ({ name: v }))
+                        : interest ? [{ name: interest }] : []
+                },
+                "Timing": { select: { name: timing || "Undecided" } },
+                "Status": { select: { name: "New" } },
+                "Message": {
+                    rich_text: [{ text: { content: message || "" } }],
+                },
+                "Submitted At": { date: { start: new Date().toISOString() } },
             },
             children: [
                 {
