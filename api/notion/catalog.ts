@@ -11,10 +11,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!process.env.NOTION_API_KEY || !CATALOG_DB_ID) {
         console.error("Missing Notion environment variables");
-        if (process.env.NODE_ENV === "development") {
-            console.log("Simulating Notion submission (missing env vars):", req.body);
-            return res.status(200).json({ ok: true, simulated: true });
-        }
         return res.status(500).json({ error: "Server configuration error" });
     }
 
