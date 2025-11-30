@@ -15,14 +15,12 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/philosophy"} component={PhilosophyPage} />
-      <Route path={"/product"} component={ProductPage} />
-      <Route path={"/company"} component={CompanyPage} />
-      <Route path={"/privacy"} component={PrivacyPolicy} />
-      <Route path={"/terms"} component={TermsOfService} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/philosophy" component={PhilosophyPage} />
+      <Route path="/product" component={ProductPage} />
+      <Route path="/company" component={CompanyPage} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfService} />
       <Route component={NotFound} />
     </Switch>
   );

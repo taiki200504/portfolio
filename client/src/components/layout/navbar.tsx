@@ -17,11 +17,9 @@ export function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: "ABOUT", href: "#about" },
-        { name: "PRODUCT", href: "#product" },
-        { name: "EXPERIENCE", href: "#experience" },
-        { name: "SCIENCE", href: "#science" },
-        { name: "TEAM", href: "#team" },
+        { name: "PHILOSOPHY", href: "/philosophy" },
+        { name: "PRODUCT", href: "/product" },
+        { name: "COMPANY", href: "/company" },
     ];
 
     const handleNavClick = (href: string) => {
@@ -51,23 +49,20 @@ export function Navbar() {
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    handleNavClick(link.href);
-                                }}
-                                className="text-xs font-bold tracking-[0.2em] text-white/60 hover:text-[#f6bd2b] transition-colors font-['Outfit']"
-                            >
-                                {link.name}
-                            </a>
+                            <Link key={link.name} href={link.href}>
+                                <a className={cn(
+                                    "text-xs font-bold tracking-widest hover:text-[#f6bd2b] transition-colors font-['Outfit']",
+                                    location === link.href ? "text-white" : "text-white/60"
+                                )}>
+                                    {link.name}
+                                </a>
+                            </Link>
                         ))}
-                        <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}>
-                            <Button size="sm" className="rounded-full font-bold tracking-wider bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90">
+                        <Link href="/company#contact">
+                            <Button variant="outline" size="sm" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all font-['Outfit'] tracking-widest text-xs">
                                 CONTACT
                             </Button>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -82,25 +77,22 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="absolute top-full left-0 right-0 bg-[#040B17] border-b border-white/10 p-4 md:hidden flex flex-col gap-4 shadow-2xl">
+                <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl p-4 md:hidden flex flex-col gap-4 border-t border-white/10">
                     {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                handleNavClick(link.href);
-                            }}
-                            className="text-sm font-bold tracking-widest text-white/80 hover:text-[#f6bd2b] py-2 font-['Outfit']"
-                        >
-                            {link.name}
-                        </a>
+                        <Link key={link.name} href={link.href}>
+                            <a
+                                className="text-sm font-bold tracking-widest text-white/80 hover:text-[#f6bd2b] py-2 font-['Outfit']"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        </Link>
                     ))}
-                    <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}>
-                        <Button className="w-full rounded-full font-bold tracking-wider bg-[#f6bd2b] text-[#040B17]">
+                    <Link href="/company#contact">
+                        <Button className="w-full rounded-full bg-white text-black hover:bg-white/90 font-['Outfit'] tracking-widest text-xs">
                             CONTACT
                         </Button>
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>

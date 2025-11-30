@@ -1,16 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { About } from "@/components/sections/about";
-import { Contact } from "@/components/sections/contact";
-import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
-import { Problem } from "@/components/sections/problem";
-import { Product } from "@/components/sections/product";
-import { Roadmap } from "@/components/sections/roadmap";
-import { Science } from "@/components/sections/science";
-import { Solution } from "@/components/sections/solution";
-import { Team } from "@/components/sections/team";
-import { UseCases } from "@/components/sections/use-cases";
+import { MenuGrid } from "@/components/sections/menu-grid";
 
 export default function Home() {
   return (
@@ -18,16 +9,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Problem />
-        <Solution />
-        <Product />
-        <Experience />
-        <UseCases />
-        <Science />
-        <Roadmap />
-        <Team />
-        <Contact />
+        <MenuGrid />
+        {/* News Section will be added here */}
       </main>
       <Footer />
     </div>
