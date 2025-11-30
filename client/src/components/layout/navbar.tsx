@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [locationPath] = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,7 +53,7 @@ export function Navbar() {
                             <Link key={link.name} href={link.href}>
                                 <a className={cn(
                                     "text-xs font-bold tracking-widest hover:text-[#f6bd2b] transition-colors font-['Outfit']",
-                                    location === link.href ? "text-white" : "text-white/60"
+                                    locationPath === link.href ? "text-white" : "text-white/60"
                                 )}>
                                     {link.name}
                                 </a>

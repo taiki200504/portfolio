@@ -3,6 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import CompanyPage from "@/pages/CompanyPage";
 import Home from "@/pages/Home";
+import NewsPage from "@/pages/NewsPage";
+import NewsDetailPage from "@/pages/NewsDetailPage";
 import NotFound from "@/pages/NotFound";
 import PhilosophyPage from "@/pages/PhilosophyPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/philosophy" component={PhilosophyPage} />
       <Route path="/product" component={ProductPage} />
       <Route path="/company" component={CompanyPage} />
+      <Route path="/news" component={NewsPage} />
+      <Route path="/news/:slug" component={NewsDetailPage} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
       <Route component={NotFound} />

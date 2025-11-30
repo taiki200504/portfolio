@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { MenuGrid } from "@/components/sections/menu-grid";
+import { NewsPreview } from "@/components/sections/news-preview";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <MenuGrid />
-        {/* News Section will be added here */}
+        <NewsPreview />
       </main>
       <Footer />
     </div>
