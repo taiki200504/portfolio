@@ -10,7 +10,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-        const response = await notion.databases.query({
+        const response = await (notion.databases as any).query({
             database_id: databaseId,
             filter: {
                 property: "Status",
