@@ -51,9 +51,9 @@ async function test() {
             console.log("Found Source DB ID:", sourceId);
             console.log("Retrieving Source DB...");
             const sourceDb = await notion.databases.retrieve({ database_id: sourceId });
-            console.log("Source DB Properties Keys:", Object.keys(sourceDb.properties));
+            console.log("Source DB Properties Keys:", Object.keys((sourceDb as any).properties));
         } else if ('properties' in db) {
-            console.log("Properties Keys:", Object.keys(db.properties));
+            console.log("Properties Keys:", Object.keys((db as any).properties));
         } else {
             console.log("No properties field found on object.");
         }
