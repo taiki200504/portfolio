@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { CustomCursor } from "@/components/ui/custom-cursor";
+
 import CompanyPage from "@/pages/CompanyPage";
 import Home from "@/pages/Home";
 import NewsPage from "@/pages/NewsPage";
@@ -58,7 +58,7 @@ function App() {
       // switchable
       >
         <TooltipProvider>
-          <CustomCursor />
+
           <LanguageProvider>
             <Router />
             <Toaster />

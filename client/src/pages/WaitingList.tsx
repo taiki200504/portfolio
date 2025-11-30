@@ -39,8 +39,9 @@ export default function WaitingList() {
             if (response.ok) {
                 setSubmitted(true);
             } else {
-                console.error("Failed to submit");
-                alert("Submission failed. Please try again.");
+                const errorData = await response.json();
+                console.error("Failed to submit:", errorData);
+                alert(`Submission failed: ${errorData.error}\n${JSON.stringify(errorData.details, null, 2)}`);
             }
         } catch (error) {
             console.error("Error submitting form:", error);

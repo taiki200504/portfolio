@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
@@ -6,6 +6,7 @@ import { useTranslation } from "@/lib/i18n";
 export function Footer() {
     const currentYear = new Date().getFullYear();
     const { t, language } = useTranslation();
+    const [, setLocation] = useLocation();
 
     const getLink = (path: string) => language === "en" ? `/en${path}` : path;
 
@@ -32,11 +33,12 @@ export function Footer() {
                                     {t("footer.catalog")}
                                 </Button>
                             </a>
-                            <Link href={getLink("/waiting-list")}>
-                                <Button className="rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 hover:shadow-[0_0_20px_rgba(246,189,43,0.4)] font-['Outfit'] tracking-widest font-bold transition-all duration-300">
-                                    {t("footer.waitingList")}
-                                </Button>
-                            </Link>
+                            <Button
+                                onClick={() => setLocation(getLink("/waiting-list"))}
+                                className="rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 hover:shadow-[0_0_20px_rgba(246,189,43,0.4)] font-['Outfit'] tracking-widest font-bold transition-all duration-300"
+                            >
+                                {t("footer.waitingList")}
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -71,18 +73,18 @@ export function Footer() {
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.company")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
                             <li>
-                                <Link href={getLink("/philosophy")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.philosophy")}</a>
+                                <Link href={getLink("/philosophy")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.philosophy")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={getLink("/company")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.team")}</a>
+                                <Link href={getLink("/company")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.team")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={getLink("/company#contact")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.contact")}</a>
+                                <Link href={getLink("/company#contact")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.contact")}
                                 </Link>
                             </li>
                         </ul>
@@ -92,18 +94,18 @@ export function Footer() {
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.product")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
                             <li>
-                                <Link href={getLink("/product")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.egg")}</a>
+                                <Link href={getLink("/product")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.egg")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={getLink("/product#use-cases")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.useCases")}</a>
+                                <Link href={getLink("/product#use-cases")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.useCases")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={getLink("/philosophy#science")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.science")}</a>
+                                <Link href={getLink("/philosophy#science")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.science")}
                                 </Link>
                             </li>
                         </ul>
@@ -113,8 +115,8 @@ export function Footer() {
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.resources")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
                             <li>
-                                <Link href={getLink("/news")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.news")}</a>
+                                <Link href={getLink("/news")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.news")}
                                 </Link>
                             </li>
                             <li>
@@ -123,13 +125,13 @@ export function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <Link href={getLink("/privacy")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.privacy")}</a>
+                                <Link href={getLink("/privacy")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.privacy")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={getLink("/terms")}>
-                                    <a className="hover:text-white transition-colors duration-300">{t("footer.links.terms")}</a>
+                                <Link href={getLink("/terms")} className="hover:text-white transition-colors duration-300">
+                                    {t("footer.links.terms")}
                                 </Link>
                             </li>
                         </ul>
