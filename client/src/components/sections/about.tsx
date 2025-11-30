@@ -1,7 +1,10 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/lib/i18n";
 
 export function About() {
+    const { t } = useTranslation();
+
     return (
         <Section id="about" className="bg-[#040B17] relative">
             <div className="container mx-auto px-4">
@@ -14,17 +17,12 @@ export function About() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-8 uppercase">About LYEN</h2>
-                            <h3 className="text-4xl md:text-6xl font-bold text-white leading-tight font-['Outfit'] mb-8">
-                                We Engineer <br />
-                                Silence.
+                            <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-8 uppercase">{t("about.label")}</h2>
+                            <h3 className="text-4xl md:text-6xl font-bold text-white leading-tight font-['Outfit'] mb-8 whitespace-pre-line">
+                                {t("about.title")}
                             </h3>
-                            <p className="text-white/60 text-lg leading-relaxed">
-                                情報は飽和し、外部脳（AI）は進化し続ける。<br />
-                                けれど、私たちの「内側」はどうだろう？
-                                <br /><br />
-                                LYENは、取り残された人間の内面をアップデートするラボです。
-                                静寂をエンジニアリングし、誰もが本来の自分に還れる場所を作ります。
+                            <p className="text-white/60 text-lg leading-relaxed whitespace-pre-line">
+                                {t("about.desc")}
                             </p>
                         </motion.div>
                     </div>
@@ -32,21 +30,9 @@ export function About() {
                     {/* Right: MVV List */}
                     <div className="lg:col-span-7 space-y-16 lg:mt-32">
                         {[
-                            {
-                                label: "MISSION",
-                                jp: "個人のポテンシャルを拡張する",
-                                en: "Expand individual Potential"
-                            },
-                            {
-                                label: "VISION",
-                                jp: "人類を内側からアップデート",
-                                en: "Upgrade humanity from the inside out"
-                            },
-                            {
-                                label: "VALUE",
-                                jp: "最高の自己没入体験をつくる",
-                                en: "Create the ultimate self-immersion experience"
-                            },
+                            t("about.mission"),
+                            t("about.vision"),
+                            t("about.value"),
                         ].map((item, i) => (
                             <motion.div
                                 key={i}

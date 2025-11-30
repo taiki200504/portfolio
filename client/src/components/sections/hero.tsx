@@ -3,8 +3,11 @@ import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Link } from "wouter";
+import { useTranslation } from "@/lib/i18n";
 
 export function Hero() {
+    const { t, language } = useTranslation();
+
     return (
         <Section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-0 pb-0">
             {/* Background: Deep Void with subtle pulse */}
@@ -32,10 +35,7 @@ export function Hero() {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight font-['Outfit']"
                 >
-                    Build your <br className="md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">
-                        inner sanctuary.
-                    </span>
+                    {t("hero.title")}
                 </motion.h1>
 
                 <motion.p
@@ -44,7 +44,7 @@ export function Hero() {
                     transition={{ delay: 1, duration: 0.8 }}
                     className="text-white/60 text-sm md:text-lg tracking-[0.2em] uppercase font-light mb-12"
                 >
-                    外部脳の時代に、内部OSを。
+                    {t("hero.subtitle")}
                 </motion.p>
 
                 <motion.div
@@ -52,9 +52,9 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2 }}
                 >
-                    <Link href="/product">
+                    <Link href={language === "en" ? "/en/product" : "/product"}>
                         <Button size="lg" className="rounded-full font-bold tracking-wider text-base">
-                            DISCOVER THE EGG
+                            {t("hero.cta")}
                         </Button>
                     </Link>
                 </motion.div>
@@ -67,7 +67,7 @@ export function Hero() {
                 transition={{ delay: 2, duration: 1 }}
                 className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2"
             >
-                <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+                <span className="text-[10px] tracking-[0.3em] uppercase">{t("hero.scroll")}</span>
                 <ArrowDown className="w-4 h-4 animate-bounce" />
             </motion.div>
         </Section>

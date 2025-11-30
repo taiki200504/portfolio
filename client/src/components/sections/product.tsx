@@ -2,8 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useTranslation } from "@/lib/i18n";
 
 export function Product() {
+    const { t, language } = useTranslation();
+
+    const getLink = (path: string) => language === "en" ? `/en${path}` : path;
+
     return (
         <Section id="product" className="bg-[#040B17] py-0 relative">
             <div className="container mx-auto px-4">
@@ -18,35 +23,35 @@ export function Product() {
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <span className="w-12 h-px bg-[#f6bd2b]" />
-                            <span className="text-[#f6bd2b] text-xs font-bold tracking-[0.2em] uppercase">Flagship Model</span>
+                            <span className="text-[#f6bd2b] text-xs font-bold tracking-[0.2em] uppercase">{t("product.label")}</span>
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 font-['Outfit']">
-                            The EGG
+                            {t("product.title")}
                         </h2>
 
                         <p className="text-xl text-white/80 mb-8 leading-relaxed font-light">
-                            The EGGは、「最高の自己没入体験」を形にしたフラッグシップデバイスです。
+                            {t("product.desc")}
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center gap-4 pt-8">
-                            <Link href="/waiting-list">
+                            <Link href={getLink("/waiting-list")}>
                                 <Button className="w-full sm:w-auto px-8 py-6 rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest font-bold text-lg">
-                                    WAITING LIST
+                                    {t("product.waitingList")}
                                 </Button>
                             </Link>
                             <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                 <Button variant="outline" className="w-full px-8 py-6 rounded-full border-white/20 text-white hover:bg-white hover:text-[#040B17] font-['Outfit'] tracking-widest text-lg">
-                                    DOWNLOAD CATALOG
+                                    {t("product.downloadCatalog")}
                                 </Button>
                             </a>
                         </div>
 
                         <div className="space-y-6 mb-12">
                             {[
-                                { title: "Total Isolation", desc: "外界のノイズを物理的に遮断するシェル構造" },
-                                { title: "Biophilic Light", desc: "脳波と同期する、生体リズムに合わせた光" },
-                                { title: "AI Guide", desc: "内省を深めるための音声ガイドとフィードバック" }
+                                { title: t("product.features.isolation.title"), desc: t("product.features.isolation.desc") },
+                                { title: t("product.features.light.title"), desc: t("product.features.light.desc") },
+                                { title: t("product.features.guide.title"), desc: t("product.features.guide.desc") }
                             ].map((item, i) => (
                                 <div key={i} className="pl-6 border-l border-white/20">
                                     <h4 className="text-white font-bold font-['Outfit'] mb-1">{item.title}</h4>
@@ -55,9 +60,9 @@ export function Product() {
                             ))}
                         </div>
 
-                        <Link href="/product">
+                        <Link href={getLink("/product")}>
                             <Button variant="outline" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all">
-                                VIEW FULL SPECS
+                                {t("product.viewSpecs")}
                             </Button>
                         </Link>
                     </motion.div>

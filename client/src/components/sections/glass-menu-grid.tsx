@@ -1,53 +1,56 @@
 import { ArrowRight, Brain, Building2, FileText, Newspaper, User } from "lucide-react";
 import { Link } from "wouter";
 import { cn } from "@/lib/utils";
-
-const menuItems = [
-    {
-        title: "The EGG",
-        description: "Flagship Pod",
-        icon: Brain,
-        href: "/product",
-        color: "text-white",
-    },
-    {
-        title: "Philosophy",
-        description: "Vision & Mission",
-        icon: User,
-        href: "/philosophy",
-        color: "text-white",
-    },
-    {
-        title: "Use Cases",
-        description: "For Executives",
-        icon: FileText,
-        href: "/product#use-cases",
-        color: "text-white",
-    },
-    {
-        title: "Company",
-        description: "Team & Roadmap",
-        icon: Building2,
-        href: "/company",
-        color: "text-white",
-    },
-    {
-        title: "News",
-        description: "Latest Updates",
-        icon: Newspaper,
-        href: "/news",
-        color: "text-white",
-    },
-    {
-        title: "Contact",
-        description: "Get in Touch",
-        icon: ArrowRight,
-        href: "/company#contact",
-        color: "text-[#f6bd2b]",
-    },
-];
+import { useTranslation } from "@/lib/i18n";
 
 export function GlassMenuGrid() {
+    const { t, language } = useTranslation();
+
+    const menuItems = [
+        {
+            title: t("menu.egg.title"),
+            description: t("menu.egg.desc"),
+            icon: Brain,
+            href: language === "en" ? "/en/product" : "/product",
+            color: "text-white",
+        },
+        {
+            title: t("menu.philosophy.title"),
+            description: t("menu.philosophy.desc"),
+            icon: User,
+            href: language === "en" ? "/en/philosophy" : "/philosophy",
+            color: "text-white",
+        },
+        {
+            title: t("menu.useCases.title"),
+            description: t("menu.useCases.desc"),
+            icon: FileText,
+            href: language === "en" ? "/en/product#use-cases" : "/product#use-cases",
+            color: "text-white",
+        },
+        {
+            title: t("menu.company.title"),
+            description: t("menu.company.desc"),
+            icon: Building2,
+            href: language === "en" ? "/en/company" : "/company",
+            color: "text-white",
+        },
+        {
+            title: t("menu.news.title"),
+            description: t("menu.news.desc"),
+            icon: Newspaper,
+            href: language === "en" ? "/en/news" : "/news",
+            color: "text-white",
+        },
+        {
+            title: t("menu.contact.title"),
+            description: t("menu.contact.desc"),
+            icon: ArrowRight,
+            href: language === "en" ? "/en/company#contact" : "/company#contact",
+            color: "text-[#f6bd2b]",
+        },
+    ];
+
     return (
         <section className="relative z-10 -mt-20 pb-24">
             <div className="container mx-auto px-4">
@@ -70,7 +73,7 @@ export function GlassMenuGrid() {
                                 <div className="relative z-10 flex flex-col justify-between h-full">
                                     <div className="flex justify-between items-start">
                                         <item.icon className={cn("w-6 h-6", item.color)} />
-                                        {item.title === "Contact" && (
+                                        {item.title === t("menu.contact.title") && (
                                             <div className="w-2 h-2 rounded-full bg-[#f6bd2b] animate-pulse" />
                                         )}
                                     </div>
