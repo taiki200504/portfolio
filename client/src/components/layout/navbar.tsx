@@ -2,12 +2,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [location] = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,24 +52,57 @@ export function Navbar() {
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
                             <a
-                                className={cn(
-                                    "text-4xl font-bold hover:text-[#f6bd2b] transition-all duration-300 transform font-['Outfit']",
-                                    mobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-                                    location === item.href ? "text-[#f6bd2b]" : "text-white/80"
-                                )}
-                                style={{ transitionDelay: `${i * 50}ms` }}
+                                key={link.name}
+                                href={link.href}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleNavClick(link.href);
+                                }}
+                                className="text-xs font-bold tracking-[0.2em] text-white/60 hover:text-[#f6bd2b] transition-colors font-['Outfit']"
                             >
-                                {item.label}
+                                {link.name}
                             </a>
-                        </Link>
-                    ))}
-                    <Link href="/company#contact">
-                        <Button className="mt-8 bg-[#f6bd2b] text-black hover:bg-[#f6bd2b]/90 rounded-full px-8 py-6 text-lg font-bold">
-                            CONTACT US
-                        </Button>
-                    </Link>
-                </nav>
+                        ))}
+                        <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}>
+                            <Button size="sm" className="rounded-full font-bold tracking-wider bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90">
+                                CONTACT
+                            </Button>
+                        </a>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="md:hidden text-white p-2"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? <X /> : <Menu />}
+                    </button>
+                </div>
             </div>
-        </>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="absolute top-full left-0 right-0 bg-[#040B17] border-b border-white/10 p-4 md:hidden flex flex-col gap-4 shadow-2xl">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleNavClick(link.href);
+                            }}
+                            className="text-sm font-bold tracking-widest text-white/80 hover:text-[#f6bd2b] py-2 font-['Outfit']"
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                    <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}>
+                        <Button className="w-full rounded-full font-bold tracking-wider bg-[#f6bd2b] text-[#040B17]">
+                            CONTACT
+                        </Button>
+                    </a>
+                </div>
+            )}
+        </nav>
     );
 }
