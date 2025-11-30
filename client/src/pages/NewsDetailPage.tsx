@@ -21,10 +21,8 @@ export default function NewsDetailPage() {
             <main className="pt-24">
                 <Section className="py-24">
                     <div className="container mx-auto px-4 max-w-3xl">
-                        <Link href="/news">
-                            <a className="inline-flex items-center gap-2 text-white/40 hover:text-[#f6bd2b] transition-colors mb-12 text-sm font-bold tracking-widest font-['Outfit']">
-                                <ArrowLeft className="w-4 h-4" /> BACK TO NEWS
-                            </a>
+                        <Link href="/news" className="inline-flex items-center gap-2 text-white/40 hover:text-[#f6bd2b] transition-colors mb-12 text-sm font-bold tracking-widest font-['Outfit']">
+                            <ArrowLeft className="w-4 h-4" /> BACK TO NEWS
                         </Link>
 
                         {news ? (

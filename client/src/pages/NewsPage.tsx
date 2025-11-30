@@ -22,26 +22,24 @@ export default function NewsPage() {
                         <div className="space-y-8">
                             {news && news.length > 0 ? (
                                 news.map((item: any) => (
-                                    <Link key={item.id} href={`/news/${item.slug}`}>
-                                        <a className="block group">
-                                            <article className="bg-white/5 border border-white/10 p-8 rounded-xl hover:border-[#f6bd2b] transition-all duration-300">
-                                                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                                                    <time className="text-sm text-white/40 font-['Outfit'] shrink-0 w-32">
-                                                        {item.date}
-                                                    </time>
-                                                    <div>
-                                                        <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#f6bd2b] transition-colors mb-2">
-                                                            {item.title}
-                                                        </h2>
-                                                        {item.excerpt && (
-                                                            <p className="text-white/60 text-sm line-clamp-2">
-                                                                {item.excerpt}
-                                                            </p>
-                                                        )}
-                                                    </div>
+                                    <Link key={item.id} href={`/news/${item.slug}`} className="block group">
+                                        <article className="bg-white/5 border border-white/10 p-8 rounded-xl hover:border-[#f6bd2b] transition-all duration-300">
+                                            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                                <time className="text-sm text-white/40 font-['Outfit'] shrink-0 w-32">
+                                                    {item.date}
+                                                </time>
+                                                <div>
+                                                    <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#f6bd2b] transition-colors mb-2">
+                                                        {item.title}
+                                                    </h2>
+                                                    {item.excerpt && (
+                                                        <p className="text-white/60 text-sm line-clamp-2">
+                                                            {item.excerpt}
+                                                        </p>
+                                                    )}
                                                 </div>
-                                            </article>
-                                        </a>
+                                            </div>
+                                        </article>
                                     </Link>
                                 ))
                             ) : (

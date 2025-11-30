@@ -50,13 +50,15 @@ export function Navbar() {
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <Link key={link.name} href={link.href}>
-                                <a className={cn(
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className={cn(
                                     "text-xs font-bold tracking-widest hover:text-[#f6bd2b] transition-colors font-['Outfit']",
                                     locationPath === link.href ? "text-white" : "text-white/60"
-                                )}>
-                                    {link.name}
-                                </a>
+                                )}
+                            >
+                                {link.name}
                             </Link>
                         ))}
                         <Link href="/company#contact">
@@ -80,13 +82,13 @@ export function Navbar() {
             {isOpen && (
                 <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl p-4 md:hidden flex flex-col gap-4 border-t border-white/10">
                     {navLinks.map((link) => (
-                        <Link key={link.name} href={link.href}>
-                            <a
-                                className="text-sm font-bold tracking-widest text-white/80 hover:text-[#f6bd2b] py-2 font-['Outfit']"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.name}
-                            </a>
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="text-sm font-bold tracking-widest text-white/80 hover:text-[#f6bd2b] py-2 font-['Outfit']"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.name}
                         </Link>
                     ))}
                     <Link href="/company#contact">
