@@ -5,9 +5,9 @@ import CompanyPage from "@/pages/CompanyPage";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 import PhilosophyPage from "@/pages/PhilosophyPage";
-import Privacy from "@/pages/Privacy";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import ProductPage from "@/pages/ProductPage";
-import Terms from "@/pages/Terms";
+import TermsOfService from "@/pages/TermsOfService";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -19,8 +19,8 @@ function Router() {
       <Route path={"/philosophy"} component={PhilosophyPage} />
       <Route path={"/product"} component={ProductPage} />
       <Route path={"/company"} component={CompanyPage} />
-      <Route path={"/privacy"} component={Privacy} />
-      <Route path={"/terms"} component={Terms} />
+      <Route path={"/privacy"} component={PrivacyPolicy} />
+      <Route path={"/terms"} component={TermsOfService} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

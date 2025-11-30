@@ -1,10 +1,16 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
+import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
-import { Section } from "@/components/ui/section";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "wouter";
+import { Problem } from "@/components/sections/problem";
+import { Product } from "@/components/sections/product";
+import { Roadmap } from "@/components/sections/roadmap";
+import { Science } from "@/components/sections/science";
+import { Solution } from "@/components/sections/solution";
+import { Team } from "@/components/sections/team";
+import { UseCases } from "@/components/sections/use-cases";
 
 export default function Home() {
   return (
@@ -12,39 +18,16 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-
-        {/* Highlights Section */}
-        <Section className="py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "PHILOSOPHY", desc: "Why we build internal OS.", link: "/philosophy", color: "bg-[#092a62]" },
-              { title: "PRODUCT", desc: "The EGG Series 01.", link: "/product", color: "bg-black" },
-              { title: "COMPANY", desc: "Our team and vision.", link: "/company", color: "bg-[#1a1a1a]" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link href={item.link}>
-                  <a className={`block h-full p-8 rounded-3xl border border-white/10 hover:border-[#f6bd2b]/50 transition-all group ${item.color} relative overflow-hidden`}>
-                    <div className="relative z-10">
-                      <h3 className="text-2xl font-bold mb-2 font-['Outfit']">{item.title}</h3>
-                      <p className="text-white/60 mb-8">{item.desc}</p>
-                      <div className="flex items-center gap-2 text-[#f6bd2b] font-bold text-sm group-hover:gap-4 transition-all">
-                        EXPLORE <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                    {/* Hover Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#f6bd2b]/0 to-[#f6bd2b]/0 group-hover:from-[#f6bd2b]/5 group-hover:to-transparent transition-all duration-500" />
-                  </a>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </Section>
+        <About />
+        <Problem />
+        <Solution />
+        <Product />
+        <Experience />
+        <UseCases />
+        <Science />
+        <Roadmap />
+        <Team />
+        <Contact />
       </main>
       <Footer />
     </div>

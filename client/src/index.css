@@ -47,106 +47,102 @@
 }
 
 :root {
-  /* Quiet Sci-Fi Palette */
-  --primary: oklch(0.85 0.15 85);
-  /* #f6bd2b Golden Yellow */
-  --primary-foreground: oklch(0.1 0.05 260);
-  /* #040B17 Black */
+  /* Base Colors */
+  --background: #040B17;
+  /* Deep Void */
+  --foreground: #fafcfd;
+  /* White */
 
-  --background: oklch(0.1 0.05 260);
-  /* #040B17 Void Black */
-  --foreground: oklch(0.98 0.01 240);
-  /* #fafcfd White */
+  /* UI Colors */
+  --card: #092a62;
+  /* Silent Indigo */
+  --card-foreground: #fafcfd;
+  --popover: #040B17;
+  --popover-foreground: #fafcfd;
 
-  --card: oklch(0.15 0.08 270);
-  /* #092a62 Deep Indigo (Darker) */
-  --card-foreground: oklch(0.98 0.01 240);
+  /* Primary / Accent */
+  --primary: #f6bd2b;
+  /* Core Gold */
+  --primary-foreground: #040B17;
 
-  --popover: oklch(0.1 0.05 260);
-  --popover-foreground: oklch(0.98 0.01 240);
+  /* Secondary */
+  --secondary: rgba(255, 255, 255, 0.1);
+  --secondary-foreground: #fafcfd;
 
-  --secondary: oklch(0.25 0.1 270);
-  /* Lighter Indigo */
-  --secondary-foreground: oklch(0.98 0.01 240);
+  /* Muted */
+  --muted: rgba(4, 11, 23, 0.5);
+  --muted-foreground: rgba(250, 252, 253, 0.6);
 
-  --muted: oklch(0.2 0.05 260);
-  --muted-foreground: oklch(0.7 0.05 260);
+  /* Destructive */
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafcfd;
 
-  --accent: oklch(0.85 0.15 85);
-  /* #f6bd2b */
-  --accent-foreground: oklch(0.1 0.05 260);
+  /* Borders & Inputs */
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #f6bd2b;
 
-  --destructive: oklch(0.6 0.2 20);
-  --destructive-foreground: oklch(0.98 0 0);
-
-  --border: oklch(0.2 0.05 260);
-  --input: oklch(0.2 0.05 260);
-  --ring: oklch(0.85 0.15 85);
-
+  /* Radius */
   --radius: 0.5rem;
-
-  --chart-1: oklch(0.85 0.15 85);
-  --chart-2: oklch(0.98 0.01 240);
-  --chart-3: oklch(0.15 0.08 270);
-  --chart-4: oklch(0.7 0.05 260);
-  --chart-5: oklch(0.5 0.05 260);
 }
 
 .dark {
-  --primary: oklch(0.85 0.15 85);
-  --primary-foreground: oklch(0.1 0.05 260);
-
-  --background: oklch(0.1 0.05 260);
-  --foreground: oklch(0.98 0.01 240);
-
-  --card: oklch(0.15 0.08 270);
-  --card-foreground: oklch(0.98 0.01 240);
-
-  --popover: oklch(0.1 0.05 260);
-  --popover-foreground: oklch(0.98 0.01 240);
-
-  --secondary: oklch(0.25 0.1 270);
-  --secondary-foreground: oklch(0.98 0.01 240);
-
-  --muted: oklch(0.2 0.05 260);
-  --muted-foreground: oklch(0.7 0.05 260);
-
-  --accent: oklch(0.85 0.15 85);
-  --accent-foreground: oklch(0.1 0.05 260);
-
-  --destructive: oklch(0.6 0.2 20);
-  --destructive-foreground: oklch(0.98 0 0);
-
-  --border: oklch(0.2 0.05 260);
-  --input: oklch(0.2 0.05 260);
-  --ring: oklch(0.85 0.15 85);
-
-  --chart-1: oklch(0.85 0.15 85);
-  --chart-2: oklch(0.98 0.01 240);
-  --chart-3: oklch(0.15 0.08 270);
-  --chart-4: oklch(0.7 0.05 260);
-  --chart-5: oklch(0.5 0.05 260);
+  --background: #040B17;
+  --foreground: #fafcfd;
+  --card: #092a62;
+  --card-foreground: #fafcfd;
+  --popover: #040B17;
+  --popover-foreground: #fafcfd;
+  --primary: #f6bd2b;
+  --primary-foreground: #040B17;
+  --secondary: rgba(255, 255, 255, 0.1);
+  --secondary-foreground: #fafcfd;
+  --muted: rgba(4, 11, 23, 0.5);
+  --muted-foreground: rgba(250, 252, 253, 0.6);
+  --accent: #f6bd2b;
+  --accent-foreground: #040B17;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fafcfd;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #f6bd2b;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    @apply bg-[#040B17];
-    /* Force background color */
-  }
-
-  * {
-    @apply border-border outline-ring/50;
+    @apply bg-background text-foreground;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
-    background-color: #040B17;
-    background-image:
-      radial-gradient(circle at 50% 0%, rgba(9, 42, 98, 0.4) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(9, 42, 98, 0.2) 0%, transparent 40%);
-    background-attachment: fixed;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  /* Typography Rules */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  /* H1: Hero Title */
+  h1 {
+    @apply text-5xl md:text-7xl font-bold tracking-tight;
+  }
+
+  /* H2: Section Title */
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-widest;
+  }
+
+  /* Body Text */
+  p {
+    @apply leading-relaxed text-muted-foreground;
   }
 
   /* Custom Scrollbar for Webkit */

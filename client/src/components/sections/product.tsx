@@ -1,58 +1,67 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function Product() {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"],
-    });
-
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
     return (
-        <Section id="product" className="bg-black text-white py-32 overflow-hidden border-t border-white/5">
-            <div className="container mx-auto px-4" ref={ref}>
-                <div className="flex flex-col md:flex-row items-center gap-16">
-                    {/* Text Content */}
-                    <div className="w-full md:w-1/2 z-10">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="text-[#f6bd2b] font-bold tracking-[0.3em] text-sm mb-6 font-['Outfit']">FLAGSHIP MODEL</div>
-                            <h2 className="text-5xl md:text-8xl font-bold mb-8 font-['Outfit'] leading-none">
-                                The EGG
-                            </h2>
-                            <p className="text-xl text-white/70 mb-12 leading-relaxed font-light">
-                                The EGGは、「最高の自己没入体験」を形にしたフラッグシップデバイスです。
-                                <br />
-                                <span className="text-base opacity-70">
-                                    完全な遮音、バイオフィリックな照明制御、そしてAIによる思考のガイド。
-                                    あなたの脳を「ゾーン」へと強制転送します。
-                                </span>
-                            </p>
-                            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 font-bold text-lg">
-                                VIEW SPECS
-                            </Button>
-                        </motion.div>
-                    </div>
+        <Section id="product" className="bg-[#040B17] py-0 relative">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
 
-                    {/* Visual */}
-                    <div className="w-full md:w-1/2 relative">
-                        <motion.div style={{ y }} className="relative z-10">
-                            <img
-                                src="/assets/egg/vr egg.png"
-                                alt="The EGG VR"
-                                className="w-full h-auto drop-shadow-[0_0_100px_rgba(9,42,98,0.5)] grayscale-[30%] hover:grayscale-0 transition-all duration-700"
-                            />
-                        </motion.div>
-                        {/* Background Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-[#092a62]/30 to-[#f6bd2b]/5 rounded-full blur-3xl -z-10" />
-                    </div>
+                    {/* Left: Text */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="order-2 lg:order-1"
+                    >
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="w-12 h-px bg-[#f6bd2b]" />
+                            <span className="text-[#f6bd2b] text-xs font-bold tracking-[0.2em] uppercase">Flagship Model</span>
+                        </div>
+
+                        <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 font-['Outfit']">
+                            The EGG
+                        </h2>
+
+                        <p className="text-xl text-white/80 mb-8 leading-relaxed font-light">
+                            The EGGは、「最高の自己没入体験」を形にしたフラッグシップデバイスです。
+                        </p>
+
+                        <div className="space-y-6 mb-12">
+                            {[
+                                { title: "Total Isolation", desc: "外界のノイズを物理的に遮断するシェル構造" },
+                                { title: "Biophilic Light", desc: "脳波と同期する、生体リズムに合わせた光" },
+                                { title: "AI Guide", desc: "内省を深めるための音声ガイドとフィードバック" }
+                            ].map((item, i) => (
+                                <div key={i} className="pl-6 border-l border-white/20">
+                                    <h4 className="text-white font-bold font-['Outfit'] mb-1">{item.title}</h4>
+                                    <p className="text-white/50 text-sm">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <Link href="/product">
+                            <Button variant="outline" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all">
+                                VIEW FULL SPECS
+                            </Button>
+                        </Link>
+                    </motion.div>
+
+                    {/* Right: Visual (Placeholder for 3D Render) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="order-1 lg:order-2 relative"
+                    >
+                        <div className="aspect-square rounded-full bg-gradient-to-br from-[#092a62] to-black border border-white/10 shadow-[0_0_100px_rgba(9,42,98,0.5)] flex items-center justify-center relative overflow-hidden">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />
+                            <span className="text-white/20 font-['Outfit'] text-sm tracking-[0.5em]">EGG VISUAL</span>
+                        </div>
+                    </motion.div>
+
                 </div>
             </div>
         </Section>

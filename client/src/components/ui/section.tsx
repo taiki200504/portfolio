@@ -12,7 +12,7 @@ export function Section({ children, className, id }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "w-full py-20 md:py-32 relative overflow-hidden",
+        "py-24 md:py-32 relative",
         className
       )}
     >

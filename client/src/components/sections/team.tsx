@@ -3,16 +3,15 @@ import { motion } from "framer-motion";
 
 export function Team() {
     return (
-        <Section id="team" className="bg-[#040B17] py-32 border-t border-white/5">
+        <Section id="team" className="bg-[#092a62]">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-20">
-                    <h2 className="text-[#f6bd2b] font-bold tracking-[0.2em] text-sm mb-4 font-['Outfit']">TEAM</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white font-['Outfit']">
+                <div className="text-center mb-24">
+                    <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-6 uppercase">TEAM</h2>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white font-['Outfit'] mb-8">
                         The Architects
                     </h3>
-                    <p className="text-white/60 mt-6 max-w-2xl mx-auto">
-                        私たちは、最高の自己没入体験を通じて、
-                        <br />
+                    <p className="text-white/60 max-w-2xl mx-auto">
+                        私たちは、最高の自己没入体験を通じて、<br />
                         個人のポテンシャルを拡張し、人類を内側からアップデートしていきます。
                     </p>
                 </div>
@@ -82,13 +81,13 @@ export function Team() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-[#092a62]/10 border border-white/5 p-8 rounded-2xl text-left hover:bg-[#092a62]/20 transition-colors"
+                            className="bg-[#040B17] border border-white/5 p-8 rounded-xl text-left hover:border-[#f6bd2b]/50 transition-all duration-300 group"
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-white/5 rounded-full flex-shrink-0" />
+                                <div className="w-12 h-12 bg-white/5 rounded-full flex-shrink-0" />
                                 <div>
-                                    <h4 className="text-xl font-bold text-white font-['Outfit']">{item.name}</h4>
-                                    <div className="text-[#f6bd2b] text-xs font-bold tracking-widest uppercase">{item.role}</div>
+                                    <h4 className="text-lg font-bold text-white font-['Outfit']">{item.name}</h4>
+                                    <div className="text-[#f6bd2b] text-[10px] font-bold tracking-widest uppercase">{item.role}</div>
                                 </div>
                             </div>
 
@@ -96,8 +95,8 @@ export function Team() {
 
                             <ul className="space-y-2 mb-4">
                                 {item.details.map((detail, j) => (
-                                    <li key={j} className="text-white/60 text-xs leading-relaxed pl-3 relative">
-                                        <span className="absolute left-0 top-1.5 w-1 h-1 bg-[#f6bd2b] rounded-full" />
+                                    <li key={j} className="text-white/50 text-xs leading-relaxed pl-3 relative">
+                                        <span className="absolute left-0 top-1.5 w-1 h-1 bg-[#f6bd2b] rounded-full opacity-50" />
                                         {detail}
                                     </li>
                                 ))}
@@ -105,7 +104,7 @@ export function Team() {
 
                             {item.mission && (
                                 <div className="pt-4 border-t border-white/5">
-                                    <p className="text-[#f6bd2b] text-xs italic">"{item.mission}"</p>
+                                    <p className="text-[#f6bd2b] text-xs italic opacity-80">"{item.mission}"</p>
                                 </div>
                             )}
                         </motion.div>

@@ -1,82 +1,64 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import { Layers, Zap, Brain } from "lucide-react";
+import { Box, Brain, Zap } from "lucide-react";
 
 export function Solution() {
     return (
-        <Section id="solution" className="bg-[#040B17] py-32">
+        <Section id="solution" className="bg-[#092a62] relative">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-20">
-                    <h2 className="text-[#f6bd2b] font-bold tracking-[0.2em] text-sm mb-4 font-['Outfit']">SOLUTION</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white font-['Outfit'] mb-6">
+                <div className="text-center mb-24">
+                    <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-6 uppercase">SOLUTION</h2>
+                    <h3 className="text-3xl md:text-5xl font-bold text-white font-['Outfit'] mb-8">
                         Internal OS Platform
                     </h3>
-                    <p className="text-white/60 max-w-2xl mx-auto">
-                        個人のポテンシャルを拡張するOS。
-                        <br />
+                    <p className="text-white/60 max-w-2xl mx-auto text-lg">
+                        個人のポテンシャルを拡張するOS。<br />
                         それは、人類を内側からアップデートするためのインフラです。
                     </p>
                 </div>
 
-                <div className="relative max-w-4xl mx-auto">
-                    {/* Connecting Line */}
-                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#f6bd2b]/50 to-transparent md:-translate-x-1/2" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    {/* Connecting Line (Desktop) */}
+                    <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-                    <div className="space-y-12">
-                        {[
-                            {
-                                icon: Layers,
-                                title: "Hardware Layer",
-                                subtitle: "物理的な遮断",
-                                desc: "視覚・聴覚を完全にシャットアウトする没入ポッド。"
-                            },
-                            {
-                                icon: Zap,
-                                title: "Sensory Layer",
-                                subtitle: "感覚のハック",
-                                desc: "バイオフィリックな光と音で、脳波を誘導する。"
-                            },
-                            {
-                                icon: Brain,
-                                title: "OS Layer",
-                                subtitle: "思考のログ",
-                                desc: "対話を通じて思考を整理し、自分だけの判断基準を育てる。"
-                            },
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className={`relative flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-                            >
-                                {/* Icon Marker */}
-                                <div className="absolute left-8 md:left-1/2 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#040B17] border-2 border-[#f6bd2b] rounded-full z-10 md:-translate-x-1/2" />
-
-                                <div className="w-full md:w-1/2 pl-20 md:pl-0 md:pr-16 md:text-right">
-                                    {i % 2 === 0 && (
-                                        <div className="md:text-right">
-                                            <div className="text-[#f6bd2b] text-xs font-bold tracking-widest mb-2">{item.subtitle}</div>
-                                            <h4 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
-                                            <p className="text-white/60 text-sm">{item.desc}</p>
-                                        </div>
-                                    )}
-                                    {i % 2 !== 0 && <div className="hidden md:block" />} {/* Spacer for layout */}
-                                </div>
-
-                                <div className="w-full md:w-1/2 pl-20 md:pl-16">
-                                    {i % 2 !== 0 && (
-                                        <div>
-                                            <div className="text-[#f6bd2b] text-xs font-bold tracking-widest mb-2">{item.subtitle}</div>
-                                            <h4 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
-                                            <p className="text-white/60 text-sm">{item.desc}</p>
-                                        </div>
-                                    )}
-                                    {i % 2 === 0 && <div className="hidden md:block" />} {/* Spacer for layout */}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                    {[
+                        {
+                            icon: Box,
+                            title: "Hardware",
+                            desc: "物理的な遮断と、生体調和環境。",
+                            sub: "The EGG / Pods"
+                        },
+                        {
+                            icon: Zap,
+                            title: "Sensory",
+                            desc: "光、音、振動による感覚への介入。",
+                            sub: "Biophilic Interface"
+                        },
+                        {
+                            icon: Brain,
+                            title: "OS",
+                            desc: "脳波解析とAIによる思考ガイド。",
+                            sub: "Neuro Feedback"
+                        },
+                    ].map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.2 }}
+                            className="relative bg-[#040B17] border border-white/10 p-8 rounded-xl text-center group hover:border-[#f6bd2b]/50 transition-colors"
+                        >
+                            <div className="w-16 h-16 mx-auto bg-[#092a62] rounded-full flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                <item.icon className="w-8 h-8 text-[#f6bd2b]" />
+                            </div>
+                            <h4 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
+                            <p className="text-[#f6bd2b] text-xs font-bold tracking-widest uppercase mb-4">{item.sub}</p>
+                            <p className="text-white/60 text-sm leading-relaxed">
+                                {item.desc}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </Section>
