@@ -43,8 +43,7 @@ export function Navbar() {
                         {/* Logo */}
                         <Link href="/">
                             <a className="flex items-center gap-3 group">
-                                <img src="/assets/logos/icon.png" alt="LYEN Icon" className="w-8 h-8 object-contain group-hover:rotate-180 transition-transform duration-700" />
-                                <img src="/assets/logos/name logo.png" alt="LYEN" className={cn("h-4 object-contain brightness-0 invert transition-opacity duration-300", scrolled ? "opacity-0 w-0 overflow-hidden" : "opacity-100")} />
+                                <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-8 object-contain" />
                             </a>
                         </Link>
 

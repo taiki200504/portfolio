@@ -7,9 +7,7 @@ export function Footer() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
                     <div>
-                        <h2 className="text-[12vw] leading-none font-bold tracking-tighter text-white/10 select-none font-['Outfit']">
-                            LYEN
-                        </h2>
+                        <img src="/assets/logos/logo.png" alt="LYEN" className="w-32 md:w-40 opacity-80 hover:opacity-100 transition-opacity" />
                     </div>
 
                     <div className="flex flex-col justify-end">
