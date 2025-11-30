@@ -1,7 +1,6 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";

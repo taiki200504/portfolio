@@ -3,67 +3,38 @@ import { motion } from "framer-motion";
 
 export function Roadmap() {
     return (
-        <Section id="roadmap" className="bg-white">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#092a62]">
-                    ひとつのポッドから、
-                    <br className="md:hidden" />
-                    内側のプラットフォームへ。
-                </h2>
-                <p className="text-[#092a62]/70">
-                    The EGGは、LYENが描く“内部OS”構想のはじまりにすぎません。
-                </p>
-            </div>
+        <Section className="bg-[#040B17] py-32">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-20">
+                    <h2 className="text-[#f6bd2b] font-bold tracking-[0.2em] text-sm mb-4 font-['Outfit']">ROADMAP</h2>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white font-['Outfit']">
+                        The Future
+                    </h3>
+                </div>
 
-            <div className="relative max-w-4xl mx-auto">
-                {/* Timeline Line */}
-                <div className="absolute top-8 left-0 right-0 h-0.5 bg-slate-200 hidden md:block" />
+                <div className="relative max-w-3xl mx-auto">
+                    <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {[
-                        {
-                            phase: "NOW",
-                            title: "Phase 1: The EGG",
-                            items: ["フラッグシップモデル導入", "世界観と体験の確立", "初期ログの蓄積"],
-                            active: true,
-                        },
-                        {
-                            phase: "NEXT",
-                            title: "Phase 2: Expansion",
-                            items: ["バリエーションモデル展開", "教育・コワーキングへの導入", "OSダッシュボード強化"],
-                            active: false,
-                        },
-                        {
-                            phase: "FUTURE",
-                            title: "Phase 3: Platform",
-                            items: ["ソフトウェア版インターフェース", "自宅向けデバイス", "日常の意思決定プラットフォーム"],
-                            active: false,
-                        },
+                        { year: "2025", title: "The EGG Launch", desc: "フラッグシップモデルの展開開始。" },
+                        { year: "2026", title: "Internal OS App", desc: "思考ログを可視化するアプリのリリース。" },
+                        { year: "2028", title: "BMI Integration", desc: "脳波インターフェースとの統合。" },
                     ].map((item, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.2 }}
-                            className="relative pt-8 md:pt-16"
+                            className="relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 pl-8 md:pl-0"
                         >
-                            {/* Dot */}
-                            <div className={`absolute top-8 left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-white ${item.active ? 'bg-[#f6bd2b] shadow-[0_0_0_4px_rgba(246,189,43,0.2)]' : 'bg-slate-300'}`} />
+                            <div className="absolute left-[-4px] md:left-1/2 top-2 w-2 h-2 bg-[#f6bd2b] rounded-full md:-translate-x-1/2" />
 
-                            <div className="pl-8 md:pl-0 md:text-center">
-                                <div className={`text-xs font-bold tracking-widest mb-2 ${item.active ? 'text-[#f6bd2b]' : 'text-slate-400'}`}>
-                                    {item.phase}
-                                </div>
-                                <h3 className="font-bold text-[#092a62] text-lg mb-4">{item.title}</h3>
-                                <ul className="space-y-2">
-                                    {item.items.map((sub, j) => (
-                                        <li key={j} className="text-sm text-slate-600">
-                                            {sub}
-                                        </li>
-                                    ))}
-                                </ul>
+                            <div className={`w-full md:w-1/2 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:order-2 md:pl-12"}`}>
+                                <div className="text-4xl font-bold text-white/10 font-['Outfit'] mb-2">{item.year}</div>
+                                <h4 className="text-xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
+                                <p className="text-white/60 text-sm">{item.desc}</p>
                             </div>
+                            <div className={`hidden md:block w-1/2 ${i % 2 === 0 ? "order-2" : "order-1"}`} />
                         </motion.div>
                     ))}
                 </div>

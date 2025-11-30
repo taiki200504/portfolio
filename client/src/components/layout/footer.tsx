@@ -17,19 +17,19 @@ export function Footer() {
                             <div>
                                 <h4 className="font-bold mb-6 text-[#f6bd2b] tracking-widest text-xs">PRODUCT</h4>
                                 <ul className="space-y-4 text-sm text-white/60">
-                                    <li><Link href="/product"><a className="hover:text-white transition-colors">The EGG</a></Link></li>
-                                    <li><Link href="/product"><a className="hover:text-white transition-colors">Experience</a></Link></li>
-                                    <li><Link href="/philosophy"><a className="hover:text-white transition-colors">Science</a></Link></li>
+                                    <li><a href="#product" className="hover:text-white transition-colors">The EGG</a></li>
+                                    <li><a href="#experience" className="hover:text-white transition-colors">Experience</a></li>
+                                    <li><a href="#science" className="hover:text-white transition-colors">Science</a></li>
                                 </ul>
                             </div>
 
                             <div>
                                 <h4 className="font-bold mb-6 text-[#f6bd2b] tracking-widest text-xs">COMPANY</h4>
                                 <ul className="space-y-4 text-sm text-white/60">
-                                    <li><Link href="/philosophy"><a className="hover:text-white transition-colors">Philosophy</a></Link></li>
-                                    <li><Link href="/company"><a className="hover:text-white transition-colors">Roadmap</a></Link></li>
-                                    <li><Link href="/company"><a className="hover:text-white transition-colors">Team</a></Link></li>
-                                    <li><Link href="/company"><a className="hover:text-white transition-colors">Contact</a></Link></li>
+                                    <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+                                    <li><a href="#roadmap" className="hover:text-white transition-colors">Roadmap</a></li>
+                                    <li><a href="#team" className="hover:text-white transition-colors">Team</a></li>
+                                    <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -1,101 +1,81 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import { Brain, Layers, Radio } from "lucide-react";
+import { Layers, Zap, Brain } from "lucide-react";
 
 export function Solution() {
     return (
-        <Section id="platform" className="bg-[#040B17] text-white">
-            <div className="text-center mb-16">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold mb-4"
-                >
-                    人の“内側”に走る、
-                    <br className="md:hidden" />
-                    もうひとつのOS。
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="text-white/70 max-w-2xl mx-auto"
-                >
-                    LYENは、The EGGのような物理インターフェースと、
-                    <br className="hidden md:block" />
-                    AI・ログ・プロトコルを組み合わせて、人の内側に“静かなOS”を走らせます。
-                </motion.p>
-            </div>
+        <Section id="solution" className="bg-[#040B17] py-32">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-20">
+                    <h2 className="text-[#f6bd2b] font-bold tracking-[0.2em] text-sm mb-4 font-['Outfit']">SOLUTION</h2>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white font-['Outfit'] mb-6">
+                        Internal OS Platform
+                    </h3>
+                    <p className="text-white/60 max-w-2xl mx-auto">
+                        個人のポテンシャルを拡張するOS。
+                        <br />
+                        それは、人類を内側からアップデートするためのインフラです。
+                    </p>
+                </div>
 
-            <div className="relative max-w-4xl mx-auto">
-                {/* Platform Diagram */}
-                <div className="relative aspect-square md:aspect-[16/9] flex items-center justify-center">
-                    {/* Concentric Circles */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] border border-white/10 rounded-full animate-[spin_60s_linear_infinite]" />
-                        <div className="w-[200px] h-[200px] md:w-[350px] md:h-[350px] border border-white/20 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
-                        <div className="w-[100px] h-[100px] md:w-[200px] md:h-[200px] border border-[#f6bd2b]/30 rounded-full animate-pulse" />
-                    </div>
+                <div className="relative max-w-4xl mx-auto">
+                    {/* Connecting Line */}
+                    <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#f6bd2b]/50 to-transparent md:-translate-x-1/2" />
 
-                    {/* Core */}
-                    <div className="relative z-10 w-24 h-24 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
-                        <span className="font-bold tracking-widest text-xs">HUMAN</span>
-                    </div>
+                    <div className="space-y-12">
+                        {[
+                            {
+                                icon: Layers,
+                                title: "Hardware Layer",
+                                subtitle: "物理的な遮断",
+                                desc: "視覚・聴覚を完全にシャットアウトする没入ポッド。"
+                            },
+                            {
+                                icon: Zap,
+                                title: "Sensory Layer",
+                                subtitle: "感覚のハック",
+                                desc: "バイオフィリックな光と音で、脳波を誘導する。"
+                            },
+                            {
+                                icon: Brain,
+                                title: "OS Layer",
+                                subtitle: "思考のログ",
+                                desc: "対話を通じて思考を整理し、自分だけの判断基準を育てる。"
+                            },
+                        ].map((item, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className={`relative flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+                            >
+                                {/* Icon Marker */}
+                                <div className="absolute left-8 md:left-1/2 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#040B17] border-2 border-[#f6bd2b] rounded-full z-10 md:-translate-x-1/2" />
 
-                    {/* Nodes */}
-                    <div className="absolute inset-0">
-                        {/* Node 1: Interface */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="absolute top-10 left-10 md:top-1/4 md:left-0 flex items-center gap-4"
-                        >
-                            <div className="w-12 h-12 bg-[#092a62] rounded-lg flex items-center justify-center border border-white/20">
-                                <Layers className="w-6 h-6 text-[#f6bd2b]" />
-                            </div>
-                            <div className="text-left">
-                                <div className="text-[#f6bd2b] text-sm font-bold">Interface Layer</div>
-                                <div className="text-xs text-white/60">The EGG / Pod</div>
-                            </div>
-                        </motion.div>
+                                <div className="w-full md:w-1/2 pl-20 md:pl-0 md:pr-16 md:text-right">
+                                    {i % 2 === 0 && (
+                                        <div className="md:text-right">
+                                            <div className="text-[#f6bd2b] text-xs font-bold tracking-widest mb-2">{item.subtitle}</div>
+                                            <h4 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
+                                            <p className="text-white/60 text-sm">{item.desc}</p>
+                                        </div>
+                                    )}
+                                    {i % 2 !== 0 && <div className="hidden md:block" />} {/* Spacer for layout */}
+                                </div>
 
-                        {/* Node 2: Session */}
-                        <motion.div
-                            initial={{ opacity: 0, y: -50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                        >
-                            <div className="w-12 h-12 bg-[#092a62] rounded-lg flex items-center justify-center border border-white/20">
-                                <Radio className="w-6 h-6 text-[#f6bd2b]" />
-                            </div>
-                            <div className="text-center">
-                                <div className="text-[#f6bd2b] text-sm font-bold">Session Layer</div>
-                                <div className="text-xs text-white/60">AI / Sound / Light</div>
-                            </div>
-                        </motion.div>
-
-                        {/* Node 3: OS */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                            className="absolute bottom-10 right-10 md:bottom-1/4 md:right-0 flex items-center gap-4 flex-row-reverse text-right"
-                        >
-                            <div className="w-12 h-12 bg-[#092a62] rounded-lg flex items-center justify-center border border-white/20">
-                                <Brain className="w-6 h-6 text-[#f6bd2b]" />
-                            </div>
-                            <div>
-                                <div className="text-[#f6bd2b] text-sm font-bold">OS Layer</div>
-                                <div className="text-xs text-white/60">Log / Protocol</div>
-                            </div>
-                        </motion.div>
+                                <div className="w-full md:w-1/2 pl-20 md:pl-16">
+                                    {i % 2 !== 0 && (
+                                        <div>
+                                            <div className="text-[#f6bd2b] text-xs font-bold tracking-widest mb-2">{item.subtitle}</div>
+                                            <h4 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h4>
+                                            <p className="text-white/60 text-sm">{item.desc}</p>
+                                        </div>
+                                    )}
+                                    {i % 2 === 0 && <div className="hidden md:block" />} {/* Spacer for layout */}
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>

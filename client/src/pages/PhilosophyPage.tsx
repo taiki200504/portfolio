@@ -1,7 +1,9 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { BentoGrid } from "@/components/sections/bento-grid";
+import { About } from "@/components/sections/about";
+import { Problem } from "@/components/sections/problem";
 import { Science } from "@/components/sections/science";
+import { Solution } from "@/components/sections/solution";
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 
@@ -25,7 +27,9 @@ export default function PhilosophyPage() {
                     </p>
                 </Section>
 
-                <BentoGrid />
+                <About />
+                <Problem />
+                <Solution />
                 <Science />
             </main>
             <Footer />
