@@ -36,7 +36,17 @@ export default function NewsDetailPage() {
                                     </h1>
                                 </header>
 
-                                <div className="prose prose-invert prose-lg max-w-none prose-headings:font-['Outfit'] prose-a:text-[#f6bd2b] prose-strong:text-white">
+                                <div className="prose prose-invert prose-lg max-w-none 
+                                    prose-headings:font-['Outfit'] prose-headings:font-bold prose-headings:tracking-wide
+                                    prose-h1:text-4xl prose-h1:leading-tight prose-h1:mb-8
+                                    prose-h2:text-3xl prose-h2:leading-tight prose-h2:mt-12 prose-h2:mb-6 prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-2
+                                    prose-h3:text-2xl prose-h3:leading-tight prose-h3:mt-8 prose-h3:mb-4
+                                    prose-p:text-white/80 prose-p:leading-loose prose-p:mb-6
+                                    prose-li:text-white/80 prose-li:leading-relaxed prose-li:mb-2
+                                    prose-strong:text-white prose-strong:font-bold
+                                    prose-a:text-[#f6bd2b] prose-a:no-underline hover:prose-a:underline
+                                    prose-blockquote:border-l-[#f6bd2b] prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+                                ">
                                     <ReactMarkdown>{news.content}</ReactMarkdown>
                                 </div>
                             </article>

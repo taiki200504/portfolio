@@ -56,13 +56,13 @@ export function Footer() {
                             {t("footer.tagline")}
                         </p>
                         <div className="flex items-center gap-4">
-                            <a href="#" className="text-white/40 hover:text-[#f6bd2b] transition-colors duration-300">
+                            <a href="https://x.com/The_egg_pj" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#f6bd2b] transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </a>
                             <a href="#" className="text-white/40 hover:text-[#f6bd2b] transition-colors duration-300">
                                 <Linkedin className="w-5 h-5" />
                             </a>
-                            <a href="#" className="text-white/40 hover:text-[#f6bd2b] transition-colors duration-300">
+                            <a href="https://www.instagram.com/the.egg_pj/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#f6bd2b] transition-colors">
                                 <Instagram className="w-5 h-5" />
                             </a>
                         </div>

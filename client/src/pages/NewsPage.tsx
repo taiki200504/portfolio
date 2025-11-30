@@ -5,7 +5,14 @@ import { Link } from "wouter";
 import useSWR from "swr";
 import { useTranslation } from "@/lib/i18n";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.error || "Failed to fetch");
+    }
+    return res.json();
+};
 
 export default function NewsPage() {
     const { data: news, error } = useSWR("/api/news", fetcher);
@@ -28,7 +35,11 @@ export default function NewsPage() {
                                 <div className="text-center text-white/40 py-12">{t("newsPage.loading")}</div>
                             )}
                             {error && (
-                                <div className="text-center text-white/40 py-12">{t("newsPage.error")}</div>
+                                <div className="text-center text-red-400 py-12">
+                                    {t("newsPage.error")}
+                                    <br />
+                                    <span className="text-sm opacity-70">{error.message}</span>
+                                </div>
                             )}
                             {news && news.length === 0 && (
                                 <div className="text-center text-white/40 py-12">{t("newsPage.empty")}</div>

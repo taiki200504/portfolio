@@ -218,7 +218,7 @@ export const ja = {
     },
     waitingList: {
         title: "JOIN THE WAITING LIST",
-        subtitle: "Be the first to experience the internal OS for humanity.\nWe are currently accepting early access requests for The EGG.",
+        subtitle: "人類のための内部OSを、誰よりも早く体験してください。\n現在、The EGGのアーリーアクセスリクエストを受け付けています。",
         success: {
             title: "THANK YOU",
             desc: "リクエストを受け付けました。詳細については追ってご連絡いたします。",
