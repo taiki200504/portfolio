@@ -13,9 +13,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         const response = await (notion.databases as any).query({
             database_id: databaseId,
             filter: {
-                property: "Status",
-                select: {
-                    equals: "Published",
+                property: "Published",
+                checkbox: {
+                    equals: true,
                 },
             },
             sorts: [

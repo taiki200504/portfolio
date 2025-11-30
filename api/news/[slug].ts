@@ -26,9 +26,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                         },
                     },
                     {
-                        property: "Status",
-                        select: {
-                            equals: "Published",
+                        property: "Published",
+                        checkbox: {
+                            equals: true,
                         },
                     },
                 ],
