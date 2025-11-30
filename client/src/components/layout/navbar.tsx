@@ -60,11 +60,18 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <Link href="/company#contact">
-                            <Button variant="outline" size="sm" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all font-['Outfit'] tracking-widest text-xs">
-                                CONTACT
-                            </Button>
-                        </Link>
+                        <div className="flex items-center gap-3 ml-4">
+                            <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer">
+                                <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10 font-['Outfit'] tracking-widest text-xs">
+                                    CATALOG
+                                </Button>
+                            </a>
+                            <Link href="/waiting-list">
+                                <Button size="sm" className="rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest text-xs font-bold">
+                                    WAITING LIST
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -90,11 +97,18 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Link href="/company#contact">
-                        <Button className="w-full rounded-full bg-white text-black hover:bg-white/90 font-['Outfit'] tracking-widest text-xs">
-                            CONTACT
-                        </Button>
-                    </Link>
+                    <div className="flex flex-col gap-3 mt-4">
+                        <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" className="w-full rounded-full border-white/20 text-white hover:bg-white hover:text-black font-['Outfit'] tracking-widest text-xs">
+                                DOWNLOAD CATALOG
+                            </Button>
+                        </a>
+                        <Link href="/waiting-list">
+                            <Button className="w-full rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest text-xs font-bold">
+                                JOIN WAITING LIST
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             )}
         </nav>

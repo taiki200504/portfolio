@@ -29,6 +29,19 @@ export function Product() {
                             The EGGは、「最高の自己没入体験」を形にしたフラッグシップデバイスです。
                         </p>
 
+                        <div className="flex flex-col sm:flex-row items-center gap-4 pt-8">
+                            <Link href="/waiting-list">
+                                <Button className="w-full sm:w-auto px-8 py-6 rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest font-bold text-lg">
+                                    WAITING LIST
+                                </Button>
+                            </Link>
+                            <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                                <Button variant="outline" className="w-full px-8 py-6 rounded-full border-white/20 text-white hover:bg-white hover:text-[#040B17] font-['Outfit'] tracking-widest text-lg">
+                                    DOWNLOAD CATALOG
+                                </Button>
+                            </a>
+                        </div>
+
                         <div className="space-y-6 mb-12">
                             {[
                                 { title: "Total Isolation", desc: "外界のノイズを物理的に遮断するシェル構造" },

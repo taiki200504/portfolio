@@ -5,6 +5,7 @@ import CompanyPage from "@/pages/CompanyPage";
 import Home from "@/pages/Home";
 import NewsPage from "@/pages/NewsPage";
 import NewsDetailPage from "@/pages/NewsDetailPage";
+import WaitingList from "@/pages/WaitingList";
 import NotFound from "@/pages/NotFound";
 import PhilosophyPage from "@/pages/PhilosophyPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/company" component={CompanyPage} />
       <Route path="/news" component={NewsPage} />
       <Route path="/news/:slug" component={NewsDetailPage} />
+      <Route path="/waiting-list" component={WaitingList} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={TermsOfService} />
       <Route component={NotFound} />

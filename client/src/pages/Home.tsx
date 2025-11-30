@@ -1,7 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
-import { MenuGrid } from "@/components/sections/menu-grid";
+import { GlassMenuGrid } from "@/components/sections/glass-menu-grid";
 import { NewsPreview } from "@/components/sections/news-preview";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <MenuGrid />
+        <GlassMenuGrid />
         <NewsPreview />
       </main>
       <Footer />
