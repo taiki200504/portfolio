@@ -1,10 +1,9 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Twitter, Linkedin, Instagram } from "lucide-react";
 import { useTranslation } from "@/lib/i18n";
 
 export function Footer() {
-    const currentYear = new Date().getFullYear();
     const { t, language } = useTranslation();
     const [, setLocation] = useLocation();
 
@@ -48,7 +47,7 @@ export function Footer() {
             <div className="relative z-10 container mx-auto px-4 py-16 md:py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
                     {/* Brand Column */}
-                    <div className="lg:col-span-2">
+                    <div className="lg:col-span-1">
                         <Link href={getLink("/")} className="inline-block mb-6">
                             <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-8 object-contain opacity-90 hover:opacity-100 transition-opacity" />
                         </Link>
@@ -68,72 +67,45 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Links Columns */}
+                    {/* Company Column */}
                     <div>
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.company")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
-                            <li>
-                                <Link href={getLink("/philosophy")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.philosophy")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={getLink("/company")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.team")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={getLink("/company#contact")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.contact")}
-                                </Link>
-                            </li>
+                            <li><Link href={getLink("/company/about")} className="hover:text-white transition-colors">{t("navbar.items.about")}</Link></li>
+                            <li><Link href={getLink("/company/story")} className="hover:text-white transition-colors">{t("navbar.items.story")}</Link></li>
+                            <li><Link href={getLink("/company/roadmap")} className="hover:text-white transition-colors">{t("navbar.items.roadmap")}</Link></li>
+                            <li><Link href={getLink("/company/team")} className="hover:text-white transition-colors">{t("navbar.items.team")}</Link></li>
+                            <li><Link href={getLink("/news")} className="hover:text-white transition-colors">{t("navbar.news")}</Link></li>
                         </ul>
                     </div>
 
+                    {/* Product Column */}
                     <div>
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.product")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
-                            <li>
-                                <Link href={getLink("/product")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.egg")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={getLink("/product#use-cases")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.useCases")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={getLink("/philosophy#science")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.science")}
-                                </Link>
-                            </li>
+                            <li><Link href={getLink("/product/the-egg")} className="hover:text-white transition-colors">{t("navbar.items.theEgg")}</Link></li>
+                            <li><Link href={getLink("/product/lineup")} className="hover:text-white transition-colors">{t("navbar.items.lineup")}</Link></li>
+                            <li><Link href={getLink("/use-cases")} className="hover:text-white transition-colors">{t("navbar.items.useCases")}</Link></li>
+                            <li><Link href={getLink("/platform")} className="hover:text-white transition-colors">{t("navbar.items.platform")}</Link></li>
                         </ul>
                     </div>
 
+                    {/* Resources Column */}
                     <div>
                         <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.resources")}</h4>
                         <ul className="space-y-4 text-sm text-white/60">
-                            <li>
-                                <Link href={getLink("/news")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.news")}
-                                </Link>
-                            </li>
-                            <li>
-                                <a href="/assets/egg-catalog.pdf" download className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.catalog")}
-                                </a>
-                            </li>
-                            <li>
-                                <Link href={getLink("/privacy")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.privacy")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={getLink("/terms")} className="hover:text-white transition-colors duration-300">
-                                    {t("footer.links.terms")}
-                                </Link>
-                            </li>
+                            <li><Link href={getLink("/catalog")} className="hover:text-white transition-colors">{t("navbar.items.catalog")}</Link></li>
+                            <li><Link href={getLink("/waiting-list")} className="hover:text-white transition-colors">{t("navbar.items.waitingList")}</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Legal Column */}
+                    <div>
+                        <h4 className="font-bold font-['Outfit'] tracking-widest mb-6 text-[#f6bd2b] text-xs uppercase">{t("footer.legal")}</h4>
+                        <ul className="space-y-4 text-sm text-white/60">
+                            <li><Link href={getLink("/privacy")} className="hover:text-white transition-colors">{t("footer.links.privacy")}</Link></li>
+                            <li><Link href={getLink("/terms")} className="hover:text-white transition-colors">{t("footer.links.terms")}</Link></li>
+                            <li><Link href={getLink("/contact")} className="hover:text-white transition-colors">{t("footer.links.contact")}</Link></li>
                         </ul>
                     </div>
                 </div>

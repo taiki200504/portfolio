@@ -30,6 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             priceRange,
             specificPrice,
             requests,
+            timing,
         } = req.body;
 
         // Calculate Estimated Pre-order Amount
@@ -85,6 +86,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 "Catalog Sent": { checkbox: true }, // Assuming we show the link after submission
                 "Follow-up Status": { select: { name: "New" } },
                 "Source": { select: { name: "HP Catalog Form" } },
+                "Expected Installation Timing": { select: { name: timing || "Undecided" } },
                 "Requests": { rich_text: [{ text: { content: requests || "" } }] },
             },
         });

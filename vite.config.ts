@@ -272,6 +272,21 @@ export default defineConfig(({ mode }) => {
                           "Submitted At": { date: { start: new Date().toISOString() } },
                         },
                       });
+                    } else if (pathname === "/api/notion/contact") {
+                      const { name, email, company, subject, message } = data;
+                      await notion.pages.create({
+                        parent: { database_id: env.NOTION_CONTACT_DB_ID! },
+                        properties: {
+                          "Name": { title: [{ text: { content: name || "Anonymous" } }] },
+                          "Email": { email: email },
+                          "Company": { rich_text: [{ text: { content: company || "" } }] },
+                          "Subject": { select: { name: subject || "Other" } },
+                          "Message": { rich_text: [{ text: { content: message || "" } }] },
+                          "Status": { select: { name: "New" } },
+                          "Source": { select: { name: "HP Contact Form" } },
+                          "Submitted At": { date: { start: new Date().toISOString() } },
+                        },
+                      });
                     }
 
                     res.statusCode = 200;

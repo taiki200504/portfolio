@@ -32,6 +32,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 "Subject": { select: { name: subject || "Other" } },
                 "Message": { rich_text: [{ text: { content: message || "" } }] },
                 "Status": { select: { name: "New" } },
+                "Source": { select: { name: "HP Contact Form" } },
                 "Submitted At": { date: { start: new Date().toISOString() } },
             },
         });
