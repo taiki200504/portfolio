@@ -31,6 +31,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             specificPrice,
             requests,
             timing,
+            model,
         } = req.body;
 
         // Calculate Estimated Pre-order Amount
@@ -79,7 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 },
                 "Purchase Interest Level": { select: { name: status || "Info Only" } },
                 "Pre-order Intention": { select: { name: preorderIntention || "Info Only" } },
-                "Desired Model / Package": { select: { name: "Standard" } }, // Defaulting for now
+                "Desired Model / Package": { select: { name: model || "Undecided" } },
                 "Expected Quantity": { number: qty },
                 "Expected Unit Price (JPY)": { number: estimatedUnitPrice },
                 "Currency": { select: { name: "JPY" } },

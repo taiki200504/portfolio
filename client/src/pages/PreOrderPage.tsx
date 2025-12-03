@@ -303,9 +303,9 @@ export default function PreOrderPage() {
                                                 <Select onValueChange={(v) => handleSelectChange("model", v)} value={formData.model}>
                                                     <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select Model" /></SelectTrigger>
                                                     <SelectContent className="bg-[#092a62] border-white/10 text-white">
-                                                        <SelectItem value={`${t("catalogPage.models.matsu.name")} (Premium)`}>{t("catalogPage.models.matsu.name")} (Premium)</SelectItem>
-                                                        <SelectItem value={`${t("catalogPage.models.take.name")} (Standard)`}>{t("catalogPage.models.take.name")} (Standard)</SelectItem>
-                                                        <SelectItem value={`${t("catalogPage.models.ume.name")} (Entry)`}>{t("catalogPage.models.ume.name")} (Entry)</SelectItem>
+                                                        <SelectItem value="Model Matsu">{t("catalogPage.models.matsu.name")} (Premium)</SelectItem>
+                                                        <SelectItem value="Model Take">{t("catalogPage.models.take.name")} (Standard)</SelectItem>
+                                                        <SelectItem value="Model Ume">{t("catalogPage.models.ume.name")} (Entry)</SelectItem>
                                                         <SelectItem value="Undecided">{t("waitingList.form.timingOptions.undecided")}</SelectItem>
                                                     </SelectContent>
                                                 </Select>

@@ -34,15 +34,15 @@ export default function Home() {
     },
     {
       date: "2024.04.15",
-      category: "PRODUCT",
-      title: "The EGG Waiting List is now open",
-      path: "/waiting-list"
+      category: "NEWS",
+      title: "The EGG Concept Movie Released",
+      path: "/news/movie"
     },
     {
       date: "2024.04.01",
-      category: "EVENT",
-      title: "Concept Movie Released",
-      path: "/news/movie"
+      category: "PRESS",
+      title: "LYEN raises seed funding to accelerate 'Internal OS' development",
+      path: "/news/funding"
     }
   ];
 

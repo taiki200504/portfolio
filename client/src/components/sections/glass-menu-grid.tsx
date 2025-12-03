@@ -17,20 +17,7 @@ export function GlassMenuGrid() {
             title: t("menu.egg.title"),
             desc: t("menu.egg.desc"),
         },
-        {
-            id: "useCases",
-            path: "/use-cases",
-            label: t("menu.useCases.label"),
-            title: t("menu.useCases.title"),
-            desc: t("menu.useCases.desc"),
-        },
-        {
-            id: "platform",
-            path: "/platform",
-            label: t("menu.platform.label"),
-            title: t("menu.platform.title"),
-            desc: t("menu.platform.desc"),
-        },
+
         {
             id: "company",
             path: "/company",

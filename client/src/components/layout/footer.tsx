@@ -19,8 +19,6 @@ export function Footer() {
         product: [
             { label: t("footer.links.egg"), path: "/product/the-egg" },
             { label: t("footer.links.lineup"), path: "/product/lineup" },
-            { label: t("footer.links.useCases"), path: "/use-cases" },
-            { label: t("footer.links.platform"), path: "/platform" },
         ],
         resources: [
             { label: t("footer.links.catalog"), path: "/catalog" },
@@ -44,7 +42,7 @@ export function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-5 space-y-8">
                         <Link href={getLink("/")} className="block w-fit">
-                            <img src="/assets/logo.svg" alt="LYEN" className="h-8 w-auto invert opacity-90 hover:opacity-100 transition-opacity" />
+                            <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity" />
                         </Link>
                         <p className="text-white/60 text-sm leading-relaxed max-w-md font-['Outfit']">
                             Internal OS for Humanity

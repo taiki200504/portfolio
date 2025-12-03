@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Section } from "@/components/ui/section";
 import { useTranslation } from "@/lib/i18n";
 import { motion } from "framer-motion";
-import { Brain, Layers, Mic, Zap } from "lucide-react";
+import { Brain, Layers, Mic, Zap, Smartphone } from "lucide-react";
 
 export default function CompanyAbout() {
     const { t } = useTranslation();
@@ -33,6 +33,49 @@ export default function CompanyAbout() {
                             >
                                 {t("companyPage.aboutPage.hero.desc")}
                             </motion.p>
+                        </div>
+                    </div>
+                </Section>
+
+                {/* 1.5. Concept: External vs Internal */}
+                <Section>
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-16 uppercase text-center">
+                            {t("platform.concept.title")}
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                            {/* External */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="p-12 rounded-3xl bg-white/[0.02] border border-white/5 flex flex-col items-center text-center opacity-50 hover:opacity-100 transition-opacity duration-500"
+                            >
+                                <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-8">
+                                    <Smartphone className="w-10 h-10 text-white/40" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-4">{t("platform.concept.external.title")}</h3>
+                                <p className="text-white/60 whitespace-pre-line leading-relaxed">
+                                    {t("platform.concept.external.desc")}
+                                </p>
+                            </motion.div>
+
+                            {/* Internal */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="p-12 rounded-3xl bg-gradient-to-br from-[#f6bd2b]/10 to-transparent border border-[#f6bd2b]/30 flex flex-col items-center text-center relative overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-[#f6bd2b]/5 blur-3xl" />
+                                <div className="w-20 h-20 rounded-full bg-[#f6bd2b]/10 flex items-center justify-center mb-8 relative z-10">
+                                    <Brain className="w-10 h-10 text-[#f6bd2b]" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-4 text-[#f6bd2b] relative z-10">{t("platform.concept.internal.title")}</h3>
+                                <p className="text-white/80 whitespace-pre-line leading-relaxed relative z-10">
+                                    {t("platform.concept.internal.desc")}
+                                </p>
+                            </motion.div>
                         </div>
                     </div>
                 </Section>

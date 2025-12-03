@@ -16,8 +16,8 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import ProductPage from "@/pages/ProductPage";
 import TheEggPage from "@/pages/product/TheEggPage";
 import LineupPage from "@/pages/product/LineupPage";
-import UseCasesPage from "@/pages/UseCasesPage";
-import PlatformPage from "@/pages/PlatformPage";
+
+
 import ContactPage from "@/pages/ContactPage";
 import TermsOfService from "@/pages/TermsOfService";
 import CatalogPage from "@/pages/CatalogPage";
@@ -37,8 +37,8 @@ function Router() {
       <Route path="/en/product" component={ProductPage} />
       <Route path="/en/product/the-egg" component={TheEggPage} />
       <Route path="/en/product/lineup" component={LineupPage} />
-      <Route path="/en/use-cases" component={UseCasesPage} />
-      <Route path="/en/platform" component={PlatformPage} />
+
+
       <Route path="/en/company" component={CompanyHub} />
       <Route path="/en/company/about" component={CompanyAbout} />
       <Route path="/en/company/story" component={CompanyStory} />
@@ -59,8 +59,8 @@ function Router() {
       <Route path="/product" component={ProductPage} />
       <Route path="/product/the-egg" component={TheEggPage} />
       <Route path="/product/lineup" component={LineupPage} />
-      <Route path="/use-cases" component={UseCasesPage} />
-      <Route path="/platform" component={PlatformPage} />
+
+
       <Route path="/company" component={CompanyHub} />
       <Route path="/company/about" component={CompanyAbout} />
       <Route path="/company/story" component={CompanyStory} />

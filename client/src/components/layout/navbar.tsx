@@ -125,8 +125,6 @@ export function Navbar() {
 
     const navItems = [
         { label: "Product", path: "/product/the-egg" },
-        { label: "Use Cases", path: "/use-cases" },
-        { label: "Platform", path: "/platform" },
         { label: "Company", path: "/company" },
         { label: "News", path: "/news" },
         { label: "Contact", path: "/contact" },
@@ -140,15 +138,23 @@ export function Navbar() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-[#040B17]/80 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
-                }`}
+            className={cn(
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+                isScrolled ? "py-4" : "py-6"
+            )}
         >
-            <div className="container mx-auto px-4 md:px-8">
-                <div className="flex items-center justify-between">
+            <div className={cn(
+                "container mx-auto px-4 md:px-8 transition-all duration-500",
+                isScrolled && "max-w-6xl"
+            )}>
+                <div className={cn(
+                    "flex items-center justify-between transition-all duration-500 rounded-full px-6",
+                    isScrolled ? "bg-[#040B17]/60 backdrop-blur-xl border border-white/10 shadow-lg py-3" : "bg-transparent py-2"
+                )}>
                     {/* Logo */}
                     <Link href={getLink("/")} className="relative z-50 group">
                         <div className="flex items-center gap-3">
-                            <img src="/assets/logo.svg" alt="LYEN" className="h-6 w-auto invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                            <img src="/assets/logos/logo-footer.png" alt="LYEN" className="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
                         </div>
                     </Link>
 
