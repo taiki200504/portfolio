@@ -1,34 +1,61 @@
 export const en = {
     hero: {
-        title: "Build your inner sanctuary.",
-        subtitle: "Internal OS for the age of external brains.",
-        cta: "DISCOVER THE EGG",
+        title: "Internal OS for the Age of External Brains.",
+        subtitle: "LYEN is an Internal OS company starting with 'The EGG',\nupdating individuals and organizations from the inside out.",
+        cta: {
+            catalog: "View Catalog",
+            contact: "Contact for PoC",
+            waitingList: "Join Waiting List"
+        },
         scroll: "Scroll",
+    },
+    lyenIn60s: {
+        title: "LYEN in 60 seconds",
+        points: [
+            {
+                title: "The Premise",
+                desc: "Our 'External Brains' are fully extended by AI and smartphones."
+            },
+            {
+                title: "The Hypothesis",
+                desc: "What's missing is a 'Shell' and 'Internal OS' to dive inward."
+            },
+            {
+                title: "The Future",
+                desc: "Creating a world where The EGG exists beside every major decision."
+            }
+        ]
     },
     menu: {
         egg: {
+            label: "PRODUCT",
             title: "The EGG",
-            desc: "Immersion Pod",
-        },
-        philosophy: {
-            title: "Philosophy",
-            desc: "Vision & Mission",
+            desc: "The egg-shaped immersion pod. An internal OS room.",
         },
         useCases: {
+            label: "USE CASES",
             title: "Use Cases",
-            desc: "Applications",
+            desc: "Implementation scenes in offices, lounges, and hotels.",
+        },
+        platform: {
+            label: "PLATFORM",
+            title: "Internal OS",
+            desc: "The complete picture: EGG, Session, and Log.",
         },
         company: {
+            label: "COMPANY",
             title: "Company",
-            desc: "Team & Roadmap",
+            desc: "We Engineer Silence. Team and Roadmap.",
+        },
+        catalog: {
+            label: "RESOURCES",
+            title: "Catalog",
+            desc: "Download product catalog and pre-order.",
         },
         news: {
+            label: "NEWS",
             title: "News",
-            desc: "Latest Updates",
-        },
-        contact: {
-            title: "Contact",
-            desc: "Get in Touch",
+            desc: "Latest updates from LYEN.",
         },
     },
     footer: {

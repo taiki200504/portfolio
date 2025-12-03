@@ -1,34 +1,61 @@
 export const ja = {
     hero: {
-        title: "Build your inner sanctuary.",
-        subtitle: "外部脳の時代に、内部OSを。",
-        cta: "DISCOVER THE EGG",
+        title: "外部脳の時代に、内部OSを。",
+        subtitle: "LYENは、卵型没入ポッド『The EGG』からはじまる、\n個人と組織を“内側からアップデート”する Internal OS カンパニーです。",
+        cta: {
+            catalog: "The EGGのカタログを見る",
+            contact: "導入・PoCの相談をする",
+            waitingList: "Waiting Listに登録"
+        },
         scroll: "Scroll",
+    },
+    lyenIn60s: {
+        title: "LYEN in 60 seconds",
+        points: [
+            {
+                title: "世界の前提",
+                desc: "AIとスマホで『外側の脳』は拡張されきっている。"
+            },
+            {
+                title: "LYENの仮説",
+                desc: "足りていないのは、内側に潜るための“殻”と“内部OS”だ。"
+            },
+            {
+                title: "LYENがつくる未来",
+                desc: "重要な意思決定のそばにThe EGGがある世界をつくる。"
+            }
+        ]
     },
     menu: {
         egg: {
+            label: "PRODUCT",
             title: "The EGG",
-            desc: "卵型没入ポッド",
-        },
-        philosophy: {
-            title: "Philosophy",
-            desc: "ビジョンとミッション",
+            desc: "卵型没入ポッドという、内側のOSルーム。",
         },
         useCases: {
+            label: "USE CASES",
             title: "Use Cases",
-            desc: "活用事例",
+            desc: "オフィス、ラウンジ、ホテルなどでの導入シーン。",
+        },
+        platform: {
+            label: "PLATFORM",
+            title: "Internal OS",
+            desc: "EGG / セッション / ログで構成される内部OSの全体像。",
         },
         company: {
+            label: "COMPANY",
             title: "Company",
-            desc: "チームとロードマップ",
+            desc: "We Engineer Silence. チームとロードマップ。",
+        },
+        catalog: {
+            label: "RESOURCES",
+            title: "Catalog",
+            desc: "製品カタログのダウンロードとプレオーダー。",
         },
         news: {
+            label: "NEWS",
             title: "News",
-            desc: "最新情報",
-        },
-        contact: {
-            title: "Contact",
-            desc: "お問い合わせ",
+            desc: "LYENに関する最新情報。",
         },
     },
     footer: {
