@@ -106,8 +106,4 @@ export function NewsPreview() {
         </section>
     );
 }
-                </div >
-            </div >
-        </section >
-    );
-}
+
