@@ -79,31 +79,31 @@ export default function ContactPage() {
                             >
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
+                                        <label htmlFor="name" className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
                                             {t("contactPage.form.name")}
                                         </label>
-                                        <input type="text" name="name" required className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.namePlaceholder")} />
+                                        <input id="name" type="text" name="name" autoComplete="name" required className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.namePlaceholder")} />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
+                                        <label htmlFor="email" className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
                                             {t("contactPage.form.email")}
                                         </label>
-                                        <input type="email" name="email" required className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.emailPlaceholder")} />
+                                        <input id="email" type="email" name="email" autoComplete="email" required className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.emailPlaceholder")} />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
+                                    <label htmlFor="company" className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
                                         {t("contactPage.form.company")}
                                     </label>
-                                    <input type="text" name="company" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.companyPlaceholder")} />
+                                    <input id="company" type="text" name="company" autoComplete="organization" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.companyPlaceholder")} />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
+                                    <label htmlFor="subject" className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
                                         {t("contactPage.form.subject")}
                                     </label>
-                                    <select name="subject" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors appearance-none">
+                                    <select id="subject" name="subject" className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors appearance-none">
                                         <option className="bg-[#040B17]" value="Implementation">{t("contactPage.form.subjectOptions.implementation")}</option>
                                         <option className="bg-[#040B17]" value="Partnership">{t("contactPage.form.subjectOptions.partnership")}</option>
                                         <option className="bg-[#040B17]" value="Media">{t("contactPage.form.subjectOptions.media")}</option>
@@ -112,10 +112,10 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
+                                    <label htmlFor="message" className="text-xs font-bold text-white/50 tracking-wider font-['Outfit'] uppercase">
                                         {t("contactPage.form.message")}
                                     </label>
-                                    <textarea name="message" required rows={5} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.messagePlaceholder")} />
+                                    <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#f6bd2b] transition-colors" placeholder={t("contactPage.form.messagePlaceholder")} />
                                 </div>
 
                                 <div className="text-center pt-8">

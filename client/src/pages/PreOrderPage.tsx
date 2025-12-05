@@ -186,33 +186,33 @@ export default function PreOrderPage() {
                                         >
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.name")}</label>
-                                                    <Input name="name" value={formData.name} onChange={handleInputChange} placeholder={t("waitingList.form.namePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                    <label htmlFor="name" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.name")}</label>
+                                                    <Input id="name" name="name" autoComplete="name" value={formData.name} onChange={handleInputChange} placeholder={t("waitingList.form.namePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.email")}</label>
-                                                    <Input name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder={t("waitingList.form.emailPlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
-                                                </div>
-                                            </div>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.organization")}</label>
-                                                    <Input name="organization" value={formData.organization} onChange={handleInputChange} placeholder={t("waitingList.form.organizationPlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
-                                                </div>
-                                                <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.role")}</label>
-                                                    <Input name="role" value={formData.role} onChange={handleInputChange} placeholder={t("waitingList.form.rolePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                    <label htmlFor="email" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.email")}</label>
+                                                    <Input id="email" name="email" type="email" autoComplete="email" value={formData.email} onChange={handleInputChange} placeholder={t("waitingList.form.emailPlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                                 </div>
                                             </div>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.country")}</label>
-                                                    <Input name="country" value={formData.country} onChange={handleInputChange} placeholder="Japan" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                    <label htmlFor="organization" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.organization")}</label>
+                                                    <Input id="organization" name="organization" autoComplete="organization" value={formData.organization} onChange={handleInputChange} placeholder={t("waitingList.form.organizationPlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.facilityType")}</label>
+                                                    <label htmlFor="role" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.role")}</label>
+                                                    <Input id="role" name="role" autoComplete="organization-title" value={formData.role} onChange={handleInputChange} placeholder={t("waitingList.form.rolePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                </div>
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                <div className="space-y-2">
+                                                    <label htmlFor="country" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.country")}</label>
+                                                    <Input id="country" name="country" autoComplete="country-name" value={formData.country} onChange={handleInputChange} placeholder="Japan" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                </div>
+                                                <div className="space-y-2">
+                                                    <label htmlFor="facilityType" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.facilityType")}</label>
                                                     <Select onValueChange={(v) => handleSelectChange("facilityType", v)} value={formData.facilityType}>
-                                                        <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
+                                                        <SelectTrigger id="facilityType" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
                                                         <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                             <SelectItem value="Office">{t("catalog.form.facilityOptions.office")}</SelectItem>
                                                             <SelectItem value="Hotel">{t("catalog.form.facilityOptions.hotel")}</SelectItem>
@@ -225,8 +225,8 @@ export default function PreOrderPage() {
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.website")}</label>
-                                                <Input name="website" value={formData.website} onChange={handleInputChange} placeholder={t("waitingList.form.websitePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                <label htmlFor="website" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.website")}</label>
+                                                <Input id="website" name="website" autoComplete="url" value={formData.website} onChange={handleInputChange} placeholder={t("waitingList.form.websitePlaceholder")} className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                             </div>
                                         </motion.div>
                                     )}
@@ -263,9 +263,9 @@ export default function PreOrderPage() {
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.status")}</label>
+                                                <label htmlFor="status" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.status")}</label>
                                                 <Select onValueChange={(v) => handleSelectChange("status", v)} value={formData.status}>
-                                                    <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
+                                                    <SelectTrigger id="status" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
                                                     <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                         <SelectItem value="Just collecting info">{t("catalog.form.statusOptions.info")}</SelectItem>
                                                         <SelectItem value="Comparing with other options">{t("catalog.form.statusOptions.compare")}</SelectItem>
@@ -276,9 +276,9 @@ export default function PreOrderPage() {
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.timing")}</label>
+                                                <label htmlFor="timing" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("waitingList.form.timing")}</label>
                                                 <Select onValueChange={(v) => handleSelectChange("timing", v)} value={formData.timing}>
-                                                    <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
+                                                    <SelectTrigger id="timing" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
                                                     <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                         <SelectItem value="Within 6 months">{t("waitingList.form.timingOptions.within6m")}</SelectItem>
                                                         <SelectItem value="Within 1 year">{t("waitingList.form.timingOptions.within1y")}</SelectItem>
@@ -299,9 +299,9 @@ export default function PreOrderPage() {
                                             className="space-y-6"
                                         >
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">Target Model</label>
+                                                <label htmlFor="model" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">Target Model</label>
                                                 <Select onValueChange={(v) => handleSelectChange("model", v)} value={formData.model}>
-                                                    <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select Model" /></SelectTrigger>
+                                                    <SelectTrigger id="model" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select Model" /></SelectTrigger>
                                                     <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                         <SelectItem value="Model Matsu">{t("catalogPage.models.matsu.name")} (Premium)</SelectItem>
                                                         <SelectItem value="Model Take">{t("catalogPage.models.take.name")} (Standard)</SelectItem>
@@ -312,9 +312,9 @@ export default function PreOrderPage() {
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.preorderIntention")}</label>
+                                                <label htmlFor="preorderIntention" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.preorderIntention")}</label>
                                                 <Select onValueChange={(v) => handleSelectChange("preorderIntention", v)} value={formData.preorderIntention}>
-                                                    <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
+                                                    <SelectTrigger id="preorderIntention" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
                                                     <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                         <SelectItem value="Interested in pre-order">{t("catalog.form.preorderOptions.interested")}</SelectItem>
                                                         <SelectItem value="Want to pre-order depending on conditions">{t("catalog.form.preorderOptions.conditional")}</SelectItem>
@@ -325,13 +325,13 @@ export default function PreOrderPage() {
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.quantity")}</label>
-                                                    <Input name="quantity" type="number" min="1" value={formData.quantity} onChange={handleInputChange} placeholder="1" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                    <label htmlFor="quantity" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.quantity")}</label>
+                                                    <Input id="quantity" name="quantity" type="number" min="1" value={formData.quantity} onChange={handleInputChange} placeholder="1" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.priceRange")}</label>
+                                                    <label htmlFor="priceRange" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.priceRange")}</label>
                                                     <Select onValueChange={(v) => handleSelectChange("priceRange", v)} value={formData.priceRange}>
-                                                        <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
+                                                        <SelectTrigger id="priceRange" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]"><SelectValue placeholder="Select" /></SelectTrigger>
                                                         <SelectContent className="bg-[#092a62] border-white/10 text-white">
                                                             <SelectItem value="~ 300万円">{t("catalog.form.priceOptions.range1")}</SelectItem>
                                                             <SelectItem value="300〜500万円">{t("catalog.form.priceOptions.range2")}</SelectItem>
@@ -344,8 +344,8 @@ export default function PreOrderPage() {
                                             </div>
 
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.specificPrice")}</label>
-                                                <Input name="specificPrice" type="number" value={formData.specificPrice} onChange={handleInputChange} placeholder="JPY" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
+                                                <label htmlFor="specificPrice" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.specificPrice")}</label>
+                                                <Input id="specificPrice" name="specificPrice" type="number" value={formData.specificPrice} onChange={handleInputChange} placeholder="JPY" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b]" />
                                             </div>
 
                                             {/* Virtual Sales Display (Subtle) */}
@@ -357,8 +357,8 @@ export default function PreOrderPage() {
                                             )}
 
                                             <div className="space-y-2">
-                                                <label className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.requests")}</label>
-                                                <Textarea name="requests" value={formData.requests} onChange={handleInputChange} placeholder="..." className="bg-white/5 border-white/10 text-white h-24 focus:border-[#f6bd2b]" />
+                                                <label htmlFor="requests" className="text-xs font-bold tracking-[0.2em] text-[#f6bd2b] font-['Outfit'] uppercase">{t("catalog.form.requests")}</label>
+                                                <Textarea id="requests" name="requests" value={formData.requests} onChange={handleInputChange} placeholder="..." className="bg-white/5 border-white/10 text-white h-24 focus:border-[#f6bd2b]" />
                                             </div>
                                         </motion.div>
                                     )}

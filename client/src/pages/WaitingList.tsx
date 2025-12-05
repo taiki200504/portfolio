@@ -85,6 +85,7 @@ export default function WaitingList() {
                                     <Input
                                         id="name"
                                         name="name"
+                                        autoComplete="name"
                                         required
                                         placeholder={t("waitingList.form.namePlaceholder")}
                                         className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b] h-12 transition-all duration-300"
@@ -99,6 +100,7 @@ export default function WaitingList() {
                                         id="email"
                                         name="email"
                                         type="email"
+                                        autoComplete="email"
                                         required
                                         placeholder={t("waitingList.form.emailPlaceholder")}
                                         className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b] h-12 transition-all duration-300"
@@ -113,6 +115,7 @@ export default function WaitingList() {
                                         <Input
                                             id="organization"
                                             name="organization"
+                                            autoComplete="organization"
                                             placeholder={t("waitingList.form.organizationPlaceholder")}
                                             className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b] h-12 transition-all duration-300"
                                         />
@@ -124,6 +127,7 @@ export default function WaitingList() {
                                         <Input
                                             id="role"
                                             name="role"
+                                            autoComplete="organization-title"
                                             placeholder={t("waitingList.form.rolePlaceholder")}
                                             className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b] h-12 transition-all duration-300"
                                         />
@@ -137,6 +141,7 @@ export default function WaitingList() {
                                     <Input
                                         id="website"
                                         name="website"
+                                        autoComplete="url"
                                         placeholder={t("waitingList.form.websitePlaceholder")}
                                         className="bg-white/5 border-white/10 text-white placeholder:text-white/20 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b] h-12 transition-all duration-300"
                                     />
@@ -147,7 +152,7 @@ export default function WaitingList() {
                                         {t("waitingList.form.interest")}
                                     </label>
                                     <Select name="interest" required>
-                                        <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b]">
+                                        <SelectTrigger id="interest" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b]">
                                             <SelectValue placeholder="Select an option" />
                                         </SelectTrigger>
                                         <SelectContent className="bg-[#092a62] border-white/10 text-white">
@@ -164,7 +169,7 @@ export default function WaitingList() {
                                         {t("waitingList.form.timing")}
                                     </label>
                                     <Select name="timing" required>
-                                        <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b]">
+                                        <SelectTrigger id="timing" className="bg-white/5 border-white/10 text-white h-12 focus:border-[#f6bd2b] focus:ring-1 focus:ring-[#f6bd2b]">
                                             <SelectValue placeholder="Select an option" />
                                         </SelectTrigger>
                                         <SelectContent className="bg-[#092a62] border-white/10 text-white">
