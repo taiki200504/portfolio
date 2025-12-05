@@ -20,7 +20,7 @@ export default function CatalogPage() {
             desc: t("catalogPage.models.matsu.desc"),
             features: t("catalogPage.models.matsu.features") as string[],
             target: "経営者・富裕層",
-            useCases: ["/assets/products/matsu/usecase1.png", "/assets/products/matsu/usecase2.png"]
+
         },
         {
             id: "take",
@@ -31,7 +31,7 @@ export default function CatalogPage() {
             desc: t("catalogPage.models.take.desc"),
             features: t("catalogPage.models.take.features") as string[],
             target: "企業オフィス・中堅層",
-            useCases: ["/assets/products/take/usecase1.png", "/assets/products/take/usecase2.png"]
+
         },
         {
             id: "ume",
@@ -42,7 +42,7 @@ export default function CatalogPage() {
             desc: t("catalogPage.models.ume.desc"),
             features: t("catalogPage.models.ume.features") as string[],
             target: "一般オフィス・公共施設",
-            useCases: ["/assets/products/ume/usecase1.png", "/assets/products/ume/usecase2.png"]
+
         }
     ];
 
@@ -119,14 +119,9 @@ export default function CatalogPage() {
                                             </div>
 
                                             <div className="mt-auto pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
-                                                <div className="flex -space-x-4 overflow-hidden">
-                                                    {model.useCases.map((img, idx) => (
-                                                        <img key={idx} src={img} alt="Use case" className="inline-block h-12 w-12 rounded-full ring-2 ring-[#040B17] object-cover" />
-                                                    ))}
-                                                </div>
-                                                <Link href={getLink(`/preorder?model=${model.id}`)}>
-                                                    <Button className="w-full sm:w-auto bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-bold rounded-full px-8 h-12 tracking-widest">
-                                                        PRE-ORDER <ArrowRight className="ml-2 w-4 h-4" />
+                                                <Link href={getLink(`/catalog/${model.id}`)}>
+                                                    <Button className="w-full sm:w-auto bg-transparent border border-[#f6bd2b] text-[#f6bd2b] hover:bg-[#f6bd2b]/10 font-bold rounded-full px-8 h-12 tracking-widest">
+                                                        VIEW DETAILS <ArrowRight className="ml-2 w-4 h-4" />
                                                     </Button>
                                                 </Link>
                                             </div>
@@ -138,65 +133,7 @@ export default function CatalogPage() {
                     </div>
                 </Section>
 
-                {/* Use Cases Section */}
-                <Section className="pb-32">
-                    <div className="container mx-auto px-4">
-                        <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] mb-16 uppercase text-center">
-                            {t("useCases.hero.title")}
-                        </h2>
-                        <div className="grid grid-cols-1 gap-12 max-w-5xl mx-auto">
-                            {(t("useCases.scenes") as any[]).map((scene, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                    className="bg-white/[0.02] border border-white/10 rounded-3xl overflow-hidden hover:border-[#f6bd2b]/30 transition-colors"
-                                >
-                                    <div className="grid grid-cols-1 md:grid-cols-2">
-                                        {/* Placeholder for Scene Image */}
-                                        <div className="h-64 md:h-auto bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-[#040B17]/20" />
-                                        </div>
 
-                                        <div className="p-8 md:p-12 flex flex-col justify-center">
-                                            <h3 className="text-2xl font-bold font-['Outfit'] mb-8">{scene.title}</h3>
-
-                                            <div className="space-y-6 mb-8">
-                                                <div className="flex gap-4">
-                                                    <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 flex-shrink-0">
-                                                        <Check className="w-5 h-5 rotate-45" />
-                                                    </div>
-                                                    <div>
-                                                        <p className="text-xs text-white/40 uppercase tracking-widest mb-1">Before</p>
-                                                        <p className="text-white/80">{scene.before}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex gap-4">
-                                                    <div className="w-8 h-8 rounded-full bg-[#f6bd2b]/10 flex items-center justify-center text-[#f6bd2b] flex-shrink-0">
-                                                        <Check className="w-5 h-5" />
-                                                    </div>
-                                                    <div>
-                                                        <p className="text-xs text-white/40 uppercase tracking-widest mb-1">After</p>
-                                                        <p className="text-white/80 font-bold">{scene.after}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                                                <div>
-                                                    <p className="text-xs text-white/40 uppercase tracking-widest mb-1">Recommended Model</p>
-                                                    <p className="text-lg font-bold font-['Outfit'] text-[#f6bd2b]">{scene.model}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </Section>
             </main>
             <Footer />
         </div>

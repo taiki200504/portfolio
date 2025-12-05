@@ -124,14 +124,33 @@ export function Navbar() {
     // };
 
     const navItems = [
-        { label: "Product", path: "/product/the-egg" },
-        { label: "Company", path: "/company" },
+        {
+            label: "Product", path: "/product", children: [
+                { label: "The EGG", path: "/product/the-egg" },
+                { label: "Lineup", path: "/product/lineup" },
+                { label: "Use Cases", path: "/use-cases" },
+                { label: "Platform", path: "/platform" },
+            ]
+        },
+        {
+            label: "Company", path: "/company", children: [
+                { label: "About", path: "/company/about" },
+                { label: "Story", path: "/company/story" },
+                { label: "Roadmap", path: "/company/roadmap" },
+                { label: "Team", path: "/company/team" },
+            ]
+        },
+        {
+            label: "Resources", path: "/resources", children: [
+                { label: "Catalog", path: "/catalog" },
+                { label: "Waiting List", path: "/waiting-list" },
+            ]
+        },
         { label: "News", path: "/news" },
         { label: "Contact", path: "/contact" },
     ];
 
-    // Dropdown items (if needed, but for now we are simplifying to top-level links as per request)
-    // Keeping the structure simple for now.
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
         <motion.nav
@@ -149,7 +168,7 @@ export function Navbar() {
             )}>
                 <div className={cn(
                     "flex items-center justify-between transition-all duration-500 rounded-full px-6",
-                    isScrolled ? "bg-[#040B17]/60 backdrop-blur-xl border border-white/10 shadow-lg py-3" : "bg-transparent py-2"
+                    isScrolled ? "bg-[#040B17]/80 backdrop-blur-xl border border-white/10 shadow-lg py-3" : "bg-transparent py-2"
                 )}>
                     {/* Logo */}
                     <Link href={getLink("/")} className="relative z-50 group">
@@ -160,26 +179,73 @@ export function Navbar() {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-8">
-                        {navItems.map((item) => (
-                            <Link key={item.path} href={getLink(item.path)}>
-                                <span className={`text-sm font-bold tracking-widest uppercase font-['Outfit'] hover:text-[#f6bd2b] transition-colors ${location === item.path ? "text-[#f6bd2b]" : "text-white/70"
-                                    }`}>
-                                    {item.label}
-                                </span>
-                            </Link>
+                        {navItems.map((item, index) => (
+                            <div
+                                key={item.path}
+                                className="relative group"
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
+                            >
+                                <Link href={getLink(item.path)}>
+                                    <span className={cn(
+                                        "text-sm font-bold tracking-widest uppercase font-['Outfit'] transition-colors flex items-center gap-1 py-4",
+                                        location.startsWith(item.path) ? "text-[#f6bd2b]" : "text-white/70 hover:text-white"
+                                    )}>
+                                        {item.label}
+                                        {item.children && <ChevronDown className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />}
+                                    </span>
+                                </Link>
+
+                                {/* Dropdown Menu */}
+                                {item.children && (
+                                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                        <div className="bg-[#040B17]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
+                                            {item.children.map((child) => (
+                                                <Link key={child.path} href={getLink(child.path)}>
+                                                    <div className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors font-['Outfit'] whitespace-nowrap">
+                                                        {child.label}
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
 
                     {/* Actions */}
                     <div className="hidden md:flex items-center gap-6">
-                        {/* Language Switcher */}
-                        <button
-                            onClick={toggleLanguage}
-                            className="flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 hover:text-white transition-colors font-['Outfit']"
-                        >
-                            <Globe className="w-3 h-3" />
-                            <span>{language === "ja" ? "EN" : "JP"}</span>
-                        </button>
+                        {/* Language Switcher Dropdown */}
+                        <div className="relative group">
+                            <button className="flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 hover:text-white transition-colors font-['Outfit'] py-2">
+                                <Globe className="w-3 h-3" />
+                                <span>{language === "ja" ? "JP" : "EN"}</span>
+                                <ChevronDown className="w-3 h-3 opacity-50" />
+                            </button>
+                            <div className="absolute right-0 top-full pt-2 w-24 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                <div className="bg-[#040B17]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl overflow-hidden p-1">
+                                    <button
+                                        onClick={() => language !== "ja" && toggleLanguage()}
+                                        className={cn(
+                                            "w-full text-left px-4 py-2 text-xs font-bold tracking-widest rounded-lg transition-colors font-['Outfit']",
+                                            language === "ja" ? "bg-white/10 text-[#f6bd2b]" : "text-white/70 hover:text-white hover:bg-white/5"
+                                        )}
+                                    >
+                                        JP
+                                    </button>
+                                    <button
+                                        onClick={() => language !== "en" && toggleLanguage()}
+                                        className={cn(
+                                            "w-full text-left px-4 py-2 text-xs font-bold tracking-widest rounded-lg transition-colors font-['Outfit']",
+                                            language === "en" ? "bg-white/10 text-[#f6bd2b]" : "text-white/70 hover:text-white hover:bg-white/5"
+                                        )}
+                                    >
+                                        EN
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
                         <div className="flex items-center gap-3">
                             <Link href={getLink("/catalog")}>
@@ -228,14 +294,30 @@ export function Navbar() {
                     >
                         <div className="flex flex-col gap-6 pb-12">
                             {navItems.map((item) => (
-                                <Link key={item.path} href={getLink(item.path)}>
-                                    <span
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-2xl font-bold text-white font-['Outfit'] block py-2 border-b border-white/5"
-                                    >
-                                        {item.label}
-                                    </span>
-                                </Link>
+                                <div key={item.path} className="space-y-2">
+                                    <Link href={getLink(item.path)}>
+                                        <span
+                                            onClick={() => !item.children && setIsOpen(false)}
+                                            className="text-2xl font-bold text-white font-['Outfit'] block py-2 border-b border-white/5"
+                                        >
+                                            {item.label}
+                                        </span>
+                                    </Link>
+                                    {item.children && (
+                                        <div className="pl-4 flex flex-col gap-2 border-l border-white/10 ml-2">
+                                            {item.children.map(child => (
+                                                <Link key={child.path} href={getLink(child.path)}>
+                                                    <span
+                                                        onClick={() => setIsOpen(false)}
+                                                        className="text-white/60 hover:text-white py-1 block text-sm font-['Outfit']"
+                                                    >
+                                                        {child.label}
+                                                    </span>
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                             <div className="pt-6 flex flex-col gap-4">
                                 <Link href={getLink("/catalog")}>
@@ -248,16 +330,32 @@ export function Navbar() {
                                         WAITING LIST
                                     </Button>
                                 </Link>
-                                <button
-                                    onClick={() => {
-                                        toggleLanguage();
-                                        setIsOpen(false);
-                                    }}
-                                    className="flex items-center justify-center gap-2 text-sm font-bold text-white/50 py-4"
-                                >
-                                    <Globe className="w-4 h-4" />
-                                    <span>Switch to {language === "ja" ? "English" : "日本語"}</span>
-                                </button>
+                                <div className="flex gap-2 pt-4 border-t border-white/10">
+                                    <button
+                                        onClick={() => {
+                                            if (language !== "ja") toggleLanguage();
+                                            setIsOpen(false);
+                                        }}
+                                        className={cn(
+                                            "flex-1 py-3 text-sm font-bold rounded-lg transition-colors font-['Outfit']",
+                                            language === "ja" ? "bg-white/10 text-[#f6bd2b]" : "text-white/50"
+                                        )}
+                                    >
+                                        日本語
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            if (language !== "en") toggleLanguage();
+                                            setIsOpen(false);
+                                        }}
+                                        className={cn(
+                                            "flex-1 py-3 text-sm font-bold rounded-lg transition-colors font-['Outfit']",
+                                            language === "en" ? "bg-white/10 text-[#f6bd2b]" : "text-white/50"
+                                        )}
+                                    >
+                                        English
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </motion.div>

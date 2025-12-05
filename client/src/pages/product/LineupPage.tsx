@@ -90,30 +90,33 @@ export default function LineupPage() {
                     </div>
                 </Section>
 
-                {/* 3. Future Lineup */}
+                {/* 3. Coming Soon */}
                 <Section className="bg-white/[0.02]">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Outfit']">
-                                {t("productPage.lineup.future.title")}
+                                Coming Soon
                             </h2>
                             <p className="text-white/60">
-                                {t("productPage.lineup.future.desc")}
+                                {t("productPage.lineup.comingSoon.desc")}
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {(t("productPage.lineup.future.items") as any[]).map((item, i) => (
+                            {(t("productPage.lineup.comingSoon.items") as any[]).map((item, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors"
+                                    className="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden group"
                                 >
-                                    <h3 className="text-2xl font-bold font-['Outfit'] mb-4 text-[#f6bd2b]">{item.name}</h3>
-                                    <p className="text-white/70">{item.desc}</p>
+                                    <div className="absolute top-0 right-0 bg-[#f6bd2b] text-[#040B17] text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                        Coming Soon
+                                    </div>
+                                    <h3 className="text-2xl font-bold font-['Outfit'] mb-4 text-white group-hover:text-[#f6bd2b] transition-colors">{item.name}</h3>
+                                    <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

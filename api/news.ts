@@ -29,8 +29,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const apiKey = process.env.NOTION_API_KEY;
 
     if (!databaseId || !apiKey) {
-        console.error("[News API Error] Missing credentials");
-        return res.status(500).json({ error: "Notion credentials not configured" });
+        console.warn("[News API Warning] Missing credentials (NOTION_NEWS_DB_ID or NOTION_API_KEY). Returning empty list.");
+        return res.status(200).json([]);
     }
 
     try {

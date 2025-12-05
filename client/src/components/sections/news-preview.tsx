@@ -23,7 +23,7 @@ export function NewsPreview() {
         },
     ];
 
-    const displayNews = news && news.length > 0 ? news.slice(0, 3) : (error ? [] : []);
+    const displayNews = news && news.length > 0 ? news.slice(0, 3) : placeholderNews;
 
     return (
         <section className="py-24 bg-[#040B17]">

@@ -21,7 +21,10 @@ import LineupPage from "@/pages/product/LineupPage";
 import ContactPage from "@/pages/ContactPage";
 import TermsOfService from "@/pages/TermsOfService";
 import CatalogPage from "@/pages/CatalogPage";
-import PreOrderPage from "@/pages/PreOrderPage"; // Added PreOrderPage
+import PreOrderPage from "@/pages/PreOrderPage";
+import ModelMatsuPage from "@/pages/catalog/ModelMatsuPage";
+import ModelTakePage from "@/pages/catalog/ModelTakePage";
+import ModelUmePage from "@/pages/catalog/ModelUmePage";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -48,6 +51,9 @@ function Router() {
       <Route path="/en/news/:slug" component={NewsDetailPage} />
       <Route path="/en/waiting-list" component={WaitingListPage} />
       <Route path="/en/catalog" component={CatalogPage} />
+      <Route path="/en/catalog/matsu" component={ModelMatsuPage} />
+      <Route path="/en/catalog/take" component={ModelTakePage} />
+      <Route path="/en/catalog/ume" component={ModelUmePage} />
       <Route path="/en/preorder" component={PreOrderPage} />
       <Route path="/en/contact" component={ContactPage} />
       <Route path="/en/privacy" component={PrivacyPolicy} />
@@ -70,6 +76,9 @@ function Router() {
       <Route path="/news/:slug" component={NewsDetailPage} />
       <Route path="/waiting-list" component={WaitingListPage} />
       <Route path="/catalog" component={CatalogPage} />
+      <Route path="/catalog/matsu" component={ModelMatsuPage} />
+      <Route path="/catalog/take" component={ModelTakePage} />
+      <Route path="/catalog/ume" component={ModelUmePage} />
       <Route path="/preorder" component={PreOrderPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/privacy" component={PrivacyPolicy} />

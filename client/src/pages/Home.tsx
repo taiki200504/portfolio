@@ -8,7 +8,9 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "wouter";
 import { LyenIn60s } from "@/components/sections/lyen-in-60s";
+import { VisualWorldView } from "@/components/sections/visual-world-view";
 import { GlassMenuGrid } from "@/components/sections/glass-menu-grid";
+import { NewsPreview } from "@/components/sections/news-preview";
 
 export default function Home() {
   const { t, language } = useTranslation();
@@ -106,48 +108,14 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* 2. LYEN in 60 seconds */}
-        <LyenIn60s />
+        {/* 2. LYEN in 60 seconds (Visual) */}
+        <VisualWorldView />
 
         {/* 3. Glass Menu Grid */}
         <GlassMenuGrid />
 
         {/* 4. Latest News */}
-        <Section className="py-24 border-t border-white/5">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-bold font-['Outfit'] tracking-widest text-white">LATEST NEWS</h2>
-              <Link href={getLink("/news")}>
-                <Button variant="ghost" className="text-white/50 hover:text-white group">
-                  VIEW ALL <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              {newsItems.map((item, index) => (
-                <Link key={index} href={getLink(item.path)}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group flex flex-col md:flex-row md:items-center gap-4 md:gap-8 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
-                  >
-                    <div className="flex items-center gap-4 text-xs font-bold tracking-widest font-['Outfit']">
-                      <span className="text-white/40">{item.date}</span>
-                      <span className="px-2 py-1 rounded bg-white/10 text-[#f6bd2b]">{item.category}</span>
-                    </div>
-                    <h3 className="text-lg font-bold group-hover:text-[#f6bd2b] transition-colors flex-1">
-                      {item.title}
-                    </h3>
-                    <ArrowRight className="w-5 h-5 text-white/20 group-hover:text-[#f6bd2b] group-hover:translate-x-1 transition-all" />
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </Section>
+        <NewsPreview />
 
       </main>
       <Footer />
