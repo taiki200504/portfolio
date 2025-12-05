@@ -16,6 +16,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import ProductPage from "@/pages/ProductPage";
 import TheEggPage from "@/pages/product/TheEggPage";
 import LineupPage from "@/pages/product/LineupPage";
+import ResourcesPage from "@/pages/ResourcesPage";
 
 
 import ContactPage from "@/pages/ContactPage";
@@ -50,6 +51,7 @@ function Router() {
       <Route path="/en/news" component={NewsPage} />
       <Route path="/en/news/:slug" component={NewsDetailPage} />
       <Route path="/en/waiting-list" component={WaitingListPage} />
+      <Route path="/en/resources" component={ResourcesPage} />
       <Route path="/en/catalog" component={CatalogPage} />
       <Route path="/en/catalog/matsu" component={ModelMatsuPage} />
       <Route path="/en/catalog/take" component={ModelTakePage} />
@@ -75,6 +77,7 @@ function Router() {
       <Route path="/news" component={NewsPage} />
       <Route path="/news/:slug" component={NewsDetailPage} />
       <Route path="/waiting-list" component={WaitingListPage} />
+      <Route path="/resources" component={ResourcesPage} />
       <Route path="/catalog" component={CatalogPage} />
       <Route path="/catalog/matsu" component={ModelMatsuPage} />
       <Route path="/catalog/take" component={ModelTakePage} />

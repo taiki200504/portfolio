@@ -128,8 +128,6 @@ export function Navbar() {
             label: "Product", path: "/product", children: [
                 { label: "The EGG", path: "/product/the-egg" },
                 { label: "Lineup", path: "/product/lineup" },
-                { label: "Use Cases", path: "/use-cases" },
-                { label: "Platform", path: "/platform" },
             ]
         },
         {
