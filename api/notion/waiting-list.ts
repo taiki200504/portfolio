@@ -41,7 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 },
                 "Timing": { select: { name: timing || "Undecided" } },
                 "Status": { select: { name: "New" } },
-                "Status": { select: { name: "New" } },
+
                 // "Source": { select: { name: "HP Waiting List" } },
                 "Message": {
                     rich_text: [{ text: { content: message || "" } }],
