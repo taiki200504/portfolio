@@ -6,7 +6,19 @@ import useSWR from "swr";
 import ReactMarkdown from "react-markdown";
 import { ArrowLeft } from "lucide-react";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+const fetcher = async (url: string) => {
+    const res = await fetch(url);
+    if (!res.ok) {
+        const text = await res.text();
+        try {
+            const json = JSON.parse(text);
+            throw new Error(json.error || `Error ${res.status}: ${res.statusText}`);
+        } catch {
+            throw new Error(`Error ${res.status}: ${res.statusText}`);
+        }
+    }
+    return res.json();
+};
 
 export default function NewsDetailPage() {
     const [match, params] = useRoute("/news/:slug");
@@ -52,7 +64,11 @@ export default function NewsDetailPage() {
                             </article>
                         ) : (
                             <div className="text-center text-white/40 py-12">
-                                {error ? "Failed to load news." : "Loading..."}
+                                {error ? (
+                                    <span className="text-red-400">Failed to load news: {error.message}</span>
+                                ) : (
+                                    "Loading..."
+                                )}
                             </div>
                         )}
                     </div>
