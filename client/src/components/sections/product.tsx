@@ -67,16 +67,32 @@ export function Product() {
                         </Link>
                     </motion.div>
 
-                    {/* Right: Visual (Placeholder for 3D Render) */}
+                    {/* Right: Visual */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="order-1 lg:order-2 relative"
+                        className="order-1 lg:order-2 relative flex justify-center items-center"
                     >
-                        <div className="aspect-square rounded-full bg-gradient-to-br from-[#092a62] to-black border border-white/10 shadow-[0_0_100px_rgba(9,42,98,0.5)] flex items-center justify-center relative overflow-hidden">
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />
-                            <span className="text-white/20 font-['Outfit'] text-sm tracking-[0.5em]">EGG VISUAL</span>
+                        <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center">
+                            {/* Glow effect */}
+                            <div className="absolute inset-0 bg-[#f6bd2b]/10 blur-[100px] rounded-full" />
+
+                            {/* Animated Image */}
+                            <motion.img
+                                src="/assets/model-matsu.png"
+                                alt="The EGG Model Matsu"
+                                className="relative z-10 w-full h-full object-contain opacity-80 mix-blend-screen"
+                                animate={{
+                                    y: [-10, 10, -10],
+                                    rotate: [-2, 2, -2],
+                                }}
+                                transition={{
+                                    duration: 8,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
                         </div>
                     </motion.div>
 
