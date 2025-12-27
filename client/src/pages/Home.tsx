@@ -7,7 +7,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "wouter";
-import { LyenIn60s } from "@/components/sections/lyen-in-60s";
 import { VisualWorldView } from "@/components/sections/visual-world-view";
 import { GlassMenuGrid } from "@/components/sections/glass-menu-grid";
 import { NewsPreview } from "@/components/sections/news-preview";
@@ -78,19 +77,19 @@ export default function Home() {
                 {t("hero.subtitle")}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full md:w-auto">
                 <Link href={getLink("/catalog")}>
-                  <Button size="lg" className="w-full sm:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 shadow-[0_0_20px_rgba(246,189,43,0.3)] hover:shadow-[0_0_30px_rgba(246,189,43,0.5)] transition-all">
+                  <Button size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 shadow-[0_0_20px_rgba(246,189,43,0.3)] hover:shadow-[0_0_30px_rgba(246,189,43,0.5)] transition-all">
                     {t("hero.cta.catalog")}
                   </Button>
                 </Link>
                 <Link href={getLink("/contact")}>
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 transition-all">
+                  <Button variant="outline" size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 transition-all">
                     {t("hero.cta.contact")}
                   </Button>
                 </Link>
                 <Link href={getLink("/waiting-list")}>
-                  <Button variant="ghost" size="lg" className="w-full sm:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all">
+                  <Button variant="ghost" size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all">
                     {t("hero.cta.waitingList")}
                   </Button>
                 </Link>

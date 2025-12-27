@@ -10,39 +10,43 @@ import { Link } from "wouter";
 export default function CatalogPage() {
     const { t, language } = useTranslation();
 
+    const zenEgg = t("productPage.lineup.zenEgg") as any;
+
+    // Fallback if zenEgg is not loaded yet or structure mismatch
+    const matsu = zenEgg?.models?.[0] || {};
+    const take = zenEgg?.models?.[1] || {};
+    const ume = zenEgg?.models?.[2] || {};
+
     const models = [
         {
             id: "matsu",
-            name: t("catalogPage.models.matsu.name"),
-            tag: "Premium",
-            price: "¥8,000,000 ~",
+            name: matsu.name || t("catalogPage.models.matsu.name"),
+            tag: matsu.tag || "Premium",
+            price: matsu.price || "ASK",
             image: "/assets/products/matsu/main.png",
             desc: t("catalogPage.models.matsu.desc"),
             features: t("catalogPage.models.matsu.features") as string[],
-            target: "経営者・富裕層",
-
+            target: matsu.target,
         },
         {
             id: "take",
-            name: t("catalogPage.models.take.name"),
-            tag: "Standard",
-            price: "¥3,000,000 ~",
+            name: take.name || t("catalogPage.models.take.name"),
+            tag: take.tag || "Standard",
+            price: take.price || "ASK",
             image: "/assets/products/take/main.png",
             desc: t("catalogPage.models.take.desc"),
             features: t("catalogPage.models.take.features") as string[],
-            target: "企業オフィス・中堅層",
-
+            target: take.target,
         },
         {
             id: "ume",
-            name: t("catalogPage.models.ume.name"),
-            tag: "Entry",
-            price: "¥1,500,000 ~",
+            name: ume.name || t("catalogPage.models.ume.name"),
+            tag: ume.tag || "Entry",
+            price: ume.price || "ASK",
             image: "/assets/products/ume/main.png",
             desc: t("catalogPage.models.ume.desc"),
             features: t("catalogPage.models.ume.features") as string[],
-            target: "一般オフィス・公共施設",
-
+            target: ume.target,
         }
     ];
 
@@ -59,7 +63,7 @@ export default function CatalogPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-6xl font-bold font-['Outfit'] mb-6"
                     >
-                        Choose Your EGG
+                        {t("catalogPage.title")}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -67,7 +71,7 @@ export default function CatalogPage() {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-white/60 max-w-2xl mx-auto"
                     >
-                        利用シーンや設置環境に合わせて選べる、3つのモデル。
+                        {t("catalogPage.subtitle")}
                     </motion.p>
                 </Section>
 

@@ -12,7 +12,7 @@ export function GlassMenuGrid() {
     const menuItems = [
         {
             id: "egg",
-            path: "/product/the-egg",
+            path: "/product",
             label: t("menu.egg.label"),
             title: t("menu.egg.title"),
             desc: t("menu.egg.desc"),

@@ -126,8 +126,8 @@ export function Navbar() {
     const navItems = [
         {
             label: "Product", path: "/product", children: [
-                { label: "The EGG", path: "/product/the-egg" },
-                { label: "Lineup", path: "/product/lineup" },
+                { label: "The EGG", path: "/product" },
+                { label: "Series Lineup", path: "/product#lineup" },
             ]
         },
         {
@@ -140,7 +140,7 @@ export function Navbar() {
         },
         {
             label: "Resources", path: "/resources", children: [
-                { label: "Catalog", path: "/catalog" },
+                { label: "Catalog (Zen Egg)", path: "/catalog" },
                 { label: "Waiting List", path: "/waiting-list" },
             ]
         },

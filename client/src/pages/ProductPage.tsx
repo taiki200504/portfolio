@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Experience } from "@/components/sections/experience";
 import { Product } from "@/components/sections/product";
 import { UseCases } from "@/components/sections/use-cases";
+import { Lineup } from "@/components/sections/lineup";
 
 export default function ProductPage() {
     return (
@@ -11,6 +12,7 @@ export default function ProductPage() {
             <main className="pt-24">
                 <Product />
                 <Experience />
+                <Lineup />
                 <UseCases />
             </main>
             <Footer />

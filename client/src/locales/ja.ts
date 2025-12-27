@@ -1,20 +1,18 @@
 export const ja = {
     hero: {
-        title: "外部脳の時代に、内部OSを。",
-        subtitle: "LYENは、卵型没入ポッド『The EGG』からはじまる、\n個人と組織を“内側からアップデート”する Internal OS カンパニーです。",
+        title: "数分で、心をリセットする。",
+        subtitle: "The EGGは、ノイズを遮断し、本来のクリアな思考を取り戻すための、\nAIガイド付きの「没入空間」です。",
         cta: {
-            catalog: "The EGGのカタログを見る",
-            contact: "導入・PoCの相談をする",
-            waitingList: "Waiting Listに登録"
+            catalog: "Zen Egg カタログを見る",
+            contact: "お問い合わせ",
+            waitingList: "ウェイティングリスト登録"
         },
         scroll: "Scroll",
     },
     lyenIn60s: {
-        title: "LYEN in 60 seconds",
+        title: "60秒でわかるLYEN",
         points: [
             {
-                title: "世界の前提",
-                desc: "AIとスマホで『外側の脳』は拡張されきっている。"
             },
             {
                 title: "LYENの仮説",
@@ -142,14 +140,19 @@ export const ja = {
                 desc: "フラッグシップモデル「The EGG」のリリースと、都内拠点での展開。",
             },
             {
-                year: "2026",
-                title: "Internal OS App",
-                desc: "バイタルデータと連動し、日常のメンタルコンディションを管理するアプリ。",
+                year: "2026 Q1",
+                title: "プロトタイプβ版完成",
+                desc: "The EGG特化型モデルの試作完了および、Internal OSアプリβ版の実装。",
             },
             {
-                year: "2028",
-                title: "BMI Integration",
-                desc: "脳波インターフェース(BMI)の実装による、思考と空間の直接的な同期。",
+                year: "2026 Q3",
+                title: "プレオーダー開始",
+                desc: "Model Matsu / Model Take の正式プレオーダー受付を開始。",
+            },
+            {
+                year: "2027 Q1",
+                title: "量産開始",
+                desc: "ファーストロットの量産開始および、初期パートナーへの納品開始。",
             },
             {
                 year: "Future",
@@ -257,6 +260,36 @@ export const ja = {
                     "CyberAgentでのネット広告作成業務。",
                     "2024年11月に資金調達を行い、オフライン広告事業を開始。",
                 ]
+            },
+            {
+                name: "佐藤 健司",
+                role: "Neuroscientist",
+                bio: "神経科学博士。脳波分析と認知機能の専門家。",
+                details: [
+                    "脳波同期に関する研究を主導。",
+                    "瞑想と神経可塑性に関する論文を発表。",
+                ],
+                image: "/assets/team_placeholder.png"
+            },
+            {
+                name: "田中 エミ",
+                role: "Spatial Designer",
+                bio: "ミニマリストな禅空間に焦点を当てた受賞歴のある建築家。",
+                details: [
+                    "高級ホテルやスパのインテリアを設計。",
+                    "照明と音響設計を専門とする。",
+                ],
+                image: "/assets/team_placeholder.png"
+            },
+            {
+                name: "山本 祐樹",
+                role: "AI Engineer",
+                bio: "元Google AI研究者。アフェクティブ・コンピューティングのスペシャリスト。",
+                details: [
+                    "内部OSのコアロジックを開発。",
+                    "生体フィードバックのための強化学習の経験。",
+                ],
+                image: "/assets/team_placeholder.png"
             }
         ]
     },

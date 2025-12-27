@@ -1,28 +1,28 @@
 export const en = {
     hero: {
-        title: "Internal OS for the Age of External Brains.",
-        subtitle: "LYEN is an Internal OS company starting with 'The EGG',\nupdating individuals and organizations from the inside out.",
+        title: "Reset your mind in minutes.",
+        subtitle: "The EGG is an AI-guided space that helps you cut through noise and regain clarity—repeatable anytime.",
         cta: {
-            catalog: "View Catalog",
-            contact: "Contact for PoC",
+            catalog: "View Zen Egg Catalog",
+            contact: "Contact",
             waitingList: "Join Waiting List"
         },
         scroll: "Scroll",
     },
     lyenIn60s: {
-        title: "LYEN in 60 seconds",
+        title: "LYEN in 60s",
         points: [
             {
-                title: "The Premise",
-                desc: "Our 'External Brains' are fully extended by AI and smartphones."
+                title: "Noise Overload",
+                desc: "Smartphones and AI extend our external brains, but our internal world is losing silence."
             },
             {
-                title: "The Hypothesis",
-                desc: "What's missing is a 'Shell' and 'Internal OS' to dive inward."
+                title: "The Missing Piece",
+                desc: "We need a physical shell to cut the connection, and an Internal OS to dive deep."
             },
             {
-                title: "The Future",
-                desc: "Creating a world where The EGG exists beside every major decision."
+                title: "Repeatable Clarity",
+                desc: "The EGG creates a repeatable ritual to reset and update your internal state."
             }
         ]
     },
@@ -30,55 +30,57 @@ export const en = {
         egg: {
             label: "PRODUCT",
             title: "The EGG",
-            desc: "The egg-shaped immersion pod. An internal OS room.",
+            desc: "AI-guided space for clarity.",
         },
         useCases: {
             label: "USE CASES",
             title: "Use Cases",
-            desc: "Implementation scenes in offices, lounges, and hotels.",
+            desc: "Offices, Lounges, and Hotels.",
         },
         platform: {
             label: "PLATFORM",
             title: "Internal OS",
-            desc: "The complete picture: EGG, Session, and Log.",
+            desc: "EGG + Session + Log.",
         },
         company: {
             label: "COMPANY",
             title: "Company",
-            desc: "We Engineer Silence. Team and Roadmap.",
+            desc: "Team and Roadmap.",
         },
         catalog: {
             label: "RESOURCES",
             title: "Catalog",
-            desc: "Download product catalog and pre-order.",
+            desc: "Specs for Zen Egg (Matsu/Take/Ume).",
         },
         news: {
             label: "NEWS",
             title: "News",
-            desc: "Latest updates from LYEN.",
+            desc: "Latest updates.",
         },
     },
     footer: {
         miniCta: {
-            title: "Considering The EGG?",
-            desc: "Download our catalog or join the waiting list.",
+            title: "Ready to Reset?",
+            desc: "Download catalog or join the waiting list.",
         },
         catalog: "CATALOG",
         waitingList: "WAITING LIST",
-        tagline: "Internal OS Company.\nWe engineer silence to upgrade your inner world.",
+        tagline: "Internal OS for Humanity.",
         company: "COMPANY",
         product: "PRODUCT",
         resources: "RESOURCES",
         legal: "LEGAL",
         links: {
-            philosophy: "Philosophy",
+            company: "About LYEN",
+            story: "Story",
+            roadmap: "Roadmap",
             team: "Team",
-            contact: "Contact",
             egg: "The EGG",
-            useCases: "Use Cases",
-            science: "Science",
+            lineup: "Series Lineup",
+            platform: "Internal OS",
+            catalog: "Zen Egg Catalog",
+            waitingList: "Waiting List",
             news: "News",
-            catalog: "Catalog",
             privacy: "Privacy Policy",
             terms: "Terms of Use",
         },
@@ -93,9 +95,9 @@ export const en = {
         contact: "CONTACT",
         items: {
             theEgg: "The EGG",
-            lineup: "Lineup",
+            lineup: "Series Lineup",
             useCases: "Use Cases",
-            platform: "Platform",
+            platform: "Internal OS",
             about: "About",
             story: "Story",
             roadmap: "Roadmap",
@@ -111,21 +113,21 @@ export const en = {
     product: {
         label: "Flagship Model",
         title: "The EGG",
-        desc: "The EGG is the flagship device that embodies the ultimate self-immersion experience.",
+        desc: "An AI-guided space to reset and regain clarity in minutes.",
         waitingList: "WAITING LIST",
         downloadCatalog: "DOWNLOAD CATALOG",
         features: {
             isolation: {
-                title: "Total Isolation",
-                desc: "Shell structure that physically blocks external noise",
+                title: "Physical Isolation",
+                desc: "A shell structure designed to physically block external noise.",
             },
             light: {
-                title: "Biophilic Light",
-                desc: "Light synchronized with brain waves and biological rhythms",
+                title: "Bio-Sync",
+                desc: "Lighting that synchronizes with your biological rhythm.",
             },
             guide: {
                 title: "AI Guide",
-                desc: "Voice guide and feedback to deepen introspection",
+                desc: "Voice guidance to support deep introspection.",
             },
         },
         viewSpecs: "VIEW FULL SPECS",
@@ -137,34 +139,39 @@ export const en = {
             {
                 year: "2025",
                 title: "The EGG Launch",
-                desc: "Release of the flagship model 'The EGG' and deployment in Tokyo.",
+                desc: "Official rollout of the flagship model 'The EGG' in Tokyo.",
             },
             {
-                year: "2026",
-                title: "Internal OS App",
-                desc: "App to manage daily mental condition linked with vital data.",
+                year: "2026 Q1",
+                title: "Internal OS Beta",
+                desc: "Beta release of the Internal OS logic and specialized prototype.",
             },
             {
-                year: "2028",
-                title: "BMI Integration",
-                desc: "Direct synchronization of thought and space via Brain-Machine Interface.",
+                year: "2026 Q3",
+                title: "Zen Egg Pre-order",
+                desc: "Pre-orders open for Zen Egg models (Matsu/Take/Ume).",
+            },
+            {
+                year: "2027 Q1",
+                title: "Mass Production",
+                desc: "Delivery of the first mass-produced lot begins.",
             },
             {
                 year: "Future",
                 title: "VR Egg",
-                desc: "Immersive entertainment pod hacking vision and hearing.",
+                desc: "Immersive entertainment pod specializing in visual/auditory experiences.",
                 image: "/assets/egg/vr-egg.png",
             },
             {
                 year: "Future",
                 title: "Brain Egg",
-                desc: "Meditation chamber operated solely by thought via BCI.",
+                desc: "Next-gen pod operated via Brain-Computer Interface (BCI).",
                 image: "/assets/egg/brain-egg.png",
             },
             {
                 year: "Future",
                 title: "Sleep Egg",
-                desc: "Recovery-specialized pod providing optimal sleep environment.",
+                desc: "Recovery pod optimized for short, high-quality sleep.",
                 image: "/assets/egg/sleep-egg.png",
             },
         ],
@@ -177,49 +184,49 @@ export const en = {
     },
     about: {
         label: "About LYEN",
-        title: "We Engineer\nSilence.",
-        desc: "Information is saturated, and external brains (AI) continue to evolve.\nBut what about our 'inner' world?\n\nLYEN is a lab that updates the neglected inner self of humans.\nWe engineer silence to create a place where everyone can return to their true selves.",
+        title: "We Build\nInternal OS.",
+        desc: "LYEN builds Internal OS experiences—spaces where clarity becomes repeatable.\n\nWe engineer silence to help you cut through noise and return to your true self.",
         mission: {
             label: "MISSION",
-            jp: "Expand individual Potential",
-            en: "Expand individual Potential"
+            jp: "Expand Individual Potential.",
+            en: "Expand Individual Potential."
         },
         vision: {
             label: "VISION",
-            jp: "Upgrade humanity from the inside out",
-            en: "Upgrade humanity from the inside out"
+            jp: "Upgrade Humanity from the Inside.",
+            en: "Upgrade Humanity from the Inside."
         },
         value: {
             label: "VALUE",
-            jp: "Create the ultimate self-immersion experience",
-            en: "Create the ultimate self-immersion experience"
+            jp: "Create Repeatable Clarity.",
+            en: "Create Repeatable Clarity."
         }
     },
     team: {
         label: "TEAM",
         title: "The Architects",
-        desc: "We expand individual potential and update humanity from the inside out\nthrough the ultimate self-immersion experience.",
+        desc: "A team dedicated to expanding human potential through the Internal OS.",
         members: [
             {
                 name: "Taiki Mishima",
                 role: "CEO / Founder",
                 bio: "Rikkyo University Economics (On Leave). Graduated from high schools in Japan and US.",
                 details: [
-                    "Researched DAO technology promotion in the anime industry during high school.",
-                    "Founded student organization UNION, experienced business transfer to Cometree Inc.",
-                    "Launched suit business at Regalis, continuing as Marketing Lead.",
-                    "Completed Design Thinking program at Stanford d.school via J-StarX Stanford.",
+                    "Researched DAO technology in the anime industry.",
+                    "Founded student organization UNION, sold to Cometree Inc.",
+                    "Launched suit business at Regalis as Marketing Lead.",
+                    "Completed Design Thinking program at Stanford d.school (J-StarX).",
                 ],
-                mission: "\"Embody the unknown with technology, Update daily life with worldview\""
+                mission: "\"Update daily life with a new worldview.\""
             },
             {
                 name: "Outaro Takekawa",
                 role: "Co-Founder",
-                bio: "University of Tokyo, Science I. From Kanazawa, Ishikawa.",
+                bio: "University of Tokyo, Science I.",
                 details: [
-                    "Chemistry Grand Prix Gold, Physics Challenge Award. International Chemistry Olympiad candidate.",
-                    "High School Chemistry Grand Contest Poster Award for BTB solution research.",
-                    "Participated in discussion with US representatives at G7 Education Ministers' Meeting.",
+                    "Chemistry Grand Prix Gold, Physics Challenge Award.",
+                    "Grand Contest Poster Award for BTB solution research.",
+                    "Participated in G7 Education Ministers' Meeting discussion.",
                     "Marketing for traditional crafts at Shindo LLC.",
                 ]
             },
@@ -228,9 +235,9 @@ export const en = {
                 role: "Hardware Dev",
                 bio: "Keio University SFC.",
                 details: [
-                    "Experience in design and construction at an architectural firm since high school.",
-                    "Led corporate projects as a spatial designer.",
-                    "Consistent execution from design to system construction and construction.",
+                    "Architectural design and construction experience since high school.",
+                    "Led corporate projects as spatial designer.",
+                    "Execution from design to system construction.",
                     "Managed 4 schools at a selection cram school.",
                 ]
             },
@@ -239,10 +246,10 @@ export const en = {
                 role: "PM",
                 bio: "Keio University SFC.",
                 details: [
-                    "Launched real-time coupon app 'KitaKita!' at 14, experienced fundraising.",
+                    "Launched 'KitaKita!' app at 14, raised funds.",
                     "15 years of soccer experience, 6 years as captain.",
-                    "Dalton Tokyo Gakuen 1st batch, studied abroad in Colorado, USA.",
-                    "Currently researching housing complex redevelopment and community design.",
+                    "Dalton Tokyo Gakuen 1st batch, studied in Colorado.",
+                    "Researching community design and redevelopment.",
                 ]
             },
             {
@@ -250,38 +257,68 @@ export const en = {
                 role: "Branding Manager",
                 bio: "Specialist in SNS, Media, and Advertising.",
                 details: [
-                    "Managed SNS for beauty influencers with over 1 million followers.",
-                    "Launched and managed YouTube channels at Shogakukan.",
-                    "Online ad creation at CyberAgent.",
-                    "Started offline ad business after fundraising in Nov 2024.",
+                    "Managed SNS for influencers with 1M+ followers.",
+                    "Launched YouTube channels at Shogakukan.",
+                    "CyberAgent online ad creation.",
+                    "Started offline ad business (Nov 2024).",
                 ]
+            },
+            {
+                name: "Kenji Sato",
+                role: "Neuroscientist",
+                bio: "Ph.D. in Neuroscience. Expert in EEG analysis.",
+                details: [
+                    "Research on brainwave synchronization.",
+                    "Papers on meditation and neural plasticity.",
+                ],
+                image: "/assets/team_placeholder.png"
+            },
+            {
+                name: "Emi Tanaka",
+                role: "Spatial Designer",
+                bio: "Architect focusing on minimalist zen spaces.",
+                details: [
+                    "Designed interiors for luxury hotels.",
+                    "Specializes in lighting and acoustics.",
+                ],
+                image: "/assets/team_placeholder.png"
+            },
+            {
+                name: "Yuki Yamamoto",
+                role: "AI Engineer",
+                bio: "Ex-Google AI researcher. Affective computing.",
+                details: [
+                    "Developing Internal OS core logic.",
+                    "Reinforcement learning for bio-feedback.",
+                ],
+                image: "/assets/team_placeholder.png"
             }
         ]
     },
     waitingList: {
         title: "JOIN THE WAITING LIST",
-        subtitle: "Experience the Internal OS for humanity before anyone else.\nEarly access requests for The EGG are now open.",
+        subtitle: "Internal OS—early access requests are now open.",
         success: {
             title: "THANK YOU",
-            desc: "Request received. We will contact you with details shortly.",
+            desc: "Request received. We will contact you shortly.",
         },
         form: {
             name: "Name",
             namePlaceholder: "John Doe",
             email: "Email",
             emailPlaceholder: "your@email.com",
-            organization: "Company / Organization (Optional)",
+            organization: "Company (Optional)",
             organizationPlaceholder: "LYEN Inc.",
             role: "Role (Optional)",
             rolePlaceholder: "CEO",
             website: "Website / SNS (Optional)",
             websitePlaceholder: "https://...",
-            interest: "Usage Interest (Required)",
+            interest: "Interest (Required)",
             interestOptions: {
-                personal: "Personal Interest",
-                office: "Consider for Office / Company",
-                facility: "Consider for Facility (Hotel, Lounge, Sauna, etc.)",
-                poc: "Just want to talk first",
+                personal: "Personal Use",
+                office: "Office Implementation",
+                facility: "Facility Installation",
+                poc: "General Inquiry / PoC",
             },
             timing: "Timing (Required)",
             timingOptions: {
@@ -290,15 +327,15 @@ export const en = {
                 within2y: "Within 2 years",
                 undecided: "Undecided",
             },
-            message: "Message / Usage Scene (Optional)",
-            messagePlaceholder: "Tell us about your interest in The EGG...",
-            submit: "SUBMIT REQUEST",
+            message: "Message (Optional)",
+            messagePlaceholder: "Tell us about your interest...",
+            submit: "SUBMIT",
             submitting: "SENDING...",
         }
     },
     catalog: {
         title: "CATALOG REQUEST",
-        subtitle: "For those considering The EGG.\nDownload the catalog and consult about pre-orders.",
+        subtitle: "Download the Zen Egg catalog and consult about pre-orders.",
         steps: {
             basic: "Basic Info",
             usage: "Usage",
@@ -315,29 +352,29 @@ export const en = {
                 lounge: "Members Lounge",
                 other: "Other",
             },
-            usage: "How do you want to use The EGG? (Multiple)",
+            usage: "Usage Intent (Multiple)",
             usageOptions: {
-                decision: "Decision making for Execs",
+                decision: "Executive Decision Making",
                 wellbeing: "Employee Wellbeing",
-                premium: "Premium Customer Experience",
-                value: "New Value for Members",
+                premium: "Premium CX",
+                value: "Member Value",
                 other: "Other",
             },
-            status: "Status (Required)",
+            status: "Current Status (Required)",
             statusOptions: {
-                info: "Just collecting info",
-                compare: "Comparing options",
-                consider: "Considering specific implementation",
-                want: "Want to install immediately",
+                info: "Information Gathering",
+                compare: "Comparing Options",
+                consider: "Planning Implementation",
+                want: "Ready to Install",
             },
-            preorderIntention: "Pre-order Intention (Required)",
+            preorderIntention: "Pre-order Interest (Required)",
             preorderOptions: {
-                interested: "Interested in pre-order",
-                conditional: "Conditional pre-order",
-                infoOnly: "Info only",
+                interested: "Interested",
+                conditional: "Conditional",
+                infoOnly: "Info Only",
             },
-            quantity: "Quantity considered",
-            priceRange: "Price range per unit (Required)",
+            quantity: "Quantity",
+            priceRange: "Budget per Unit (Required)",
             priceOptions: {
                 range1: "~ 3M JPY",
                 range2: "3M - 5M JPY",
@@ -345,111 +382,111 @@ export const en = {
                 range4: "8M+ JPY",
                 undecided: "Undecided",
             },
-            specificPrice: "Specific budget (Optional)",
-            requests: "Other requests (Optional)",
+            specificPrice: "Specific Budget",
+            requests: "Requests",
             download: "DOWNLOAD CATALOG",
             next: "NEXT",
             back: "BACK",
         },
         success: {
             title: "THANK YOU",
-            desc: "Form submitted. Please download the catalog.",
+            desc: "Please download the catalog below.",
             downloadButton: "DOWNLOAD PDF",
         }
     },
     companyPage: {
         hero: {
-            title: "The Company putting an OS\ninside humanity.",
-            subtitle: "LYEN is an Internal OS company that updates individuals and organizations\nfrom the inside out, starting with the immersive pod 'The EGG'.",
-            tagline: "Internal OS company for the age of external brains."
+            title: "Internal OS for Humanity.",
+            subtitle: "LYEN updates individuals and organizations from the inside out, starting with the immersive pod 'The EGG'.",
+            tagline: "Internal OS for Humanity."
         },
         summary: {
-            title: "LYEN in 60 seconds",
+            title: "LYEN in 60s",
             points: [
                 {
-                    title: "The World Context",
-                    desc: "AI, Smartphones, Cloud.\nOur 'external brains' are fully expanded."
+                    title: "The Noise",
+                    desc: "Our external brains (AI/Phones) are fully extended.\nBut we have nowhere to hide."
                 },
                 {
-                    title: "LYEN's Hypothesis",
-                    desc: "Meanwhile, 'inner silence' and 'deep thinking time' are lost.\nWhat's missing is not external, but an 'Internal OS'."
+                    title: "The Hypothesis",
+                    desc: "What's missing is an 'Internal OS'—a system to dive inward and regain clarity."
                 },
                 {
-                    title: "Our Future",
-                    desc: "We create a state where 'The EGG' (Shell) and 'Internal OS'\nexist beside every important decision in the world."
+                    title: "The Future",
+                    desc: "A world where The EGG is beside every major decision."
                 }
             ]
         },
         menu: {
             title: "COMPANY MENU",
             about: {
-                label: "ABOUT LYEN",
+                label: "ABOUT",
                 title: "About LYEN",
-                desc: "The world LYEN sees and the Internal OS overview."
+                desc: "Our vision for the Internal OS."
             },
             story: {
                 label: "STORY",
                 title: "Founding Story",
-                desc: "The story of how The EGG was born."
+                desc: "How The EGG was born."
             },
             roadmap: {
                 label: "ROADMAP",
-                title: "3-Year Plan",
-                desc: "What we will achieve in the next 3 years."
+                title: "Roadmap",
+                desc: "Our path for the next 3 years."
             },
             team: {
                 label: "TEAM",
                 title: "Team",
-                desc: "Members and partners building the Internal OS."
+                desc: "The Architects building LYEN."
             }
         },
         cta: {
-            title: "Implementation / PoC / Partnership",
-            desc: "Contact us for The EGG implementation, PoC, joint development, or partnership.",
-            primary: "Consult about Implementation/PoC",
+            title: "Work with Us / PoC",
+            desc: "Contact us for implementation, partnership, or to join the team.",
+            primary: "Contact Us",
             secondary: "View Catalog",
             link: "Join Waiting List"
         },
         aboutPage: {
             hero: {
-                title: "External brains are enough.\nWe need an 'Internal OS'.",
-                desc: "AI, Smartphones, Cloud.\nOur 'external brains' are fully expanded.\n\nMeanwhile, 'time to think alone' and 'undisturbed space'\nare disappearing from both work and private life.\n\nAs information increases, decisions become rougher,\nand important choices are made 'somehow'.\n\nLYEN chose to create an 'Internal OS' to fill this gap."
+                title: "External brains are enough.\nWe need an Internal OS.",
+                desc: "We live in an era of noise.\nTo think clearly, we need to intentionally design silence.\n\nLYEN builds the 'Internal OS'—a system to reset, cut through noise, and update your inner self."
             },
             internalOS: {
-                title: "Internal OS is\n'Device and Habit to dive inside'.",
-                desc: "LYEN's Internal OS is not just software.\nIt's an image of 'Space to dive inside', 'Thinking Experience', and 'Recorded Log'\nworking together as one OS.",
+                title: "What is Internal OS?",
+                desc: "It’s not just distinct software.\nIt’s a unified experience of Space, Session, and Log.",
                 layers: [
                     {
-                        title: "EGG",
-                        subtitle: "Space Layer",
-                        desc: "A 'Shell' to disconnect external noise and think alone."
+                        title: "The EGG",
+                        subtitle: "Space",
+                        desc: "A physical shell to block noise."
                     },
                     {
                         title: "Session",
-                        subtitle: "Experience Layer",
-                        desc: "Time to organize inner self and decide with light, sound, and questions."
+                        subtitle: "Experience",
+                        desc: "AI-guided time to organize thoughts."
                     },
                     {
                         title: "Log",
-                        subtitle: "Record Layer",
-                        desc: "Talks and decisions remain as logs, growing as your own 'Internal OS'."
+                        subtitle: "Data",
+                        desc: "Visualizing your inner state over time."
                     }
                 ]
             },
             whyNow: {
-                title: "Why 'Internal OS' Now?",
+                title: "Why Now?",
                 points: [
                     {
-                        title: "Decision Cost in AI Era",
-                        desc: "AI summarizes info.\nBut 'humans decide in the end' remains unchanged."
+                        title: "Decision Fatigue",
+                        desc: "AI summarizes information, but you must decide."
                     },
                     {
                         title: "Scarcity of Silence",
-                        desc: "Office, Home, Cafe. Surrounded by notifications everywhere.\n'Time to listen only to your voice' must be designed intentionally."
+                        desc: "Silence is a luxury we must design."
                     },
                     {
-                        title: "Update from Inside",
-                        desc: "In an era asking 'how to think' and 'what to value',\nwe need to update from the Internal OS."
+                        title: "Inner Update",
+                        desc: "Updating how we think is the next frontier."
                     }
                 ]
             },
@@ -457,115 +494,115 @@ export const en = {
                 title: "Mission / Vision / Value",
                 mission: {
                     label: "MISSION",
-                    title: "Expand individual Potential",
-                    desc: "Unlock individual potential by facing one's inner self, not the external environment."
+                    title: "Expand Individual Potential",
+                    desc: "Unlock potential by formatting the internal environment."
                 },
                 vision: {
                     label: "VISION",
-                    title: "Upgrade humanity from the inside out",
-                    desc: "Create a state where 'Shell' and 'OS' to dive inside exist beside every important decision."
+                    title: "Internal OS for Humanity",
+                    desc: "A world where clarity is repeatable for everyone."
                 },
                 value: {
                     label: "VALUE",
-                    title: "Create the ultimate self-immersion experience",
-                    desc: "Combine Zen silence and technology to design immersion you 'never want to leave'."
+                    title: "Ultimate Self-Immersion",
+                    desc: "Design silence you never want to leave."
                 }
             },
             promises: {
-                title: "3 Promises of LYEN",
+                title: "Our Promises",
                 items: [
                     {
-                        title: "Increase Silence, Not Noise",
-                        desc: "No more notifications or feeds.\nIntentionally design time where nothing happens."
+                        title: "Silence, not Noise",
+                        desc: "We design time where nothing happens."
                     },
                     {
-                        title: "Create Experience, Not Device",
-                        desc: "Not just selling hardware,\nbut polishing the quality of 30 minutes spent inside."
+                        title: "Experience, not Hardware",
+                        desc: "We sell the quality of your 30 minutes inside."
                     },
                     {
-                        title: "Human Centric, Not Tech",
-                        desc: "Sensors and AI are just support.\nThe protagonist is the 'Human' facing their inner self."
+                        title: "Human, not Tech",
+                        desc: "Technology is just the support. You are the protagonist."
                     }
                 ]
             }
         },
         storyPage: {
             hero: {
-                title: "Connected to everyone, but never settled.",
-                desc: "Since smartphones and SNS became normal, we are 'always connected', but somehow restless. In days of endless notifications, there was almost no time to think alone or be completely cut off. That discomfort was LYEN's starting point."
+                title: "Connected, but restless.",
+                desc: "We are always connected, yet never settled. The discomfort of 'no time to think' was our starting point."
             },
             shellIdea: {
-                title: "We needed a 'Shell', not another app.",
-                desc: "I thought we didn't need an 'app to stop smartphones', but a 'Shell where you can't bring smartphones'. So I imagined an 'Egg Shell' that protects people and lets them focus inside."
+                title: "We needed a Shell.",
+                desc: "Not an app to stop phones, but a shell where phones can't enter. A physical barrier for your mind."
             },
             eggShape: {
-                title: "Why Egg-shaped Pod?",
-                desc: "Soundproof room, meditation room, capsule hotel.\nAfter considering various forms,\nwe arrived at the egg pod as a shape that is 'safe to hide', 'turns consciousness inward', and 'looks good anywhere'.\n\nWe combined Washi texture, indirect lighting, and bio-synced light/sound,\nand the prototype of The EGG was formed."
+                title: "Why The EGG?",
+                desc: "The shape of safety. Security like a womb, acoustically perfect.\nCombined with bio-synced light and sound, it creates the ultimate shelter."
             },
             prototype: {
-                title: "The first EGG was\njust a 'Shell'.",
-                desc: "The first prototype was just a 'quiet shell'.\n\nFrom there, adding:\n\n- Light changing with breath\n- Guide verbalizing state before/after session\n- Mechanism to log spoken content\n\nThe EGG as an 'Internal OS', not just hardware, emerged."
+                title: "From Shell to OS.",
+                desc: "It started as a silent room. Then we added:\n- Breath-synced light\n- AI guidance\n- Voice logging\n\nIt became an 'Internal OS'—a system to navigate your mind."
             },
             future: {
-                title: "The story continues\ninside the EGG.",
-                desc: "The EGG is still Unit 1.\n\nThe story ahead depends on what each person thinks, decides,\nand changes in their life or organization inside the EGG.\n\nWe will continue to build the shell and OS quietly and madly."
+                title: "The story continues inside.",
+                desc: "The EGG is just the beginning. The real story is what you decide inside it."
             }
         },
         roadmapPage: {
             hero: {
-                title: "In 3 years,\nmake 'Internal OS' the norm.",
-                desc: "In 3 years, we aim to:\n\n- Permeate 'The EGG' shell in the world\n- Establish the experience and log mechanism to dive inside"
+                title: "3 Years to Norm.",
+                desc: "Making 'Internal OS' a standard tool for decision making."
             },
             year1: {
-                title: "Year 1: Launch of Zen Egg and Initial Ecosystem",
+                title: "Phase 1: Zen Egg Launch",
                 items: [
-                    "Release of Zen Egg (Matsu / Take / Ume)",
-                    "PoC and Installation with Early Partners",
-                    "Refining Experience based on User Feedback"
+                    "Zen Egg (Matsu/Take/Ume) Release",
+                    "Initial Partner Installations",
+                    "Experience Refinement"
                 ]
             },
             year2: {
-                title: "Year 2: Expansion to Specialized Models",
+                title: "Phase 2: Specialized Models",
                 items: [
-                    "Prototype Development of Sleep Egg (Nap-focused)",
-                    "Experimental Deployment of VR Egg (Entertainment-focused)",
-                    "Expansion of Installation Bases in Major Cities"
+                    "Sleep Egg Prototype (Recovery)",
+                    "VR Egg Prototype (Entertainment)",
+                    "City-wide Expansion"
                 ]
             },
             year3: {
-                title: "Year 3: Brain Egg and Establishment of 'Internal OS'",
+                title: "Phase 3: The Platform",
                 items: [
-                    "R&D Start of Brain Egg (BMI Operation Room)",
-                    "Public Release of Internal OS Platform API",
-                    "Full-scale Global Expansion"
+                    "Brain Egg R&D (BCI)",
+                    "Internal OS API Release",
+                    "Global Expansion"
                 ]
             },
             currentStatus: {
-                title: "Where is LYEN now?",
+                title: "Current Status",
                 items: [
-                    "Alpha concept/design complete",
-                    "Dialogue with initial PoC partners",
-                    "Interested companies/facilities gathering via Waiting List / Catalog"
+                    "Alpha Design Complete",
+                    "PoC Dialogues in Progress",
+                    "Waiting List Open"
                 ]
             }
         },
         teamPage: {
             hero: {
-                title: "Members building\nInternal OS.",
-                desc: "Hardware, Experience Design, Software, Brand.\nLYEN teams up with members and partners who have 'quiet madness' in each field."
+                title: "The Architects.",
+                desc: "Building the Internal OS with quiet madness."
             },
             advisors: {
-                title: "Partners / Advisors",
+                title: "Partners",
                 items: [
                     "Sound / Sensor Experts",
-                    "Wellness / Zen / Meditation Experts",
-                    "Hardware Manufacturing / Mass Production Partners"
+                    "Zen / Wellness Experts",
+                    "Manufacturing Partners"
                 ]
             },
             careers: {
-                title: "Want to join LYEN?",
-                desc: "We are looking for partners in Hardware, Experience Design, Software, and Brand\nwho will build from the prototype level.\nIf interested, please send a message via Contact.",
-                cta: "Contact"
+                title: "Join Us",
+                desc: "We are looking for Engineers, Designers, and Partners.\nSend us a message if you want to build the future.",
+                cta: "Contact Us"
             }
         }
     },
@@ -573,159 +610,163 @@ export const en = {
         theEgg: {
             hero: {
                 title: "The EGG",
-                subtitle: "World's first egg-shaped immersion pod.\nHardware to physically block the outside and dive inside."
+                subtitle: "The world's first AI-guided immersion pod.\nReset and regain clarity in minutes."
             },
             whatIs: {
-                title: "Why 'Egg'?",
-                desc: "The shape humans feel most safe in.\nSecurity like returning to the womb, and acoustically superior soundproofing."
+                title: "Why The EGG?",
+                desc: "A primal shape for safety.\nDesigned to physically block noise and turn your consciousness inward."
             },
             flow: {
-                title: "15-minute 'Journey Inside'.",
+                title: "The Experience",
                 steps: [
-                    { title: "Login", desc: "Bio-auth login." },
-                    { title: "Reset", desc: "Reset senses in darkness and silence." },
-                    { title: "Think", desc: "Deepen thought with voice guide." },
-                    { title: "Log", desc: "Record insights by voice to cloud." }
+                    { title: "Step In", desc: "Bio-auth login." },
+                    { title: "Reset", desc: "Darkness and silence." },
+                    { title: "Clarify", desc: "AI-guided thought process." },
+                    { title: "Log", desc: "Record your insights." }
                 ]
             },
             specs: {
-                title: "Hardware Specs",
+                title: "Specifications",
                 features: [
-                    { title: "Sound", desc: "Total soundproofing + Vibration speaker" },
-                    { title: "Light", desc: "Dimming synced with circadian rhythm" },
-                    { title: "Air", desc: "Ventilation system always circulating fresh air" },
-                    { title: "Material", desc: "Easy to clean, pleasant touch interior" }
+                    { title: "Sound", desc: "Total Soundproofing" },
+                    { title: "Light", desc: "Circadian Sync" },
+                    { title: "Air", desc: "Fresh Air Circulation" },
+                    { title: "Touch", desc: "Premium Materials" }
                 ]
             },
             benefits: {
                 title: "Benefits",
                 points: [
-                    "Improve Decision Quality",
-                    "Mental Health Improvement",
-                    "Creativity Enhancement"
+                    "Decision Quality",
+                    "Mental Reset",
+                    "Creative Flow"
                 ]
             }
         },
         lineup: {
-            title: "Lineup",
-            desc: "Zen Egg as the core, with models tailored to usage and environment.",
+            title: "The EGG Series",
+            desc: "A complete lineup of Internal OS environments.",
             zenEgg: {
                 title: "Zen Egg",
-                desc: "LYEN's core product. The standard for silence and immersion.",
+                desc: "The Core Model. Optimized for silence and clarity.",
                 models: [
                     {
                         name: "Matsu",
                         tag: "Premium",
-                        desc: "Flagship model with the finest materials and acoustic experience.",
-                        target: "CEO Room / Premium Lounge",
+                        desc: "Flagship model. Ultimate material and acoustic experience.",
+                        target: "Executive / Lounge",
                         price: "ASK"
                     },
                     {
                         name: "Take",
                         tag: "Standard",
-                        desc: "Standard model balancing function and price.",
+                        desc: "Standard model balancing function and deployment.",
                         target: "Office / Hotel",
                         price: "ASK"
                     },
                     {
                         name: "Ume",
                         tag: "Entry",
-                        desc: "Entry model focused on essential functions.",
+                        desc: "Essential model for personal focus.",
                         target: "Home / Startup",
                         price: "ASK"
                     }
                 ]
             },
             future: {
-                title: "Future Lineup",
-                desc: "Future Development Plans",
+                title: "Future Models",
+                desc: "Expanding the definition of immersion.",
                 items: [
                     {
                         name: "VR Egg",
-                        desc: "Model specialized for entertainment and immersive experiences."
+                        desc: "For Entertainment. Immersive visual/audio hacking."
                     },
                     {
                         name: "Sleep Egg",
-                        desc: "Model to maximize the quality of naps and rest."
+                        desc: "For Recovery. Optimized for power naps."
                     },
                     {
                         name: "Brain Egg",
-                        desc: "Model as a future BMI (Brain Machine Interface) operation room."
+                        desc: "For the Future. BCI-operated meditation chamber."
                     }
                 ]
             },
-            cta: "Consult about models"
+            cta: "Consult about Zen Egg",
+            comingSoon: {
+                desc: "Coming Soon",
+                items: []
+            }
         },
     },
     useCases: {
         hero: {
             title: "Use Cases",
-            desc: "From CEO decisions to public wellness.\nScenes to use The EGG."
+            desc: "Where clarity is needed most."
         },
         scenes: [
             {
-                title: "CEO/CxO Decision Room",
-                before: "Always contacted, thoughts fragmented.",
-                after: "Block outside, focus on important decisions.",
-                model: "EGG Pro"
+                title: "Executive Decision",
+                before: "Fragmented attention.",
+                after: "Deep focus and clear decisions.",
+                model: "Zen Egg Matsu"
             },
             {
-                title: "Airport Lounge / Hotel Reset",
-                before: "Travel fatigue and jet lag linger.",
-                after: "Deep rest and reset in short time.",
-                model: "EGG Public"
+                title: "Transit Recovery",
+                before: "Travel fatigue.",
+                after: "Rapid reset in 20 minutes.",
+                model: "Zen Egg Take"
             },
             {
-                title: "Beyond Sauna 'Totono'",
-                before: "No introspection space after sauna.",
-                after: "From physical relax to mental immersion.",
-                model: "EGG Public"
+                title: "Deep Flow",
+                before: "No space to think.",
+                after: "Immersive creative accumulation.",
+                model: "Zen Egg Ume"
             }
         ],
         poc: {
-            title: "PoC Process",
+            title: "PoC Steps",
             steps: [
-                "Hearing (Online)",
-                "Site Check / Requirements",
-                "2-week Trial Install"
+                "Hearing",
+                "Site Visit",
+                "Trial Installation"
             ]
         },
-        cta: "Consult about PoC"
+        cta: "Start PoC"
     },
     platform: {
         hero: {
             title: "Internal OS",
-            desc: "Update Internal OS (Thought/Spirit), not External OS (Phone/AI)."
+            desc: "The system to update your inner state."
         },
         concept: {
-            title: "External vs Internal",
+            title: "Two OSs",
             external: {
                 title: "External OS",
-                desc: "Efficiency, Speed, Info Processing.\nConnection with others."
+                desc: "Speed, Efficiency, Connection.\n(AI, Smartphone)"
             },
             internal: {
                 title: "Internal OS",
-                desc: "Meaning, Depth, Self-dialogue.\nConnection with self."
+                desc: "Depth, Meaning, Isolation.\n(EGG, Silence)"
             }
         },
         layers: {
-            title: "The 3 Layers of Internal OS",
+            title: "3 Layers",
             items: [
-                { title: "The EGG", sub: "Hardware", desc: "Physical isolation and immersion." },
-                { title: "Guided Thinking", sub: "Session", desc: "Thought guidance by voice." },
-                { title: "Inner Data", sub: "Log", desc: "Thought log accumulation and feedback." }
+                { title: "The EGG", sub: "Shell", desc: "Physical Isolation." },
+                { title: "Session", sub: "Guide", desc: "Mental Formatting." },
+                { title: "Log", sub: "Data", desc: "Inner Visualization." }
             ]
         },
         vision: {
-            title: "Inner Data Platform",
-            desc: "API to integrate vital data and thought logs to visualize/optimize 'inner state'.",
+            title: "Inner Platform",
+            desc: "An API to visualize and optimize humanity's internal state.",
         },
-        cta: "Consult about Partnership"
+        cta: "Partner with Us"
     },
     contactPage: {
         title: "Contact",
-        subtitle: "Join the Silence",
-        desc: "Contact us for implementation, partnership, media, etc.",
+        subtitle: "Join the Silence.",
+        desc: "Reach out for partnership, implementation, or recruitment.",
         form: {
             name: "NAME",
             namePlaceholder: "Your Name",
@@ -735,36 +776,55 @@ export const en = {
             companyPlaceholder: "Company / Organization",
             subject: "SUBJECT",
             subjectOptions: {
-                implementation: "Implementation",
+                implementation: "Implementation / PoC",
                 partnership: "Partnership",
                 media: "Media / Interview",
+                recruit: "Recruitment / Careers",
                 other: "Other"
             },
             message: "MESSAGE",
-            messagePlaceholder: "Your Message",
-            submit: "SEND MESSAGE",
+            messagePlaceholder: "How can we help?",
+            submit: "SEND",
             submitting: "SENDING..."
         }
     },
     catalogPage: {
         title: "Choose Your EGG",
-        subtitle: "Three models to choose from based on usage and environment.",
-        crowdfundingNote: "*This project will start development and manufacturing with Model Matsu. This pre-order is intended to gauge demand and recruit initial supporters for commercialization.",
+        subtitle: "Three models detailed for your use case and environment.",
+        crowdfundingNote: "*This project will start development and manufacturing from Model Matsu. This pre-order is for demand survey and initial supporter recruitment.",
         models: {
             matsu: {
                 name: "Model Matsu",
-                desc: "The ultimate form of Zen x Technology. A top-tier space realizing complete immersion and introspection.",
-                features: ["Total Soundproofing", "3D Surround Sound", "Bio-synced LED", "AI Zen Master", "Aroma Integration"]
+                desc: "The ultimate form of Zen x Technology. A top-tier space for complete immersion and introspection.",
+                features: ["Total Soundproofing", "3D Surround Sound", "Bio-Sync LED", "AI Zen Master", "Aroma Integration"],
+                useCases: [
+                    { title: "Executive Decision Making", desc: "Complete silence and immersion for making critical decisions." },
+                    { title: "VIP Lounge", desc: "Ultimate relaxation for the executive class." },
+                    { title: "Luxury Residence", desc: "The ultimate study and meditation room for your home." },
+                    { title: "Creative Studio", desc: "A place to sharpen the senses of artists and creators." }
+                ]
             },
             take: {
                 name: "Model Take",
                 desc: "Practical model for business professionals. An immersive space to 'return to yourself' daily.",
-                features: ["High-performance Soundproofing", "Alpha Wave Sound", "Relaxing Lighting", "Basic AI Guide", "Ergonomic Seat"]
+                features: ["High-Performance Soundproofing", "Alpha Wave Sound", "Relaxation Lighting", "Basic AI Guide", "Ergonomic Seat"],
+                useCases: [
+                    { title: "Office Focus Booth", desc: "Improve employee productivity and mental health." },
+                    { title: "Hotel Room", desc: "Heal travel fatigue and provide a special stay experience." },
+                    { title: "Airport Lounge", desc: "Reset mind and body in a short time before boarding." },
+                    { title: "Wellness Facility", desc: "A new 'totonoi' experience combined with sauna and spa." }
+                ]
             },
             ume: {
                 name: "Model Ume",
-                desc: "Standard model for the mass market. Optimized functions while maintaining the essential immersive experience.",
-                features: ["Basic Soundproofing", "Standard Speakers", "Simple Lighting", "Basic Programs", "Lightweight Materials"]
+                desc: "Mass market model. Optimizing functions while maintaining the essential immersive experience.",
+                features: ["Basic Soundproofing", "Standard Speakers", "Simple Lighting", "Basic Program", "Lightweight Materials"],
+                useCases: [
+                    { title: "Home Study", desc: "A new private space for the remote work era." },
+                    { title: "Startup Office", desc: "Focus environment installable in limited spaces." },
+                    { title: "Coworking Space", desc: "As added value for members." },
+                    { title: "University / Research", desc: "Enhance concentration for students and researchers." }
+                ]
             }
         }
     }

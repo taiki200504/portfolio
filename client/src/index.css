@@ -141,7 +141,8 @@
 
   /* Body Text */
   p {
-    @apply leading-relaxed text-muted-foreground;
+    line-height: 1.6;
+    @apply text-muted-foreground;
   }
 
   /* Custom Scrollbar for Webkit */

@@ -3,6 +3,14 @@ import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useTranslation } from "@/lib/i18n";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 export function Product() {
     const { t, language } = useTranslation();
@@ -34,14 +42,14 @@ export function Product() {
                             {t("product.desc")}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row items-center gap-4 pt-8">
+                        <div className="flex flex-col md:flex-row items-center gap-4 pt-8">
                             <Link href={getLink("/waiting-list")}>
-                                <Button className="w-full sm:w-auto px-8 py-6 rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest font-bold text-lg">
+                                <Button className="w-full md:w-auto px-8 py-6 rounded-full bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 font-['Outfit'] tracking-widest font-bold text-lg">
                                     {t("product.waitingList")}
                                 </Button>
                             </Link>
-                            <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                <Button variant="outline" className="w-full px-8 py-6 rounded-full border-white/20 text-white hover:bg-white hover:text-[#040B17] font-['Outfit'] tracking-widest text-lg">
+                            <a href="/assets/egg-catalog.pdf" download target="_blank" rel="noopener noreferrer" className="w-full md:w-auto">
+                                <Button variant="outline" className="w-full md:w-auto px-8 py-6 rounded-full border-white/20 text-white hover:bg-white hover:text-[#040B17] font-['Outfit'] tracking-widest text-lg">
                                     {t("product.downloadCatalog")}
                                 </Button>
                             </a>
@@ -60,11 +68,42 @@ export function Product() {
                             ))}
                         </div>
 
-                        <Link href={getLink("/product")}>
-                            <Button variant="outline" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all">
-                                {t("product.viewSpecs")}
-                            </Button>
-                        </Link>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button variant="outline" className="rounded-full border-white/20 text-white hover:bg-white hover:text-black transition-all">
+                                    {t("product.viewSpecs")}
+                                </Button>
+                            </DialogTrigger>
+                            <DialogContent className="bg-[#040B17] border-white/10 text-white max-w-xl">
+                                <DialogHeader>
+                                    <DialogTitle className="text-2xl font-['Outfit'] tracking-wider mb-4">The EGG Specifications</DialogTitle>
+                                </DialogHeader>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow className="border-white/10 hover:bg-white/5">
+                                            <TableCell className="font-bold text-[#f6bd2b]">Size</TableCell>
+                                            <TableCell>H2000mm x W1500mm x D1500mm</TableCell>
+                                        </TableRow>
+                                        <TableRow className="border-white/10 hover:bg-white/5">
+                                            <TableCell className="font-bold text-[#f6bd2b]">Weight</TableCell>
+                                            <TableCell>Approx. 300kg</TableCell>
+                                        </TableRow>
+                                        <TableRow className="border-white/10 hover:bg-white/5">
+                                            <TableCell className="font-bold text-[#f6bd2b]">Power</TableCell>
+                                            <TableCell>AC 100V / 15A</TableCell>
+                                        </TableRow>
+                                        <TableRow className="border-white/10 hover:bg-white/5">
+                                            <TableCell className="font-bold text-[#f6bd2b]">Sound Isolation</TableCell>
+                                            <TableCell>-30dB (Avg)</TableCell>
+                                        </TableRow>
+                                        <TableRow className="border-white/10 hover:bg-white/5">
+                                            <TableCell className="font-bold text-[#f6bd2b]">OS</TableCell>
+                                            <TableCell>LYEN Internal OS v1.0</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </DialogContent>
+                        </Dialog>
                     </motion.div>
 
                     {/* Right: Visual */}
@@ -78,7 +117,24 @@ export function Product() {
                             {/* Glow effect */}
                             <div className="absolute inset-0 bg-[#f6bd2b]/10 blur-[100px] rounded-full" />
 
-                            {/* Animated Image */}
+                            {/* Internal Schematic Overlay */}
+                            <motion.img
+                                src="/assets/egg-internal-schematic.png"
+                                alt="Internal Schematic"
+                                className="absolute inset-0 z-0 w-full h-full object-contain opacity-40 mix-blend-plus-lighter"
+                                animate={{
+                                    scale: [0.95, 1.05, 0.95],
+                                    rotate: [0, 5, 0],
+                                    opacity: [0.3, 0.6, 0.3]
+                                }}
+                                transition={{
+                                    duration: 15,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
+
+                            {/* Main Animated Image */}
                             <motion.img
                                 src="/assets/model-matsu.png"
                                 alt="The EGG Model Matsu"

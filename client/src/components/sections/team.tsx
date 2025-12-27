@@ -23,7 +23,7 @@ export function Team() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {locale.team.members.map((item, i) => (
+                    {locale.team.members.map((item: any, i: number) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,13 @@ export function Team() {
                             className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl text-left hover:border-[#f6bd2b]/50 hover:bg-white/10 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(246,189,43,0.05)]"
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 bg-gradient-to-br from-white/10 to-white/5 rounded-full flex-shrink-0 border border-white/10" />
+                                <div className="w-12 h-12 rounded-full flex-shrink-0 border border-white/10 overflow-hidden relative">
+                                    {item.image ? (
+                                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <div className="w-full h-full bg-gradient-to-br from-white/10 to-white/5" />
+                                    )}
+                                </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-white font-['Outfit'] group-hover:text-glow-sm transition-all">{item.name}</h4>
                                     <div className="text-[#f6bd2b] text-[10px] font-bold tracking-widest uppercase opacity-80 group-hover:opacity-100">{item.role}</div>
@@ -43,7 +49,7 @@ export function Team() {
                             <p className="text-white/80 text-sm mb-4 font-bold">{item.bio}</p>
 
                             <ul className="space-y-2 mb-4">
-                                {item.details.map((detail, j) => (
+                                {item.details.map((detail: string, j: number) => (
                                     <li key={j} className="text-white/50 text-xs leading-relaxed pl-3 relative group-hover:text-white/70 transition-colors">
                                         <span className="absolute left-0 top-1.5 w-1 h-1 bg-[#f6bd2b] rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                                         {detail}
