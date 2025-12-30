@@ -29,41 +29,54 @@ export function CaseStudies({ works = [] }: { works?: Work[] }) {
         </Section>
     );
 }
+import Link from "next/link";
+
+// ... (CaseStudies function remains the same)
+
 function WorkCard({ work, index }: { work: Work; index: number }) {
+    const isExternal = work.url?.startsWith("http");
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group flex flex-col h-full border border-black/10 bg-white hover:border-black transition-all duration-300 relative p-6 md:p-8"
+            className="h-full"
         >
-            {/* Header */}
-            <div className="mb-6 flex-grow">
-                <h3 className="text-xl font-bold text-black mb-3 font-['Outfit'] group-hover:underline decoration-1 underline-offset-4">
-                    {work.title}
-                </h3>
+            <Link
+                href={work.url || "#"}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="group flex flex-col h-full border border-black/10 bg-white hover:border-black transition-all duration-300 relative p-6 md:p-8 block"
+            >
+                {/* Header */}
+                <div className="mb-6 flex-grow">
+                    <h3 className="text-xl font-bold text-black mb-3 font-['Outfit'] group-hover:underline decoration-1 underline-offset-4">
+                        {work.title}
+                    </h3>
 
-                {/* One-liner */}
-                <div className="mb-4">
-                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-1">What</span>
-                    <p className="text-sm font-bold text-black leading-snug">{work.oneLiner}</p>
+                    {/* One-liner */}
+                    <div className="mb-4">
+                        <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-1">What</span>
+                        <p className="text-sm font-bold text-black leading-snug">{work.oneLiner}</p>
+                    </div>
+                    <div className="space-y-3 pt-4 border-t border-black/5">
+                        <div>
+                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Role</span>
+                            <p className="text-xs text-black">{work.role}</p>
+                        </div>
+                        <div>
+                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Impact</span>
+                            <p className="text-xs text-black">{work.impact}</p>
+                        </div>
+                        <div>
+                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Deliverables</span>
+                            <p className="text-xs text-black/70">{work.deliverables}</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="space-y-3 pt-4 border-t border-black/5">
-                    <div>
-                        <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Role</span>
-                        <p className="text-xs text-black">{work.role}</p>
-                    </div>
-                    <div>
-                        <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Impact</span>
-                        <p className="text-xs text-black">{work.impact}</p>
-                    </div>
-                    <div>
-                        <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Deliverables</span>
-                        <p className="text-xs text-black/70">{work.deliverables}</p>
-                    </div>
-                </div>
-            </div>
+            </Link>
         </motion.div>
     );
 }
