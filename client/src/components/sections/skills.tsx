@@ -33,15 +33,6 @@ export function Skills() {
         }
     ];
 
-    const getBarColor = (level: string) => {
-        switch (level) {
-            case "Strong": return "bg-[#f6bd2b]";
-            case "Good": return "bg-[#f6bd2b]/60";
-            case "Familiar": return "bg-[#f6bd2b]/30";
-            default: return "bg-white/10";
-        }
-    };
-
     const getBarWidth = (level: string) => {
         switch (level) {
             case "Strong": return "w-full";
@@ -52,31 +43,31 @@ export function Skills() {
     };
 
     return (
-        <Section id="skills" className="py-24 bg-[#040B17] border-t border-white/5">
+        <Section id="skills" className="py-24 bg-white border-t border-black/10">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] uppercase mb-16 text-center font-['Outfit']">
+                <h2 className="text-black text-xs font-bold tracking-[0.3em] uppercase mb-16 text-center font-['Outfit']">
                     SKILL MATRIX
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {categories.map((cat, i) => (
                         <div key={i}>
-                            <h3 className="text-xl font-bold text-white mb-8 border-b border-white/10 pb-4 font-['Outfit']">
+                            <h3 className="text-xl font-bold text-black mb-8 border-b-2 border-black pb-4 font-['Outfit']">
                                 {cat.title}
                             </h3>
                             <div className="space-y-8">
                                 {cat.skills.map((skill, j) => (
                                     <div key={j}>
                                         <div className="flex justify-between items-end mb-2">
-                                            <span className="text-white font-medium">{skill.name}</span>
+                                            <span className="text-black font-medium">{skill.name}</span>
                                             {skill.proof && (
-                                                <a href={skill.proof.link} className="text-xs text-white/40 hover:text-[#f6bd2b] flex items-center gap-1 transition-colors">
+                                                <a href={skill.proof.link} className="text-xs text-black/40 hover:text-black flex items-center gap-1 transition-colors">
                                                     {skill.proof.text} <ExternalLink className="w-2.5 h-2.5" />
                                                 </a>
                                             )}
                                         </div>
-                                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                                            <div className={`h-full rounded-full ${getBarColor(skill.level)} ${getBarWidth(skill.level)}`} />
+                                        <div className="h-1 w-full bg-gray-100 overflow-hidden">
+                                            <div className={`h-full bg-black ${getBarWidth(skill.level)}`} />
                                         </div>
                                     </div>
                                 ))}

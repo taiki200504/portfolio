@@ -22,7 +22,7 @@ export function History() {
             title: "UNION / Cometree",
             role: "Founder -> Advisor",
             desc: "学生団体連合UNIONを立ち上げ、株式会社Cometreeへ事業譲渡・統合。",
-            output: "30+団体のネットワーク化、事業譲渡契約の締結、コミュニティ統合プロセス"
+            output: "30+の学生団体のネットワーク化、事業譲渡契約の締結、コミュニティ統合プロセス"
         },
         {
             year: "2022",
@@ -34,13 +34,13 @@ export function History() {
     ];
 
     return (
-        <Section id="history" className="py-24 bg-[#040B17] border-t border-white/5">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] uppercase mb-12 text-center font-['Outfit']">
+        <Section id="history" className="py-24 bg-white border-t border-black/10">
+            <div className="container mx-auto px-4 max-w-5xl">
+                <h2 className="text-black text-xs font-bold tracking-[0.3em] uppercase mb-12 text-left font-['Outfit']">
                     HISTORY
                 </h2>
 
-                <div className="space-y-12">
+                <div className="space-y-0 border-l border-black/10 ml-2 md:ml-0">
                     {historyData.map((item, i) => (
                         <motion.div
                             key={i}
@@ -48,29 +48,31 @@ export function History() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="grid grid-cols-1 md:grid-cols-[100px_1fr] gap-6 md:gap-12 group"
+                            className="grid grid-cols-1 md:grid-cols-[120px_1fr] relative group"
                         >
-                            <div className="text-right pt-1 hidden md:block">
-                                <span className="text-2xl font-bold text-white/20 font-['Outfit'] group-hover:text-[#f6bd2b] transition-colors">{item.year}</span>
-                            </div>
-                            {/* Mobile Year */}
-                            <div className="md:hidden">
-                                <span className="text-xl font-bold text-[#f6bd2b] font-['Outfit']">{item.year}</span>
+                            {/* Timestamp Marker */}
+                            <div className="hidden md:flex justify-end pr-8 py-8 border-b border-black/5 group-last:border-none relative">
+                                <span className="text-lg font-bold text-black/40 font-['Outfit'] group-hover:text-black transition-colors">{item.year}</span>
+                                <div className="absolute right-[-5px] top-10 w-2.5 h-2.5 bg-black rounded-full" />
                             </div>
 
-                            <div className="relative border-l border-white/10 pl-8 md:pl-12 pb-2">
-                                {/* Dot */}
-                                <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-[#040B17] border border-white/40 group-hover:border-[#f6bd2b] group-hover:bg-[#f6bd2b] transition-colors" />
+                            {/* Content */}
+                            <div className="pl-6 md:pl-12 py-8 border-b border-black/5 group-last:border-none relative border-l md:border-l-0 border-black/10 md:border-none">
+                                {/* Mobile Dot */}
+                                <div className="absolute left-[-5px] top-10 w-2.5 h-2.5 bg-black rounded-full md:hidden" />
+                                <div className="md:hidden mb-2">
+                                    <span className="text-xl font-bold text-black font-['Outfit']">{item.year}</span>
+                                </div>
 
                                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-                                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                                    <span className="text-sm text-white/40 font-['Outfit']">{item.role}</span>
+                                    <h3 className="text-xl font-bold text-black">{item.title}</h3>
+                                    <span className="text-sm text-black/40 font-['Outfit']">{item.role}</span>
                                 </div>
-                                <p className="text-white/70 leading-relaxed mb-4">
+                                <p className="text-black/70 leading-relaxed mb-4 text-sm">
                                     {item.desc}
                                 </p>
-                                <div className="bg-white/5 border border-white/10 rounded-lg p-3 text-sm text-white/80">
-                                    <span className="text-[#f6bd2b] font-bold mr-2 text-xs uppercase tracking-wider">Output</span>
+                                <div className="bg-gray-50 border border-black/5 p-3 text-sm text-black/80 inline-block w-full">
+                                    <span className="text-black font-bold mr-2 text-xs uppercase tracking-wider block mb-1 md:inline md:mb-0">Output :</span>
                                     {item.output}
                                 </div>
                             </div>

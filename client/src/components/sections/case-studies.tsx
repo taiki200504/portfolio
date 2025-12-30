@@ -1,21 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Lock } from "lucide-react";
+import { ArrowLeft, ExternalLink, Lock } from "lucide-react";
 
 export function CaseStudies() {
     const cases = [
         {
             id: "lyen",
             title: "The EGG / LYEN",
-            oneliner: "Internal OS for Humanity - 没入型リセットポッド",
+            oneliner: "Internal OS for Humanity",
             problem: "情報過多による現代人の脳疲労と、内省時間の欠如。",
             role: "Founder / PM / Designer",
             deliverables: "Brand Identity, Web App, Hardware Prototype",
             impact: "TBD (Pre-launch)",
             tech: "Next.js, Tailwind, Framer Motion, 3D Print",
             links: [
-                { label: "Visit Site", url: "#", disabled: true } // Since it's this site basically
+                { label: "Visit Site", url: "#", disabled: true }
             ]
         },
         {
@@ -60,10 +60,10 @@ export function CaseStudies() {
     ];
 
     return (
-        <Section id="case-studies" className="py-24 bg-[#040B17]">
+        <Section id="case-studies" className="py-24 bg-white border-t border-black/10">
             <div className="container mx-auto px-4">
-                <h2 className="text-[#f6bd2b] text-xs font-bold tracking-[0.3em] uppercase mb-12 text-center font-['Outfit']">
-                    CASE STUDIES
+                <h2 className="text-black text-xs font-bold tracking-[0.3em] uppercase mb-12 text-left font-['Outfit']">
+                    CASE STUDIES / WORKS
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -74,45 +74,45 @@ export function CaseStudies() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white/[0.02] border border-white/10 rounded-2xl p-8 hover:border-[#f6bd2b]/30 transition-all group flex flex-col"
+                            className="bg-white border text-black border-black p-8 hover:bg-black hover:text-white transition-all group flex flex-col relative"
                         >
                             <div className="mb-6">
-                                <h3 className="text-2xl font-bold text-white mb-2 font-['Outfit']">{item.title}</h3>
-                                <p className="text-[#f6bd2b] text-sm font-bold">{item.oneliner}</p>
+                                <h3 className="text-2xl font-bold mb-2 font-['Outfit']">{item.title}</h3>
+                                <p className="text-sm font-bold opacity-60 group-hover:opacity-100">{item.oneliner}</p>
                             </div>
 
                             <div className="space-y-4 mb-8 flex-grow">
                                 <div>
-                                    <span className="text-xs text-white/40 uppercase tracking-widest block mb-1">Problem</span>
-                                    <p className="text-white/80 text-sm leading-relaxed">{item.problem}</p>
+                                    <span className="text-xs opacity-40 uppercase tracking-widest block mb-1">Problem</span>
+                                    <p className="text-sm leading-relaxed">{item.problem}</p>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <span className="text-xs text-white/40 uppercase tracking-widest block mb-1">Role</span>
-                                        <p className="text-white/80 text-sm">{item.role}</p>
+                                        <span className="text-xs opacity-40 uppercase tracking-widest block mb-1">Role</span>
+                                        <p className="text-sm">{item.role}</p>
                                     </div>
                                     <div>
-                                        <span className="text-xs text-white/40 uppercase tracking-widest block mb-1">Impact</span>
-                                        <p className="text-white/80 text-sm">{item.impact}</p>
+                                        <span className="text-xs opacity-40 uppercase tracking-widest block mb-1">Impact</span>
+                                        <p className="text-sm">{item.impact}</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <span className="text-xs text-white/40 uppercase tracking-widest block mb-1">Deliverables</span>
-                                    <p className="text-white/80 text-sm">{item.deliverables}</p>
+                                    <span className="text-xs opacity-40 uppercase tracking-widest block mb-1">Deliverables</span>
+                                    <p className="text-sm">{item.deliverables}</p>
                                 </div>
                                 <div>
-                                    <span className="text-xs text-white/40 uppercase tracking-widest block mb-1">Tech / Tools</span>
-                                    <p className="text-white/60 text-xs font-mono">{item.tech}</p>
+                                    <span className="text-xs opacity-40 uppercase tracking-widest block mb-1">Tech / Tools</span>
+                                    <p className="text-xs font-mono opacity-60">{item.tech}</p>
                                 </div>
                             </div>
 
-                            <div className="pt-6 border-t border-white/10">
+                            <div className="pt-6 border-t border-black/10 group-hover:border-white/20">
                                 {item.links.map((link, idx) => (
                                     <Button
                                         key={idx}
                                         variant="outline"
                                         size="sm"
-                                        className="w-full text-xs font-bold tracking-widest border-white/20 text-white hover:bg-white/10"
+                                        className="w-full text-xs font-bold tracking-widest border border-black text-black group-hover:border-white group-hover:text-white group-hover:bg-transparent rounded-none"
                                         disabled={link.disabled}
                                     >
                                         {link.disabled ? <Lock className="w-3 h-3 mr-2" /> : <ExternalLink className="w-3 h-3 mr-2" />}
