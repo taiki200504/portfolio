@@ -18,6 +18,9 @@ const syncopate = Syncopate({
 export const metadata: Metadata = {
   title: "三島大毅ポートフォリオサイト | Taiki Life OS",
   description: "起業家 / ビジョンアーキテクト。未知の世界をテクノロジーで体現する。",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
