@@ -26,7 +26,13 @@ export default async function Home() {
         <Identity />
         <HistorySection />
         <CaseStudies works={works} />
+        import {BasicInfo} from "@/components/sections/BasicInfo";
+
+        // ... (imports)
+
+        // ... (inside Home function)
         <Skills />
+        <BasicInfo />
         <Contact />
       </main>
       <Footer />

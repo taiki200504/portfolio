@@ -48,9 +48,9 @@ export function Identity() {
                             中学時代のアニメ体験を起点に、テクノロジーで非日常体験を現実にすることを長期テーマにしています。
                         </p>
                         <p className="text-lg md:text-xl font-bold text-black leading-relaxed border-l-4 border-black pl-6">
-                            一方で、理想論ではなく、<br />
-                            構想を言語化し、小さく作って検証し、運用まで回して成果を出す<br />
-                            という実装主義を重視しています。
+                            一方で、理想論ではなく構想を言語化し<br />
+                            小さく作って検証・運用まで回して<br />
+                            成果を出すという実装主義を重視しています
                         </p>
                     </motion.div>
                 </div>
