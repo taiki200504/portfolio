@@ -1,101 +1,97 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
-import { Section } from "@/components/ui/section";
-import { useTranslation } from "@/lib/i18n";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
-import { Link } from "wouter";
-import { VisualWorldView } from "@/components/sections/visual-world-view";
-import { GlassMenuGrid } from "@/components/sections/glass-menu-grid";
-import { NewsPreview } from "@/components/sections/news-preview";
+import { motion } from "framer-motion";
+import { MessageCircle, FileText } from "lucide-react";
+
+// Section Components
+import { Identity } from "@/components/sections/identity";
+import { History as HistorySection } from "@/components/sections/history"; // Aliased to avoid conflict
+import { CaseStudies } from "@/components/sections/case-studies";
+import { Skills } from "@/components/sections/skills";
+import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
-  const { t, language } = useTranslation();
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
-
-  const getLink = (path: string) => language === "en" ? `/en${path}` : path;
-
-  // Mock News Data
-  const newsItems = [
-    {
-      date: "2024.05.01",
-      category: "NEWS",
-      title: "LYEN Official Website Renewal",
-      path: "/news/renewal"
-    },
-    {
-      date: "2024.04.15",
-      category: "NEWS",
-      title: "The EGG Concept Movie Released",
-      path: "/news/movie"
-    },
-    {
-      date: "2024.04.01",
-      category: "PRESS",
-      title: "LYEN raises seed funding to accelerate 'Internal OS' development",
-      path: "/news/funding"
-    }
+  const proofPills = [
+    "UNION事業譲渡",
+    "Gaiax DAO",
+    "Regalis CMO",
+    "JAA公認アンバサダー"
   ];
+
+  const handleScrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#040B17] text-white font-sans selection:bg-[#f6bd2b] selection:text-[#040B17]">
       <Navbar />
       <main>
-        {/* 1. HERO SECTION */}
-        <div ref={targetRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Visuals */}
+        {/* HERO SECTION */}
+        <div className="relative h-screen flex items-center justify-center overflow-hidden">
+          {/* Background Visuals - Keeping minimal/abstract */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-[#040B17]/40 z-10" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#092a62] via-[#040B17] to-[#040B17] opacity-60" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f6bd2b]/10 rounded-full blur-[120px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f6bd2b]/5 rounded-full blur-[120px]" />
           </div>
 
-          <motion.div
-            style={{ opacity, scale, y }}
-            className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center"
-          >
+          <div className="relative z-20 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
+            {/* Left: Text Content */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="flex flex-col items-center"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex-1 text-center md:text-left"
             >
-              <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6 font-['Outfit'] bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 leading-tight">
-                {t("hero.title")}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-8 font-['Outfit'] leading-tight">
+                学生起業家 / <br className="md:hidden" />
+                <span className="text-white/80">プロダクト & <br />コミュニティ設計</span>
               </h1>
-              <p className="text-white/70 text-sm md:text-lg font-medium leading-relaxed max-w-2xl mb-10 whitespace-pre-line">
-                {t("hero.subtitle")}
+
+              <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mb-10 mx-auto md:mx-0">
+                Visionを、実装できる計画とプロダクトに落とします。
               </p>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full md:w-auto">
-                <Link href={getLink("/catalog")}>
-                  <Button size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 shadow-[0_0_20px_rgba(246,189,43,0.3)] hover:shadow-[0_0_30px_rgba(246,189,43,0.5)] transition-all">
-                    {t("hero.cta.catalog")}
-                  </Button>
-                </Link>
-                <Link href={getLink("/contact")}>
-                  <Button variant="outline" size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 transition-all">
-                    {t("hero.cta.contact")}
-                  </Button>
-                </Link>
-                <Link href={getLink("/waiting-list")}>
-                  <Button variant="ghost" size="lg" className="w-full md:w-auto rounded-full px-8 h-12 text-sm font-bold tracking-widest text-white/50 hover:text-white hover:bg-white/5 transition-all">
-                    {t("hero.cta.waitingList")}
-                  </Button>
-                </Link>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                <Button
+                  onClick={() => handleScrollTo("contact")}
+                  size="lg"
+                  className="w-full sm:w-auto rounded-full px-8 h-14 text-base font-bold tracking-widest bg-[#f6bd2b] text-[#040B17] hover:bg-[#f6bd2b]/90 shadow-[0_0_20px_rgba(246,189,43,0.3)] hover:shadow-[0_0_30px_rgba(246,189,43,0.5)] transition-all"
+                >
+                  <MessageCircle className="mr-2 w-5 h-5" /> 相談する
+                </Button>
+                <Button
+                  onClick={() => handleScrollTo("case-studies")}
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto rounded-full px-8 h-14 text-base font-bold tracking-widest border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/40 transition-all"
+                >
+                  <FileText className="mr-2 w-5 h-5" /> 実績を見る
+                </Button>
               </div>
             </motion.div>
-          </motion.div>
+
+            {/* Right: Proof Pills */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="flex-1 flex flex-col items-center md:items-end gap-4"
+            >
+              {proofPills.map((pill, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/5 backdrop-blur-md border border-white/10 px-6 py-4 rounded-full text-white/90 font-bold tracking-wide shadow-lg hover:border-[#f6bd2b]/50 transition-colors cursor-default"
+                >
+                  {pill}
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
           {/* Scroll Indicator */}
           <motion.div
@@ -103,18 +99,15 @@ export default function Home() {
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/40 text-xs tracking-[0.2em] uppercase font-['Outfit']"
           >
-            {t("hero.scroll")}
+            Scroll
           </motion.div>
         </div>
 
-        {/* 2. LYEN in 60 seconds (Visual) */}
-        <VisualWorldView />
-
-        {/* 3. Glass Menu Grid */}
-        <GlassMenuGrid />
-
-        {/* 4. Latest News */}
-        <NewsPreview />
+        <Identity />
+        <HistorySection />
+        <CaseStudies />
+        <Skills />
+        <Contact />
 
       </main>
       <Footer />
