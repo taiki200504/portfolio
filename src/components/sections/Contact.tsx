@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { MoveRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export function Contact() {
     const consultationTypes = [
@@ -51,24 +50,16 @@ export function Contact() {
                             </a>
                         </div>
                     </div>
-                    <form className="space-y-6 max-w-lg mx-auto" action="mailto:taiki.mishima.biz@gmail.com" method="post" encType="text/plain">
-                        <div>
-                            <label className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-2">Name</label>
-                            <input type="text" name="name" className="w-full bg-white border border-black/20 p-3 text-black focus:outline-none focus:border-black transition-colors rounded-none" placeholder="お名前" required />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-2">Contact</label>
-                            <input type="text" name="contact" className="w-full bg-white border border-black/20 p-3 text-black focus:outline-none focus:border-black transition-colors rounded-none" placeholder="メールアドレス または SNSアカウント" required />
-                        </div>
-                        <div>
-                            <label className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-2">Message</label>
-                            <textarea name="message" rows={5} className="w-full bg-white border border-black/20 p-3 text-black focus:outline-none focus:border-black transition-colors rounded-none" placeholder="ご相談の概要" required></textarea>
-                        </div>
-
-                        <Button type="submit" className="w-full bg-black text-white hover:bg-black/90 font-bold tracking-widest h-12 rounded-none">
-                            SEND MESSAGE <MoveRight className="w-4 h-4 ml-2" />
-                        </Button>
-                    </form>
+                    <div className="w-full h-[600px] bg-white">
+                        <iframe
+                            src="https://taiki-pages.notion.site/ebd/2d9e50949125804dabc9ffa81e38acec"
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            allowFullScreen
+                            className="bg-transparent"
+                        />
+                    </div>
                 </div>
             </div>
         </Section>
