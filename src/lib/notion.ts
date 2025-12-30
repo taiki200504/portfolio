@@ -20,6 +20,7 @@ export const getWorks = async (): Promise<Work[]> => {
                     equals: "Published",
                 },
             },
+
             sorts: [
                 {
                     property: "Year",
