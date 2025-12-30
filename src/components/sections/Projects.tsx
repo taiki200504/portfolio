@@ -3,49 +3,69 @@
 import { motion, useAnimationFrame, useMotionValue, useTransform, wrap, PanInfo } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import type { Work } from "@/lib/notion";
+import type { Work } from "@/types/portfolio";
 
 // Fallback data matching the Work interface
 const defaultProjects: Work[] = [
     {
         id: "1",
         title: "LYEN",
-        description: "The Egg Model. 次世代の資本エコシステム。",
-        link: "https://lyen.jp",
+        oneLiner: "The Egg Model. 次世代の資本エコシステム。",
+        role: "Founder",
+        impact: "New Capital Ecosystem",
+        deliverables: "Concept / Architecture",
+        url: "https://lyen.jp",
         tags: ["Vision", "Architecture"],
         year: "2023",
+        type: "Product",
         featured: true,
-        imageUrl: ""
+        status: "Published",
+        slug: "lyen"
     },
     {
         id: "2",
         title: "Regalis Tokyo",
-        description: "Luxury Reimagined. 伝統とデジタルの融合。",
-        link: "#",
+        oneLiner: "Luxury Reimagined. 伝統とデジタルの融合。",
+        role: "Strategic Partner",
+        impact: "Brand Re-definition",
+        deliverables: "Strategy / Digital",
+        url: "#",
         tags: ["Branding", "Digital Strategy"],
         year: "2024",
+        type: "Community",
         featured: true,
-        imageUrl: ""
+        status: "Published",
+        slug: "regalis"
     },
     {
         id: "3",
         title: "PM Lab",
-        description: "プロダクトマネジメントの実践的研究機関。",
-        link: "#",
+        oneLiner: "プロダクトマネジメントの実践的研究機関。",
+        role: "Organizer",
+        impact: "Community Growth",
+        deliverables: "Program / Operations",
+        url: "#",
         tags: ["Education", "Community"],
         year: "2024",
+        type: "Community",
         featured: true,
-        imageUrl: ""
+        status: "Published",
+        slug: "pmlab"
     },
     {
         id: "4",
         title: "UNION",
-        description: "始まりのアーカイブ。Cometreeの遺産。",
-        link: "#",
+        oneLiner: "始まりのアーカイブ。Cometreeの遺産。",
+        role: "Co-Founder",
+        impact: "Legacy Archive",
+        deliverables: "Website / Archive",
+        url: "#",
         tags: ["Archive"],
         year: "2022",
+        type: "Community",
         featured: true,
-        imageUrl: ""
+        status: "Published",
+        slug: "union"
     }
 ];
 
@@ -108,13 +128,13 @@ export function Projects({ works = [] }: ProjectsProps) {
     };
 
     return (
-        <section id="works" className="relative bg-void-black py-24 overflow-hidden">
+        <section id="works" className="relative bg-white py-24 overflow-hidden border-t border-black/10">
             {/* Title Section */}
             <div className="container mx-auto px-6 mb-16 md:mb-24 md:px-12">
-                <h2 className="font-display text-8xl font-bold uppercase tracking-tighter text-ether-white md:text-9xl">
-                    Works
+                <h2 className="text-black text-xs font-bold tracking-[0.3em] uppercase mb-4 font-['Outfit']">
+                    WORKS / CAROUSEL
                 </h2>
-                <p className="mt-6 font-mono text-sm tracking-widest text-white/40">
+                <p className="font-mono text-sm tracking-widest text-black/40">
                     SELECTED PROJECTS<br />2022 - 2025
                 </p>
             </div>
@@ -139,49 +159,33 @@ export function Projects({ works = [] }: ProjectsProps) {
                     {carouselWorks.map((project, idx) => (
                         <a
                             key={`${project.id}-${idx}`}
-                            href={project.link || "#"}
+                            href={project.url || "#"}
                             // Prevent drag from triggering click immediately if dragging?
                             onClick={(e) => {
                                 if (isDragging) e.preventDefault();
                             }}
                             draggable={false} // Disable native drag
-                            className="group relative h-[50vh] w-[80vw] md:h-[60vh] md:w-[45vw] lg:w-[35vw] flex-shrink-0 overflow-hidden bg-white/5 transition-colors hover:bg-white/10 border border-white/5 hover:border-electric-cyan/30"
+                            className="group relative h-[40vh] w-[70vw] md:h-[50vh] md:w-[40vw] lg:w-[30vw] flex-shrink-0 bg-white border border-black/10 hover:border-black transition-colors flex flex-col justify-between p-8"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 transition-colors group-hover:from-electric-cyan/10" />
+                            <div className="flex justify-between items-start mb-6">
+                                <span className="font-mono text-sm text-black/40 group-hover:text-black transition-colors">0{(idx % displayWorks.length) + 1}</span>
+                                <ArrowUpRight className="h-6 w-6 text-black/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-black" />
+                            </div>
 
-                            {/* Optional Background Image */}
-                            {project.imageUrl && (
-                                <img
-                                    src={project.imageUrl}
-                                    alt={project.title}
-                                    draggable={false}
-                                    className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-40"
-                                />
-                            )}
+                            <div>
+                                <h3 className="font-display text-3xl md:text-4xl font-bold text-black mb-4">
+                                    {project.title}
+                                </h3>
+                                <p className="text-sm text-black/60 font-medium mb-6 line-clamp-2">
+                                    {project.oneLiner}
+                                </p>
 
-                            {/* Card Content */}
-                            <div className="relative flex h-full flex-col justify-between p-8 md:p-10">
-                                <div className="flex justify-between items-start">
-                                    <span className="font-mono text-xl text-white/40 group-hover:text-electric-cyan/80 transition-colors">0{(idx % displayWorks.length) + 1}</span>
-                                    <ArrowUpRight className="h-8 w-8 text-white/40 transition-transform duration-500 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:text-electric-cyan" />
-                                </div>
-
-                                <div>
-                                    <div className="mb-6 flex flex-wrap gap-2">
-                                        {project.tags.map((tag, tIdx) => (
-                                            <span key={tIdx} className="border border-white/20 px-3 py-1 font-mono text-xs text-white/60 group-hover:border-electric-cyan/40 group-hover:text-electric-cyan/80 transition-colors">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <h3 className="font-display text-4xl md:text-5xl font-bold text-white transition-colors group-hover:text-electric-cyan leading-tight">
-                                        {project.title}
-                                    </h3>
-                                    {project.description && (
-                                        <p className="mt-4 text-sm md:text-base font-light text-white/70 line-clamp-3 group-hover:text-white/90">
-                                            {project.description}
-                                        </p>
-                                    )}
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tags.map((tag, tIdx) => (
+                                        <span key={tIdx} className="border border-black/10 px-2 py-1 text-xs text-black/50 group-hover:border-black/30 group-hover:text-black transition-colors">
+                                            {tag}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
                         </a>

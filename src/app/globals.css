@@ -1,63 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;700&display=swap');
-@import "tailwindcss";
-@plugin "tailwindcss-animate";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* Base Colors */
-  --background: #ffffff;
-  --foreground: #111111;
-  /* UI Colors */
-  --card: #ffffff;
-  --card-foreground: #111111;
-  --popover: #ffffff;
-  --popover-foreground: #111111;
-  /* Primary / Accent */
-  --primary: #111111;
-  --primary-foreground: #ffffff;
-  /* Secondary */
-  --secondary: #f4f4f5;
-  --secondary-foreground: #111111;
-  /* Muted */
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  /* Destructive */
-  --destructive: #ef4444;
-  --destructive-foreground: #fafcfd;
-  /* Borders & Inputs */
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #111111;
-  /* Radius - Minimalist = Low radius */
-  --radius: 0px;
-}
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    /* UI Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    /* Primary / Accent */
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    /* Secondary */
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 0 0% 7%;
+    /* Muted */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    /* Borders & Inputs */
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 0 0% 7%;
+    /* Radius - Minimalist = Low radius */
+    --radius: 0px;
+  }
 
-.dark {
-  /* Dark mode is inverse but still high contrast minimalist */
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #000000;
-  --card-foreground: #ffffff;
-  --popover: #000000;
-  --popover-foreground: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --secondary: #18181b;
-  --secondary-foreground: #ffffff;
-  --muted: #18181b;
-  --muted-foreground: #a1a1aa;
-  --accent: #ffffff;
-  --accent-foreground: #000000;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #fafcfd;
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #d4d4d8;
+  .dark {
+    /* Dark mode is inverse but still high contrast minimalist */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 4% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 5% 84%;
+  }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   html {
     scroll-behavior: smooth;
-    @apply bg-background text-foreground;
   }
 
   body {
