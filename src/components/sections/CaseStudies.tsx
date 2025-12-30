@@ -3,10 +3,12 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import { WORKS_DATA } from "@/lib/mock-data";
+
+
 import { Work } from "@/types/portfolio";
 
-export function CaseStudies() {
-    const featuredWorks = WORKS_DATA.filter(w => w.featured);
+export function CaseStudies({ works = [] }: { works?: Work[] }) {
+    const featuredWorks = works.length > 0 ? works : WORKS_DATA.filter(w => w.featured);
     return (
         <Section id="case-studies" className="py-20 bg-white border-t border-black/10">
             <div className="container mx-auto px-4 max-w-6xl">
