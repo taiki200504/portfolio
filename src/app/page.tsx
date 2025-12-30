@@ -8,6 +8,7 @@ import { History as HistorySection } from "@/components/sections/History";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Skills } from "@/components/sections/Skills";
 import { Contact } from "@/components/sections/Contact";
+import { BasicInfo } from "@/components/sections/BasicInfo";
 import { getWorks } from "@/lib/notion";
 
 // Force dynamic rendering if Notion data changes frequently
@@ -26,11 +27,7 @@ export default async function Home() {
         <Identity />
         <HistorySection />
         <CaseStudies works={works} />
-        import {BasicInfo} from "@/components/sections/BasicInfo";
 
-        // ... (imports)
-
-        // ... (inside Home function)
         <Skills />
         <BasicInfo />
         <Contact />
