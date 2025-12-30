@@ -3,50 +3,28 @@ import { motion } from "framer-motion";
 
 export function Identity() {
     return (
-        <Section id="identity" className="py-24 bg-white">
-            <div className="container mx-auto px-4 max-w-5xl">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-black/10 pt-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="space-y-4"
-                    >
-                        <h3 className="text-black text-sm font-bold tracking-widest uppercase font-['Outfit']">Mission</h3>
-                        <p className="text-2xl font-bold text-black leading-relaxed">
-                            個人のポテンシャルを<br />拡張する
-                        </p>
-                        <p className="text-black/40 text-sm font-['Outfit']">Expand Individual Potential</p>
-                    </motion.div>
+        <Section id="identity" className="py-20 bg-white">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h2 className="text-black text-xs font-bold tracking-[0.3em] uppercase mb-12 text-center font-['Outfit']">
+                    ABOUT
+                </h2>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="space-y-4"
-                    >
-                        <h3 className="text-black text-sm font-bold tracking-widest uppercase font-['Outfit']">Vision</h3>
-                        <p className="text-2xl font-bold text-black leading-relaxed">
-                            人類を内側から<br />アップデート
-                        </p>
-                        <p className="text-black/40 text-sm font-['Outfit']">Upgrade Humanity from the Inside</p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="space-y-4"
-                    >
-                        <h3 className="text-black text-sm font-bold tracking-widest uppercase font-['Outfit']">Philosophy</h3>
-                        <p className="text-2xl font-bold text-black leading-relaxed">
-                            静寂を<br />エンジニアリングする
-                        </p>
-                        <p className="text-black/40 text-sm font-['Outfit']">We Engineer Silence</p>
-                    </motion.div>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-left md:text-center space-y-8"
+                >
+                    <p className="text-lg md:text-xl font-medium text-black leading-relaxed">
+                        私は、「熱狂を生む場」と「動くプロダクト」を同時に設計する学生起業家です。<br />
+                        中学時代のアニメ体験を起点に、テクノロジーで非日常体験を現実にすることを長期テーマにしています。
+                    </p>
+                    <p className="text-lg md:text-xl font-bold text-black leading-relaxed border-l-4 border-black pl-6 md:border-none md:pl-0">
+                        一方で、理想論ではなく、<br />
+                        構想を言語化し、小さく作って検証し、運用まで回して成果を出す<br />
+                        という実装主義を重視しています。
+                    </p>
+                </motion.div>
             </div>
         </Section>
     );
