@@ -38,29 +38,29 @@ export function Hero() {
                             </h1>
                             <div className="space-y-4 mb-8">
                                 <p className="text-lg font-medium leading-relaxed max-w-lg text-black/80">
-                                    世界観や想いを、実装できる計画とアウトプットに落とします。<br />
-                                    企画・言語化・運用・制作まで、一気通貫で「動く形」にするのが得意です。
+                                    AI と実装力で、素早く高品質なHP/LPを制作します。<br />
+                                    短納期・高品質・改善可能なWeb体験を提供。
                                 </p>
                                 <p className="text-sm font-bold text-black border-l-2 border-black pl-4 py-1">
                                     一次情報で本質を掘り、最短距離で検証して前に進めます。
                                 </p>
                             </div>
 
-                            <div className="flex gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
                                 <Button
                                     onClick={() => handleScrollTo("contact")}
                                     size="lg"
                                     className="rounded-none h-14 px-8 text-base font-bold tracking-widest bg-black text-white hover:bg-black/90 transition-all border border-black"
                                 >
-                                    <MessageCircle className="mr-2 w-5 h-5" /> 相談する
+                                    <MessageCircle className="mr-2 w-5 h-5" /> HP/LP制作を相談する
                                 </Button>
                                 <Button
-                                    onClick={() => handleScrollTo("case-studies")}
+                                    onClick={() => handleScrollTo("services")} // Changed to matches new ID
                                     variant="outline"
                                     size="lg"
                                     className="rounded-none h-14 px-8 text-base font-bold tracking-widest border border-black text-black hover:bg-black hover:text-white transition-all bg-transparent"
                                 >
-                                    <FileText className="mr-2 w-5 h-5" /> 実績を見る
+                                    <FileText className="mr-2 w-5 h-5" /> AI活用相談
                                 </Button>
                             </div>
                         </motion.div>

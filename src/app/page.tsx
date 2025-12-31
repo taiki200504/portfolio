@@ -9,7 +9,7 @@ import { CaseStudies } from "@/components/sections/CaseStudies";
 import { Skills } from "@/components/sections/Skills";
 import { Contact } from "@/components/sections/Contact";
 import { BasicInfo } from "@/components/sections/BasicInfo";
-import { AiServices } from "@/components/sections/AiServices";
+import { Services } from "@/components/sections/AiServices";
 import { getWorks } from "@/lib/notion";
 
 // Force dynamic rendering if Notion data changes frequently
@@ -27,7 +27,7 @@ export default async function Home() {
         <Hero />
         <Identity />
         <HistorySection />
-        <AiServices />
+        <Services />
         <CaseStudies works={works} />
 
         <Skills />
