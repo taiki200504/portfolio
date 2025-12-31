@@ -62,18 +62,24 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
                         <p className="text-sm font-bold text-black leading-snug">{work.oneLiner}</p>
                     </div>
                     <div className="space-y-3 pt-4 border-t border-black/5">
-                        <div>
-                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Role</span>
-                            <p className="text-xs text-black">{work.role}</p>
-                        </div>
-                        <div>
-                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Impact</span>
-                            <p className="text-xs text-black">{work.impact}</p>
-                        </div>
-                        <div>
-                            <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Deliverables</span>
-                            <p className="text-xs text-black/70">{work.deliverables}</p>
-                        </div>
+                        {work.role && (
+                            <div>
+                                <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Role</span>
+                                <p className="text-xs text-black">{work.role}</p>
+                            </div>
+                        )}
+                        {work.impact && (
+                            <div>
+                                <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Impact</span>
+                                <p className="text-xs text-black">{work.impact}</p>
+                            </div>
+                        )}
+                        {work.deliverables && (
+                            <div>
+                                <span className="text-[10px] font-bold text-black/30 uppercase tracking-widest block mb-0.5">Deliverables</span>
+                                <p className="text-xs text-black/70">{work.deliverables}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </Link>

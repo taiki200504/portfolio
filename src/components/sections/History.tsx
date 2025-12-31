@@ -43,19 +43,27 @@ export function History() {
                             transition={{ delay: i * 0.1 }}
                             className="grid grid-cols-1 md:grid-cols-[120px_1fr] relative group py-6 first:pt-0 last:pb-0"
                         >
-                            {/* Year */}
-                            <div className="hidden md:flex items-start pt-1 relative">
-                                <span className="text-sm font-bold text-black/40 font-['Outfit'] group-hover:text-black transition-colors">{item.year}</span>
-                                <div className="absolute right-[-5px] top-[9px] w-2.5 h-2.5 bg-white border-2 border-black rounded-full z-10" />
-                            </div>
-                            {/* Content */}
-                            <div className="pl-8 relative border-l md:border-l-0 border-black/10 md:border-none">
-                                {/* Mobile Dot */}
-                                <div className="absolute left-[-5px] top-[9px] w-2.5 h-2.5 bg-white border-2 border-black rounded-full z-10 md:hidden" />
+                            {/* Year - Single source of truth */}
+                            <div className="flex items-start md:pt-1 relative pl-8 md:pl-0">
+                                {/* Mobile Dot (Absolute positioned relative to this container) */}
+                                <div className="absolute left-[-5px] top-[9px] md:hidden w-2.5 h-2.5 bg-white border-2 border-black rounded-full z-10" />
 
-                                <div className="md:hidden mb-2">
-                                    <span className="text-sm font-bold text-black/40 font-['Outfit']">{item.year}</span>
-                                </div>
+                                {/* Desktop Dot (Absolute positioned relative to this container, but we need it on the border line?) 
+                                    Actually, for desktop, the border is separate. 
+                                    Let's keep the grid structure but move the Year into the first cell only.
+                                */}
+
+                                <span className="text-sm font-bold text-black/40 font-['Outfit'] group-hover:text-black transition-colors">
+                                    {item.year}
+                                </span>
+
+                                {/* Desktop Dot */}
+                                <div className="hidden md:block absolute right-[-5px] top-[9px] w-2.5 h-2.5 bg-white border-2 border-black rounded-full z-10" />
+                            </div>
+
+                            {/* Content */}
+                            <div className="pl-8 md:pl-8 relative border-l md:border-l-0 border-black/10 md:border-none mt-2 md:mt-0">
+                                {/* We removed the mobile dot/year from here */}
                                 <p className="text-black text-sm leading-relaxed whitespace-pre-line">
                                     {item.content}
                                 </p>
