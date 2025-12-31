@@ -23,7 +23,7 @@ export function BasicInfo() {
                         <p className="text-sm font-bold text-black/80 mb-6">学生起業家｜プロダクト設計・コミュニティ設計・実装</p>
 
                         <p className="text-base text-black/80 leading-relaxed mb-4">
-                            立教大学 経済学部 在学（休学予定あり）。<br />
+                            立教大学 経済学部 在学（現在休学中）。<br />
                             “熱狂を生む場を現実化する”をテーマに、企画・設計・実装の一気通貫で価値を生む活動をしています。
                         </p>
                     </motion.div>

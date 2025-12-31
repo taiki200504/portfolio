@@ -42,12 +42,14 @@ export function Contact() {
                     <div className="text-center mb-10">
                         <p className="text-black font-medium text-base mb-4 leading-relaxed">
                             何を相談すればいいか分からない状態でも問題ありません。<br />
-                            何を相談すればいいか分からない状態でも問題ありません。<br />
                             上記のいずれかに当てはまれば、概要だけ送ってください。
                         </p>
                         <p className="text-black font-bold text-base mb-4 leading-relaxed bg-black/5 p-4 inline-block">
                             AIで何ができるか分からない状態でもOKです。<br />
                             現状の業務と理想だけ共有してください。最短のPoC案に落とします。
+                        </p>
+                        <p className="text-xs text-black/60 font-medium mb-8">
+                            ※ データ取り扱い・秘密保持・運用体制について、必要に応じて事前にすり合わせ可能です。
                         </p>
                         <div className="mt-8">
                             <a href="mailto:taiki.mishima.biz@gmail.com" className="inline-flex items-center gap-2 text-black hover:underline font-bold tracking-wider text-lg">
