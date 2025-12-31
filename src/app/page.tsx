@@ -1,13 +1,4 @@
-import { AiServices } from "@/components/sections/AiServices";
-
-// ... ensure import at top if I could, but `replace_file_content` checks exact match.
-// I will do it in two chunks correctly this time.
-// Actually, I can use `multi_replace`. Or just `replace` carefully.
-// I'll assume lines match. I will check the file content again to be safe?
-// I already saw page.tsx content in Step 453.
-// Imports were at the top.
-// I will just add the component in the JSX first, then add the import.
-
+import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 
 // Section Components
